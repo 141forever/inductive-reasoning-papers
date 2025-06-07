@@ -1,1 +1,1 @@
-# awesome-inductive-reasoning
+# the Paper Collection of Inductive Reasoning
