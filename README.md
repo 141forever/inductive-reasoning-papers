@@ -13,4 +13,4 @@
     一个inductive model用作矩阵补全任务。
 2. **Inductive Representation Learning on Large Graphs** [NIPS2017] [[link](https://arxiv.org/pdf/1706.02216)]
 
-    GraphSAGE，一个a general inductive framework that leverages node feature information (e.g., text attributes) to efficiently generate node embeddings for previously unseen data。
+    GraphSAGE，a general inductive framework that leverages node feature information (e.g., text attributes) to efficiently generate node embeddings for previously unseen data。
