@@ -31,3 +31,7 @@
 2. **Inductive Representation Learning on Large Graphs** [NIPS2017] [[paper link](https://arxiv.org/pdf/1706.02216)]
 
    GraphSAGE 是一个通用的归纳式框架，它利用节点的特征信息，可以高效地为以前未见过的数据生成节点embedding表示。
+
+3. **On the Inductive Bias of Neural Tangent Kernels** [NIPS2019] [[paper link](https://papers.nips.cc/paper_files/paper/2019/file/c4ef9c39b300931b69a36fb3dbb8d60e-Paper.pdf)]
+
+   对于传统小模型，在训练过程中会出现inductive bias这一种问题。本文给出了一种基于核函数的解决方法。
