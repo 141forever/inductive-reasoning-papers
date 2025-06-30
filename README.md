@@ -4,7 +4,7 @@
 
 1.  **On the Transfer of Inductive Bias from Simulation to the Real World: a New Disentanglement Dataset** [NIPS2019] [[paper link](https://papers.nips.cc/paper_files/paper/2019/file/d97d404b6119214e4a7018391195240a-Paper.pdf)]
 
-   对于inductive bias，提出了一个数据集，包含超过一百万张物理三维物体的图像，提升模型的迁移效果。
+      对于inductive bias，提出了一个数据集，包含超过一百万张物理三维物体的图像，提升模型的迁移效果。
    
 ## Evaluations
 
@@ -12,7 +12,7 @@
 
 1.  **Neural Program Meta-Induction** [NIPS2017] [[paper link](https://arxiv.org/pdf/1710.04157)]
 
-   集中在Neural Program Induction任务当中，对于少量训练样本，使用知识迁移的方法，提升模型泛化能力。
+      集中在Neural Program Induction任务当中，对于少量训练样本，使用知识迁移的方法，提升模型泛化能力。
 
 2. **Adapted Deep Embeddings: A Synthesis of Methods for k-Shot Inductive Transfer Learning** [NIPS2018] [[paper link](https://arxiv.org/pdf/1805.08402)]
 
