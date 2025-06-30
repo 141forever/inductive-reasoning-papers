@@ -15,7 +15,7 @@
    
 3. **Library Learning for Neurally-Guided Bayesian Program Induction** [NIPS2018] [[paper link](https://papers.nips.cc/paper_files/paper/2018/file/7aa685b3b1dc1d6780bf36f7340078c9-Paper.pdf)]
 
-   有关Program Induction任务，现有方法（如 FlashFill）虽然有效，但依赖于手工设计的DSL（领域特定语言），通用性和扩展性受限。解决方法是：构建算法 EC²，从任务中自动：探索程序（Explore）；压缩并归纳出可复用的DSL（Compress）；学习神经网络来辅助搜索（Compile）。
+   有关Program Induction任务，现有方法（如 FlashFill）虽然有效，但依赖于手工设计的DSL（领域特定语言），通用性和扩展性受限。解决方法是：构建算法 EC²，从任务中自动：探索程序；压缩并归纳出可复用的DSL；学习神经网络来辅助搜索。
 
 4. **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
 
