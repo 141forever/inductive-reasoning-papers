@@ -1,10 +1,15 @@
 # The Paper Collection of Inductive Reasoning
 
-## Benchmarks
+## Benchmarks, Datasets and Tasks
 
 1.  **On the Transfer of Inductive Bias from Simulation to the Real World: a New Disentanglement Dataset** [NIPS2019] [[paper link](https://papers.nips.cc/paper_files/paper/2019/file/d97d404b6119214e4a7018391195240a-Paper.pdf)]
 
       对于inductive bias，提出了一个数据集，包含超过一百万张物理三维物体的图像，提升模型的迁移效果。
+    
+2.  **Learning abstract structure for drawing by efficient motor program induction** [NIPS2020] [[paper link](https://papers.nips.cc/paper_files/paper/2020/file/1c104b9c0accfca52ef21728eaf01453-Paper.pdf)]
+
+     希望提高模型的inductive bias, 作者设计了一个受控实验任务：手绘复制图形。通过程序归纳（program induction）来学会绘图行为，这一类方法属于神经符号推理。
+      
    
 ## Evaluations
 
@@ -22,7 +27,11 @@
 
    有关Program Induction任务，现有方法（如 FlashFill）虽然有效，但依赖于手工设计的DSL（领域特定语言），通用性和扩展性受限。解决方法是：构建算法 EC²，从任务中自动：探索程序；压缩并归纳出可复用的DSL；学习神经网络来辅助搜索。
 
-4. **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
+4. **On the Inductive Bias of Neural Tangent Kernels** [NIPS2019] [[paper link](https://papers.nips.cc/paper_files/paper/2019/file/c4ef9c39b300931b69a36fb3dbb8d60e-Paper.pdf)]
+
+   对于传统小模型的inductive bias，本文给出了一种基于核函数的提高方法。
+
+5. **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
 
    提出了一种基于数列的类比推理合成数据管线，以code为呈现形式构建了一批SFT合成数据，有效的提高了LLMs的类比推理和code推理能力。
 
@@ -35,12 +44,8 @@
    
 2. **Inductive Representation Learning on Large Graphs** [NIPS2017] [[paper link](https://arxiv.org/pdf/1706.02216)]
 
-   GraphSAGE 是一个通用的归纳式框架，它利用节点的特征信息，可以高效地为以前未见过的数据生成节点embedding表示。
-
-3. **On the Inductive Bias of Neural Tangent Kernels** [NIPS2019] [[paper link](https://papers.nips.cc/paper_files/paper/2019/file/c4ef9c39b300931b69a36fb3dbb8d60e-Paper.pdf)]
-
-   对于传统小模型，在训练过程中会出现inductive bias这一种问题。本文给出了一种基于核函数的解决方法。
+   GraphSAGE是一个通用的归纳式框架，它利用节点的特征信息，可以高效地为以前未见过的数据生成节点embedding表示。
    
-4. **Provable Non-linear Inductive Matrix Completion** [NIPS2019] [[paper link](https://papers.nips.cc/paper_files/paper/2019/file/ce5193a069bea027a60e06c57a106eb6-Paper.pdf)]
+3. **Provable Non-linear Inductive Matrix Completion** [NIPS2019] [[paper link](https://papers.nips.cc/paper_files/paper/2019/file/ce5193a069bea027a60e06c57a106eb6-Paper.pdf)]
 
    是一种indcutive matrix补全的机器学习方法。
