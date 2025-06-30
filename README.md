@@ -35,3 +35,7 @@
 3. **On the Inductive Bias of Neural Tangent Kernels** [NIPS2019] [[paper link](https://papers.nips.cc/paper_files/paper/2019/file/c4ef9c39b300931b69a36fb3dbb8d60e-Paper.pdf)]
 
    对于传统小模型，在训练过程中会出现inductive bias这一种问题。本文给出了一种基于核函数的解决方法。
+   
+4. **Provable Non-linear Inductive Matrix Completion** [NIPS2019] [[paper link](https://papers.nips.cc/paper_files/paper/2019/file/ce5193a069bea027a60e06c57a106eb6-Paper.pdf)]
+
+   是一种indcutive matrix补全的机器学习方法。
