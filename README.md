@@ -4,11 +4,11 @@
 
 1.  **On the Transfer of Inductive Bias from Simulation to the Real World: a New Disentanglement Dataset** [NIPS2019] [[paper link](https://papers.nips.cc/paper_files/paper/2019/file/d97d404b6119214e4a7018391195240a-Paper.pdf)]
 
-      对于inductive bias，提出了一个数据集，包含超过一百万张物理三维物体的图像，提升模型的迁移效果。
+      提出了一个数据集，通过真实机械臂采样而来的，包含超过一百万张物理三维物体的图像，拥有三个子集，以提升模型的迁移效果和inductive bias。【MPI3D】【disentanglement metrics】【各类VAE模型】
     
 2.  **Learning abstract structure for drawing by efficient motor program induction** [NIPS2020] [[paper link](https://papers.nips.cc/paper_files/paper/2020/file/1c104b9c0accfca52ef21728eaf01453-Paper.pdf)]
 
-     希望提高模型的inductive bias, 作者设计了一个受控实验任务：手绘复制图形。通过程序归纳（program induction）来学会绘图行为，这一类方法属于神经符号推理。
+     研究人类如何几次演练后便构建出抽象的、可复用的程序性先验知识，供模型学习。<u>揭示两大元学习原则：abstraction（抽象）和compositionality（组合）是构成人类快速学习结构化表示的关键，同时强调motor efficiency的先验在真实行为再现中必不可少。</u>【手绘风格图形】【stroke order, motor trajectory, 模型重现度】【PI,Hybrid等】
       
    
 ## Evaluations
