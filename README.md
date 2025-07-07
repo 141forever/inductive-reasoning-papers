@@ -1,5 +1,11 @@
 # The Paper Collection of Inductive Reasoning
 
+## Importance
+
+1.  **When Is Inductive Inference Possible?** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/a8808b75b299d64a23255bc8d30fb786-Paper-Conference.pdf)]
+
+      归纳推理的小综述。
+
 ## Benchmarks, Datasets and Tasks
 
 1.  **On the Transfer of Inductive Bias from Simulation to the Real World: a New Disentanglement Dataset** [NIPS2019] [[paper link](https://papers.nips.cc/paper_files/paper/2019/file/d97d404b6119214e4a7018391195240a-Paper.pdf)]
