@@ -21,11 +21,15 @@
    
       提出了一种基于数列的类比推理合成数据管线，以code为呈现形式构建了一批SFT合成数据，有效的提高了LLMs的类比推理和code推理能力。
    
-      
+## Explanations and Explorations
+
+1. **A New Neural Kernel Regime: The Inductive Bias of Multi-Task Learning** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/fdff3c4130c24c40c88aa41eb52d2a27-Paper-Conference.pdf)]
+  
+   多任务学习（MTL）的归纳偏置如何影响神经网络的泛化行为？。扩展神经核理论到MTL场景，定义多任务神经核（Multi-Task Neural Kernel, MTNK），刻画任务梯度交互对核演化的影响。【多任务回归与分类】【MultiMNIST,CelebA】【核相似性和任务性能】【MLP,ResNet】
    
 ## Evaluations
 
-## Methods, Explanations and Explorations
+## Methods
 
 1. **A Sparse Interactive Model for Matrix Completion with Side Information** [NIPS2016] [[paper link](https://papers.nips.cc/paper_files/paper/2016/file/093b60fd0557804c8ba0cbf1453da22f-Paper.pdf)]
   
@@ -117,7 +121,7 @@
 
 23. **Scaling MLPs: A Tale of Inductive Bias** [NIPS2023] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/bf2a5ce85aea9ff40d9bf8b2c2561cae-Paper-Conference.pdf)]
 
-     探索 MLP 在视觉任务上随着规模增长的极限，评估在无 inductive bias 的条件下，性能是否能被计算资源代偿。论文核心反复强调：MLP 不具备视觉偏置，即完全依赖平铺像素信息处理，没有空间结构 inductive bias；然而结果表明，通过规模（compute）可以弥补这一缺陷，验证了“scale beats bias”这一命题。【图像分类】【ImageNet‑21k】【分类准确率】【一些MLP】
+     探索MLP在视觉任务上随着规模增长的极限，评估在无 inductive bias的条件下，性能是否能被计算资源代偿。论文核心反复强调：MLP 不具备视觉偏置，即完全依赖平铺像素信息处理，没有空间结构 inductive bias；然而结果表明，通过规模（compute）可以弥补这一缺陷，验证了“scale beats bias”这一命题。【图像分类】【ImageNet‑21k】【分类准确率】【一些MLP】
 
 24. **Mars: Situated Inductive Reasoning in an Open‑World Environment** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/1fb6d0b52f5e41b11392841a66dbfe7d-Paper-Datasets_and_Benchmarks_Track.pdf)]
 
