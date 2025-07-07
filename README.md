@@ -100,10 +100,13 @@
 
      传统知识图谱补全泛化性差，仅利用图谱结构信息（如TransE）的方法难以处理新实体的语义关联，仅依赖文本描述（如BERT编码）的方法忽略图谱的拓扑结构，导致推理能力不足。所以提出一种联合结构与文本知识的归纳式KGC框架。【知识图谱补全】【WN18RR-Ind,FB15k-237-Ind】【MRR（平均倒数排名）, Hit@1/3/10】【直推式：TransE,RotatE,ComplEx。归纳式：GraIL,CoMPILE,Meta-KGC】
 
-21. **** [NIPS2023] [[paper link]()]
+21. **C-Disentanglement: Discovering Causally-Independent Generative Factors under an Inductive Bias of Confounder** [NIPS2023] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/7ca55c8276acf1f0aa996cd3622d1df4-Paper-Conference.pdf)]
 
-     【知识图谱补全】【WN18RR-Ind,FB15k-237-Ind】【MRR（平均倒数排名）, Hit@1/3/10】【直推式：TransE,RotatE,ComplEx。归纳式：GraIL,CoMPILE,Meta-KGC】
+     当前大多数表征学习认为观察数据是由多个生成因子生成的，且这些因子应该是因果可解耦的——即一个因子的变化不应影响另一个。然而，绝大多数工作忽略了生成因子之间可能存在的混杂变量（confounder），而只追求统计独立，却无法识别那些在观测数据中存在相关性的真实因果因素将先验知识作为可观测标签引入inductive bias。这个 bias 是指用领域知识提供的混淆变量信息，用于在训练中分区拟合并强制条件独立。【图像重构,分类任务】【3dshape,Candle,CelebA】【重构误差和因果指标】【VAE系列】
 
+22. **An Inductive Bias for Tabular Deep Learning** [NIPS2023] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/8671b6dffc08b4fcf5b8ce26799b2bef-Paper-Conference.pdf)]
+
+     引入一种偏向低频率平滑的归纳偏置以解决表格数据的目标函数通常非常不规则的问题。【表格任务】【表格数据集】【分类准确率】【一些MLP】
    
 ## Others
    
