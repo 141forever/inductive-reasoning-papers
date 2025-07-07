@@ -5,6 +5,7 @@
 1.  **When Is Inductive Inference Possible?** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/a8808b75b299d64a23255bc8d30fb786-Paper-Conference.pdf)]
 
       归纳推理的小综述。
+    
 
 ## Benchmarks, Datasets and Tasks
 
@@ -145,6 +146,11 @@
 30. **Diffusion Model with Cross Attention as an Inductive Bias for Disentanglement** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/9647157086adf5aa2c0217fb7f82bb19-Paper-Conference.pdf)]
 
      利用扩散模型（Diffusion Models）结合交叉注意力（Cross Attention），作为一种inductive bias，提高模型在特定任务中的解耦能力。【生成任务】【CIFAR-10等】【FID,IS】【扩散模型】
+
+31. **Inductive biases of multi-task learning and finetuning: multiple regimes of feature reuse** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/d7346ff79699b5bba26f8af89e700a95-Paper-Conference.pdf)]
+
+     理解多任务学习（MTL）和微调（finetuning）中特征重用的内在机制。现有研究缺乏对这两种范式下模型参数如何动态变化、不同层特征如何被重用以及任务相似性如何影响性能的系统分析。【多任务分类,跨域分类】【MultiMNIST,CIFAR】【准确率】【MLP,resnet,ViT】
+
    
 ## Others
    
@@ -191,7 +197,11 @@
 11. **PID‑Inspired Inductive Biases for Deep Reinforcement Learning in Partially Observable Control Tasks** [NIPS2023] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/ba1c5356d9164bb64c446a4b690226b0-Paper-Conference.pdf)]
 
     以PID控制为启发，设计一种既能有效编码历史信息又具备强鲁棒性的inductive bias。
+
+12. **MOTIVE: A Drug-Target Interaction Graph For Inductive Link Prediction** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/fdb3fa770c2e0ecbb4b7dc7083ef5be9-Paper-Datasets_and_Benchmarks_Track.pdf)]
+
+    靶向药。
     
-12. **Theoretical Analysis of the Inductive Biases in Deep Convolutional Networks** [NIPS2023] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/eb1bad7a84ef68a64f1afd6577725d45-Paper-Conference.pdf)]
+13. **Theoretical Analysis of the Inductive Biases in Deep Convolutional Networks** [NIPS2023] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/eb1bad7a84ef68a64f1afd6577725d45-Paper-Conference.pdf)]
 
     系统性地解析这些结构形成的归纳偏置，以在理论上解释CNN的高效学习能力。
