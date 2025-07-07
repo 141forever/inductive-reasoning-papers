@@ -18,7 +18,7 @@
    
 ## Evaluations
 
-## Methods
+## Methods, Explanations and Explorations
 
 1. **A Sparse Interactive Model for Matrix Completion with Side Information** [NIPS2016] [[paper link](https://papers.nips.cc/paper_files/paper/2016/file/093b60fd0557804c8ba0cbf1453da22f-Paper.pdf)]
   
@@ -107,6 +107,10 @@
 22. **An Inductive Bias for Tabular Deep Learning** [NIPS2023] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/8671b6dffc08b4fcf5b8ce26799b2bef-Paper-Conference.pdf)]
 
      引入一种偏向低频率平滑的归纳偏置以解决表格数据的目标函数通常非常不规则的问题。【表格任务】【表格数据集】【分类准确率】【一些MLP】
+
+23. **Scaling MLPs: A Tale of Inductive Bias** [NIPS2023] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/bf2a5ce85aea9ff40d9bf8b2c2561cae-Paper-Conference.pdf)]
+
+     探索 MLP 在视觉任务上随着规模增长的极限，评估在无 inductive bias 的条件下，性能是否能被计算资源代偿。论文核心反复强调：MLP 不具备视觉偏置，即完全依赖平铺像素信息处理，没有空间结构 inductive bias；然而结果表明，通过规模（compute）可以弥补这一缺陷，验证了“scale beats bias”这一命题。【图像分类】【ImageNet‑21k】【分类准确率】【一些MLP】
    
 ## Others
    
@@ -148,8 +152,12 @@
    
 10. **PAC-Bayes Generalization Certificates for Learned Inductive Conformal Prediction** [NIPS2023] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/9235c376df778f1aaf486a882afb7471-Paper-Conference.pdf)]
 
-   在Inductive Conformal Prediction (ICP)：一种后验式、不要求数据交换性假设的保序预测方法，属于归纳学习范式中给出泛化界的inductive bias。
+         在Inductive Conformal Prediction (ICP)：一种后验式、不要求数据交换性假设的保序预测方法，属于归纳学习范式中给出泛化界的inductive bias。
 
 11. **PID‑Inspired Inductive Biases for Deep Reinforcement Learning in Partially Observable Control Tasks** [NIPS2023] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/ba1c5356d9164bb64c446a4b690226b0-Paper-Conference.pdf)]
 
-   以PID控制为启发，设计一种既能有效编码历史信息又具备强鲁棒性的inductive bias。
+         以PID控制为启发，设计一种既能有效编码历史信息又具备强鲁棒性的inductive bias。
+    
+12. **Theoretical Analysis of the Inductive Biases in Deep Convolutional Networks** [NIPS2023] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/eb1bad7a84ef68a64f1afd6577725d45-Paper-Conference.pdf)]
+
+         系统性地解析这些结构形成的归纳偏置，以在理论上解释CNN的高效学习能力。
