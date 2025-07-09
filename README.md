@@ -26,6 +26,18 @@
 1. **A New Neural Kernel Regime: The Inductive Bias of Multi-Task Learning** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/fdff3c4130c24c40c88aa41eb52d2a27-Paper-Conference.pdf)]
   
    多任务学习（MTL）的归纳偏置如何影响神经网络的泛化行为？。扩展神经核理论到MTL场景，定义多任务神经核（Multi-Task Neural Kernel, MTNK），刻画任务梯度交互对核演化的影响。【多任务回归与分类】【MultiMNIST,CelebA】【核相似性和任务性能】【MLP,ResNet】
+
+2. **The Evolution of Statistical Induction Heads: In-Context Learning Markov Chains** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/75b0edb869e2cd509d64d0e8ff446bc1-Paper-Conference.pdf)]
+
+     使用induction head来解释LLM的ICL内在机理。【ICL‑MC】【合成马尔可夫链序列数据集】【与uniform,unigram,bigram策略计算KL散度】【2‑layer attention‑only Transformer】
+    
+3. **Unveiling Induction Heads: Provable Training Dynamics and Feature Learning in Transformers** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/7aae9e3ec211249e05bd07271a6b1441-Paper-Conference.pdf)]
+
+     Transformer在大规模语言模型中展现出强大的ICL能力，而“induction heads”作为关键结构已被经验发现，但其训练动力学与各组件如何协同构建这种机制仍缺乏理论性的解析。最后证明了证明在真实Transformer架构中，训练过程自发构建generalized induction head。【n‑gram马尔可夫链中的next‑token预测】【合成马尔可夫链序列数据集】【loss等】【2‑layer attention‑only Transformer】
+
+4. **Inductive biases of multi-task learning and finetuning: multiple regimes of feature reuse** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/d7346ff79699b5bba26f8af89e700a95-Paper-Conference.pdf)]
+
+     理解多任务学习（MTL）和微调（finetuning）中特征重用的内在机制。现有研究缺乏对这两种范式下模型参数如何动态变化、不同层特征如何被重用以及任务相似性如何影响性能的系统分析。【多任务分类,跨域分类】【MultiMNIST,CIFAR】【准确率】【MLP,resnet,ViT】
    
 ## Evaluations
 
@@ -61,7 +73,7 @@
    
 8. **Latent Template Induction with Gumbel-CRFs** [NIPS2020] [[paper link](https://arxiv.org/pdf/2011.14244)]
 
-   提出了一种结构化变分自编码器（Structured Variational Autoencoder）模型，利用连续松弛的条件随机场（CRF）推理机制，自动从文本数据中归纳出控制句子生成结构的潜在模板。【文本生成】【数据到文本生成R4R和无监督同义句生成ParaNMT】【BLEU，ROUGE，Success@1】【CRF模型】
+   提出了一种结构化变分自编码器（Structured Variational Autoencoder）模型，利用连续松弛的条件随机场（CRF）推理机制，自动从文本数据中归纳出控制句子生成结构的潜在模板。【文本生成】【数据到文本生成R4R和无监督同义句生成ParaNMT】【BLEU, ROUGE, Success@1】【CRF模型】
 
 9. **Fine-grained Generalization Analysis of Inductive Matrix Completion** [NIPS2021] [[paper link](https://proceedings.neurips.cc/paper_files/paper/2021/file/d6428eecbe0f7dff83fc607c5044b2b9-Paper.pdf)]
 
@@ -69,7 +81,7 @@
 
 10. **Leveraging the Inductive Bias of Large Language Models for Abstract Textual Reasoning** [NIPS2021] [[paper link](https://arxiv.org/abs/2110.02370)]
 
-     预训练的大型语言模型（如T5、GPT-3）是否具备对抽象文本推理任务（如容器操作、导航路径推断）的归纳偏置？微调 T5，设计 container/navigation/composite 任务，对比 tabula rasa 和英语 vs 猫语模板。【NLP任务泛化】【每个任务构造成训练集、插值和外推测试集，用于各类泛化测试（基数、符号、组合）】【Exact match,BLEU】【T5】
+     预训练的大型语言模型（如T5、GPT-3）是否具备对抽象文本推理任务（如容器操作、导航路径推断）的归纳偏置？微调 T5，设计 container/navigation/composite 任务，对比tabula rasa和英语vs猫语模板。【NLP任务泛化】【每个任务构造成训练集、插值和外推测试集，用于各类泛化测试（基数、符号、组合）】【Exact match,BLEU】【T5】
 
 11. **Tailoring: encoding inductive biases by optimizing unsupervised objectives at prediction time** [NIPS2021] [[paper link](https://arxiv.org/abs/2009.10623)]
 
@@ -81,7 +93,7 @@
 
 13. **ViTAE: Vision Transformer Advanced by Exploring Intrinsic Inductive Bias** [NIPS2021] [[paper link](https://arxiv.org/pdf/2106.03348)]
 
-     ViT将图像拆成1D token序列，缺乏CNN的内在归纳偏置（intrinsic inductive bias），特别是在局部结构建模与多尺度变化上的能力。结果它需要极大规模数据和长训练才能“间接”学会这些偏置。本文将CNN的 locality和scale‑invariance偏置直接引入ViT。【图像分类和下游任务】【ImageNet-1K和下游数据集】【top1等】【ViT系列】
+     ViT将图像拆成1D token序列，缺乏CNN的内在归纳偏置，特别是在局部结构建模与多尺度变化上的能力。结果它需要极大规模数据和长训练才能“间接”学会这些偏置。本文将CNN的 locality和scale‑invariance偏置直接引入ViT。【图像分类和下游任务】【ImageNet-1K和下游数据集】【top1等】【ViT系列】
     
 14. **INDIGO: GNN‑Based Inductive Knowledge Graph Completion Using Pair‑Wise Encoding** [NIPS2021] [[paper link](https://papers.nips.cc/paper_files/paper/2021/file/0fd600c953cde8121262e322ef09f70e-Paper.pdf)]
 
@@ -121,11 +133,11 @@
 
 23. **Scaling MLPs: A Tale of Inductive Bias** [NIPS2023] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/bf2a5ce85aea9ff40d9bf8b2c2561cae-Paper-Conference.pdf)]
 
-     探索MLP在视觉任务上随着规模增长的极限，评估在无 inductive bias的条件下，性能是否能被计算资源代偿。论文核心反复强调：MLP 不具备视觉偏置，即完全依赖平铺像素信息处理，没有空间结构 inductive bias；然而结果表明，通过规模（compute）可以弥补这一缺陷，验证了“scale beats bias”这一命题。【图像分类】【ImageNet‑21k】【分类准确率】【一些MLP】
+     探索MLP在视觉任务上随着规模增长的极限，评估在无 inductive bias的条件下，性能是否能被计算资源代偿。论文核心反复强调：MLP不具备视觉偏置，即完全依赖平铺像素信息处理，没有空间结构inductive bias；然而结果表明，通过规模（compute）可以弥补这一缺陷，验证了“scale beats bias”这一命题。【图像分类】【ImageNet‑21k】【分类准确率】【一些MLP】
 
 24. **Mars: Situated Inductive Reasoning in an Open‑World Environment** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/1fb6d0b52f5e41b11392841a66dbfe7d-Paper-Datasets_and_Benchmarks_Track.pdf)]
 
-     当前 LLM 和 RL 模型依赖大量“预先存储的知识”，但在新环境中难以灵活应对。作者提出“情境归纳推理（situated inductive reasoning）”：模型需要在 开放世界中通过交互从零开始归纳出规则，并在决策中灵活应用这些新知识。【开放世界任务】【Mars】【Reward,Success Rate】【LLM】
+     当前LLM和RL模型依赖大量“预先存储的知识”，但在新环境中难以灵活应对。作者提出“情境归纳推理（situated inductive reasoning）”：模型需要在开放世界中通过交互从零开始归纳出规则，并在决策中灵活应用这些新知识。【开放世界任务】【Mars】【Reward,Success Rate】【LLM】
 
 25. **How Far Can Transformers Reason? The Globality Barrier and Inductive Scratchpad** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/3107e4bdb658c79053d7ef59cbc804dd-Paper-Conference.pdf)]
 
@@ -135,25 +147,14 @@
 
      当前的因果结构学习（causal structure learning）通常依赖：对每个数据集进行单独图结构推断（通常需慢速似然或复杂后验算法）；基于推断出的图再贪婪选择干预实验，效率低、对分布变更敏感。论文提出CAASL方法，使用更少干预获得更准确的因果图，适配不同图结构分布、干预类型，甚至更高维环境。【干预设计因果学习】【Gaussian SCM】【Returns,结构指标】【Random（随机干预）,Observational（继续采集观测数据）,DiffCBED等】
 
-27. **The Evolution of Statistical Induction Heads: In-Context Learning Markov Chains** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/75b0edb869e2cd509d64d0e8ff446bc1-Paper-Conference.pdf)]
+27. **On the Inductive Bias of Stacking Towards Improving Reasoning** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/837bc5db12f3d394d220815a7687340c-Paper-Conference.pdf)]
 
-     使用induction head来解释LLM的ICL内在机理。【ICL‑MC】【合成马尔可夫链序列数据集】【与uniform,unigram,bigram策略计算KL散度】【2‑layer attention‑only Transformer】
-    
-28. **Unveiling Induction Heads: Provable Training Dynamics and Feature Learning in Transformers** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/7aae9e3ec211249e05bd07271a6b1441-Paper-Conference.pdf)]
+     高效训练的stacking策略（如渐进式层级增长）已被用于加速大规模语言模型结构训练，但这类方法除了提高训练效率外，对模型的归纳偏置影响尚未充分研究本文目标除了探索stacking的效率提升外，更聚焦于其是否能内隐地增强模型的推理能力。（本文偏FLOPS和perplexity等底层）【UL2 objective】【开放式阅读理解,数学等】【准确率】【LLM】
 
-     Transformer在大规模语言模型中展现出强大的ICL能力，而“induction heads”作为关键结构已被经验发现，但其训练动力学与各组件如何协同构建这种机制仍缺乏理论性的解析。最后证明了证明在真实Transformer架构中，训练过程自发构建generalized induction head。【n‑gram马尔可夫链中的next‑token预测】【合成马尔可夫链序列数据集】【loss等】【2‑layer attention‑only Transformer】
-
-29. **On the Inductive Bias of Stacking Towards Improving Reasoning** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/837bc5db12f3d394d220815a7687340c-Paper-Conference.pdf)]
-
-     高效训练的stacking策略（如渐进式层级增长）已被用于加速大规模语言模型结构训练，但这类方法除了提高训练效率外，对模型的归纳偏置影响尚未充分研究 本文目标除了探索 stacking 的效率提升外，更聚焦于其是否能内隐地增强模型的推理能力。（本文偏FLOPS和perplexity等底层）【UL2 objective】【开放式阅读理解,数学等】【准确率】【LLM】
-
-30. **Diffusion Model with Cross Attention as an Inductive Bias for Disentanglement** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/9647157086adf5aa2c0217fb7f82bb19-Paper-Conference.pdf)]
+28. **Diffusion Model with Cross Attention as an Inductive Bias for Disentanglement** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/9647157086adf5aa2c0217fb7f82bb19-Paper-Conference.pdf)]
 
      利用扩散模型（Diffusion Models）结合交叉注意力（Cross Attention），作为一种inductive bias，提高模型在特定任务中的解耦能力。【生成任务】【CIFAR-10等】【FID,IS】【扩散模型】
 
-31. **Inductive biases of multi-task learning and finetuning: multiple regimes of feature reuse** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/d7346ff79699b5bba26f8af89e700a95-Paper-Conference.pdf)]
-
-     理解多任务学习（MTL）和微调（finetuning）中特征重用的内在机制。现有研究缺乏对这两种范式下模型参数如何动态变化、不同层特征如何被重用以及任务相似性如何影响性能的系统分析。【多任务分类,跨域分类】【MultiMNIST,CIFAR】【准确率】【MLP,resnet,ViT】
 
    
 ## Others
@@ -206,6 +207,6 @@
 
     靶向药。
     
-13. **Theoretical Analysis of the Inductive Biases in Deep Convolutional Networks** [NIPS2023] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/eb1bad7a84ef68a64f1afd6577725d45-Paper-Conference.pdf)]
+13. **Theoretical Analysis of the Inductive Biases in Deep Convolutional Networks** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/eb1bad7a84ef68a64f1afd6577725d45-Paper-Conference.pdf)]
 
     系统性地解析这些结构形成的归纳偏置，以在理论上解释CNN的高效学习能力。
