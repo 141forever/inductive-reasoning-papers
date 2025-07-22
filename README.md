@@ -154,6 +154,19 @@
 28. **Diffusion Model with Cross Attention as an Inductive Bias for Disentanglement** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/9647157086adf5aa2c0217fb7f82bb19-Paper-Conference.pdf)]
 
      利用扩散模型（Diffusion Models）结合交叉注意力（Cross Attention），作为一种inductive bias，提高模型在特定任务中的解耦能力。【生成任务】【CIFAR-10等】【FID,IS】【扩散模型】
+    
+29. **Explicit Inductive Bias for Transfer Learning with Convolutional Networks** [ICML2018] [[paper link](https://arxiv.org/abs/1802.01483)]
+
+     预训练之后finetune也会有所遗忘，通过显式的正则化机制，在 fine‑tuning 过程中保持与预训练模型的相似性，从而增强迁移性能并减少遗忘。【分类任务】【ImageNet、Places‑365等】【准确率】【CV模型】
+    
+30. **Fast and Sample Efficient Inductive Matrix Completion via Multi-Phase Procrustes Flow** [ICML2018] [[paper link](https://proceedings.mlr.press/v80/zhang18b/zhang18b.pdf)]
+
+   多阶段非凸梯度优化做矩阵补全。【矩阵补全】【多标签学习，基因-疾病预测】【相对误差】【矩阵补全模型】
+
+31. **Inductive Two-layer Modeling with Parametric Bregman Transfer** [ICML2018] [[paper link](https://proceedings.mlr.press/v80/ganapathiraman18a/ganapathiraman18a.pdf)]
+
+   实现带有理论保证的全局最优或近似最优两层网络学习。 kernel表示和SDP松弛，属于transductive学习方式。【分类任务】【G241N等】【ACC】【两层网络模型】
+
 
 
    
