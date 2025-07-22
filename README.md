@@ -165,8 +165,11 @@
 
 31. **Inductive Two-layer Modeling with Parametric Bregman Transfer** [ICML2018] [[paper link](https://proceedings.mlr.press/v80/ganapathiraman18a/ganapathiraman18a.pdf)]
 
-     实现带有理论保证的全局最优或近似最优两层网络学习。 kernel表示和SDP松弛，属于transductive学习方式。【分类任务】【G241N等】【ACC】【两层网络模型】
+     实现带有理论保证的全局最优或近似最优两层网络学习。 模型学习的是参数𝑊,𝑈，不需要访问训练样本进行推断。【分类任务】【G241N等】【ACC】【两层网络模型】
 
+32. **Inductive Relation Prediction by Subgraph Reasoning** [ICML2020] [[paper link](https://proceedings.mlr.press/v119/teru20a/teru20a.pdf)]
+
+     现有实体嵌入的方法无法处理新的实体，本文能够从局部子图结构中归纳出关系规则，并推广到未见实体和新图结构 。【实体预测】【WN18RR,FB15k-237,NELL-995】【AUC,hit】【GNN模型】
 
 
    
@@ -223,3 +226,7 @@
 13. **Theoretical Analysis of the Inductive Biases in Deep Convolutional Networks** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2023/file/eb1bad7a84ef68a64f1afd6577725d45-Paper-Conference.pdf)]
 
     系统性地解析这些结构形成的归纳偏置，以在理论上解释CNN的高效学习能力。
+
+14. **Inductive-bias-driven Reinforcement Learning for Efficient Schedules in Heterogeneous Clusters** [ICML2020] [[paper link](https://proceedings.mlr.press/v119/banerjee20a/banerjee20a.pdf)]
+
+    通过系统拓扑与性能计数器定义的架构依赖，提供inductive bias，引导RL agent（异构集群调度）学习有效状态表示。
