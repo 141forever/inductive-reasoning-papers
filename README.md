@@ -161,11 +161,11 @@
     
 30. **Fast and Sample Efficient Inductive Matrix Completion via Multi-Phase Procrustes Flow** [ICML2018] [[paper link](https://proceedings.mlr.press/v80/zhang18b/zhang18b.pdf)]
 
-   多阶段非凸梯度优化做矩阵补全。【矩阵补全】【多标签学习，基因-疾病预测】【相对误差】【矩阵补全模型】
+     多阶段非凸梯度优化做矩阵补全。【矩阵补全】【多标签学习，基因-疾病预测】【相对误差】【矩阵补全模型】
 
 31. **Inductive Two-layer Modeling with Parametric Bregman Transfer** [ICML2018] [[paper link](https://proceedings.mlr.press/v80/ganapathiraman18a/ganapathiraman18a.pdf)]
 
-   实现带有理论保证的全局最优或近似最优两层网络学习。 kernel表示和SDP松弛，属于transductive学习方式。【分类任务】【G241N等】【ACC】【两层网络模型】
+     实现带有理论保证的全局最优或近似最优两层网络学习。 kernel表示和SDP松弛，属于transductive学习方式。【分类任务】【G241N等】【ACC】【两层网络模型】
 
 
 
