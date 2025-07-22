@@ -17,7 +17,11 @@
 
      研究人类如何几次演练后便构建出抽象的、可复用的程序性先验知识，供模型学习。揭示两大元学习原则：abstraction（抽象）和compositionality（组合）是构成人类快速学习结构化表示的关键，同时强调motor efficiency的先验在真实行为再现中必不可少。【手绘风格图形】【stroke order, motor trajectory, 模型重现度】【PI,Hybrid等】
 
-3.  **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
+3.  **A large-scale benchmark for few-shot program induction and synthesis** [ICML2021] [[paper link](https://proceedings.mlr.press/v139/alet21a/alet21a.pdf)]
+   
+      PROGES，一个程序归纳benchmark。
+
+4.  **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
    
       提出了一种基于数列的类比推理合成数据管线，以code为呈现形式构建了一批SFT合成数据，有效的提高了LLMs的类比推理和code推理能力。
    
@@ -169,7 +173,11 @@
 
 32. **Inductive Relation Prediction by Subgraph Reasoning** [ICML2020] [[paper link](https://proceedings.mlr.press/v119/teru20a/teru20a.pdf)]
 
-     现有实体嵌入的方法无法处理新的实体，本文能够从局部子图结构中归纳出关系规则，并推广到未见实体和新图结构 。【实体预测】【WN18RR,FB15k-237,NELL-995】【AUC,hit】【GNN模型】
+     现有实体嵌入的方法无法处理新的实体，本文能够从局部子图结构中归纳出关系规则，并推广到未见实体和新图结构。【实体预测】【WN18RR,FB15k-237,NELL-995】【AUC,hit】【GNN模型】
+    
+33. **ConViT: Improving Vision Transformers with Soft Convolutional Inductive Biases** [ICML2021] [[paper link](http://proceedings.mlr.press/v139/d-ascoli21a/d-ascoli21a.pdf)]
+
+    CNN拥有硬编码的局部性和权重共享等归纳偏置，在小数据集上样本效率非常高，却因表达局限而在大数据上表现逐渐成为性能瓶颈。ViT放弃卷积硬偏置，依赖全局自注意力来捕捉视觉特征，在大规模预训练下效果卓越，但在中小规模数据时容易欠拟合或者过拟合。本文使用了Gated Positional Self-Attention（GPSA）方法，提出ConViT架构解决这一类问题。【图像分类】【ImageNet-1k】【分类准确率】【ConViT】
 
 
    
