@@ -183,6 +183,14 @@
 
     CNN拥有硬编码的局部性和权重共享等归纳偏置，在小数据集上样本效率非常高，却因表达局限而在大数据上表现逐渐成为性能瓶颈。ViT放弃卷积硬偏置，依赖全局自注意力来捕捉视觉特征，在大规模预训练下效果卓越，但在中小规模数据时容易欠拟合或者过拟合。本文使用了Gated Positional Self-Attention（GPSA）方法，提出ConViT架构解决这一类问题。【图像分类】【ImageNet-1k】【分类准确率】【ConViT】
 
+34. **LIME: Learning Inductive Bias for Primitives of Mathematical Reasoning** [ICML2021] [[paper link](http://proceedings.mlr.press/v139/wu21c/wu21c.pdf)]
+
+    提出通过设计专门的合成任务（synthetic tasks），用于给模型注入“数学推理”的 inductive bias，而非通过改变架构，形成一种新型的数学预训练范式——LIME。【数学推理】【IsarStep等】【top1 top10】【Transformers】
+
+35. **Towards Open-World Recommendation: An Inductive Model-based Collaborative Filtering Approach** [ICML2021] [[paper link](http://proceedings.mlr.press/v139/wu21j/wu21j.pdf)]
+
+    传统协同过滤（Collaborative Filtering）通过矩阵分解学习用户和物品的latent embedding，但这是典型的transductive方法，无法处理训练中未见的新用户，也无法即时推荐（on‑the‑fly）新来访用户。现实推荐场景存在大量的few‑shot用户（极少评分）或zero‑shot用户，传统方法难以应对。本文提出Relation‑learning模块归纳计算用户query特征。【推荐系统】【 MovieLens‑1M,MovieLens‑10M等】【RMSE等推荐指标】【推荐模型】
+
 
    
 ## Others
