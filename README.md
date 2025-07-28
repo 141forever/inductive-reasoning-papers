@@ -206,6 +206,18 @@
 37. **Inductive Matrix Completion: No Bad Local Minima and a Fast Algorithm** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/zilber22a/zilber22a.pdf)]
 
     一种基于优化的矩阵补全方法。【矩阵补全】【相关数据集】【rel‑RMSE】【相关基线】
+
+38. **Neuro-Symbolic Hierarchical Rule Induction** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/glanois22a/glanois22a.pdf)]
+
+    该论文聚焦于 Inductive Logic Programming (ILP) 问题——从一组正负样本和背景知识中自动学习一阶逻辑规则。传统ILP方法依赖于符号组合搜索，效率低、难以扩展；而现有神经符号方法虽然可微分，但通常缺乏通用而高效的结构。作者提出HRI模型，结合元规则（meta-rules）结构化假设与可学习嵌入，旨在获得高效、可解释、且具组合泛化能力的规则归纳方法。【ILP】【相关数据集】【成功率】【相关基线】
+
+39. **PAC-Net: A Model Pruning Approach to Inductive Transfer Learning** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/myung22a/myung22a.pdf)]
+
+      fine‑tune容易在目标任务中过拟合，遗忘源任务核心知识（例如物理规律）；当模型高度过参数化时，修剪后仍能保留源任务性能，剪枝提供了inductive bias这为 transfer learning 提供新的思路；以同时保留源知识并适应目标任务。【分类与回归任务】【Friedman和CelebA等】【RMSE和ACC等】【相关基线】
+    
+40. **Parametric Visual Program Induction with Function Modularization** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/duan22c/duan22c.pdf)]
+
+      视觉程序归纳（Visual Program Induction）旨在从图像或视觉场景生成可执行程序，但现有方法大多只能应对非参数化的原始函数（无参数或实例极少），难以处理复杂视觉场景中具有大量参数和多变属性的原始函数。作者发现：对于parametric primitive functions，即具有丰富且异构参数的函数，其变体数量极多（一个函数可能超过 10⁴ 种变体），使得动作空间爆炸，模型难以有效学习与归纳。因此论文提出Parametric Visual Program Induction的新任务，并提出Function Modularization 的方法，以应对动作空间庞大与函数间复杂相关性挑战。【VPI】【Pixel‑Grid dataset等】【ACC】【三个模块叠加的模型】
    
 ## Others
    
