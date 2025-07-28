@@ -218,6 +218,10 @@
 40. **Parametric Visual Program Induction with Function Modularization** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/duan22c/duan22c.pdf)]
 
       视觉程序归纳（Visual Program Induction）旨在从图像或视觉场景生成可执行程序，但现有方法大多只能应对非参数化的原始函数（无参数或实例极少），难以处理复杂视觉场景中具有大量参数和多变属性的原始函数。作者发现：对于parametric primitive functions，即具有丰富且异构参数的函数，其变体数量极多（一个函数可能超过 10⁴ 种变体），使得动作空间爆炸，模型难以有效学习与归纳。因此论文提出Parametric Visual Program Induction的新任务，并提出Function Modularization 的方法，以应对动作空间庞大与函数间复杂相关性挑战。【VPI】【Pixel‑Grid dataset等】【ACC】【三个模块叠加的模型】
+
+41. **Understanding Contrastive Learning Requires Incorporating Inductive Biases** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/saunshi22a/saunshi22a.pdf)]
+
+      为对比学习引入归纳偏置。【分类任务】【CIFAR-100, ImageNet】【ACC】【图像对比学习模型】
    
 ## Others
    
