@@ -46,6 +46,14 @@
 5. **Demystifying Inductive Biases for (Beta-)VAE Based Architectures** [ICML2021] [[paper link](http://proceedings.mlr.press/v139/zietlow21a/zietlow21a.pdf)]
 
     明确指出β‑VAE能disentangle的成功并非来自模型本身的能力，而是dataset varianc 结构与模型 objective 的偶然对齐。通过dataset perturbation实验呈现：当这种结构被破坏后，即factors labels仍保留，β‑VAE系统仍失败，说明评测需考虑bias而非模型普适性。强调开发更一般的disentangle方法需要设计更通用的 inductive bias或弱监督，而不能依赖dataset人为结构。【无监督disentangled表征学习】【dSprites和Shapes3D】【disentanglement metrics】【VAE系列】
+
+6. **Fast Rates for Noisy Interpolation Require Rethinking the Effects of Inductive Bias** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/donhauser22a/donhauser22a.pdf)]
+
+    传统统计观点认为：过拟合（interpolation）噪声会导致泛化性能差，因此需要正则化。但现代深度或高维模型在噪声情况下仍能很好泛化，尤其是在无正则化下。作者认为这与“明确的强inductive bias不再总是优越，尤其在存在噪声时可能反而适得其反。他们提出：更弱一些（适中）的inductive bias可能带来更好泛化性能。【回归与分类任务】【MNIST/CNTK】【estimation error或分类error rate】【ML方法】
+
+7. **Inductive Biases and Variable Creation in Self-Attention Mechanisms** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/edelman22a/edelman22a.pdf)]
+
+    该论文旨在从理论角度揭示Transformer自注意力模块的inductive bias。Inductive bias 的定义：模型的结构假设引导其在有限样本下偏向某类函数，从而实现泛化。在本作中，提出的sparse variable creation概念恰恰是Transformer的一种inductive bias：偏向于表示输入中少数子集上的稀疏依赖函数。该bias从理论上限制了模型的容量（norm-bound + covering bounds），并导致泛化样本复杂度只与s而非T线性相关，是一种隐含inductive偏好。【】【】【】【】
    
 ## Evaluations
 
@@ -191,7 +199,13 @@
 
     传统协同过滤（Collaborative Filtering）通过矩阵分解学习用户和物品的latent embedding，但这是典型的transductive方法，无法处理训练中未见的新用户，也无法即时推荐（on‑the‑fly）新来访用户。现实推荐场景存在大量的few‑shot用户（极少评分）或zero‑shot用户，传统方法难以应对。本文提出Relation‑learning模块归纳计算用户query特征。【推荐系统】【 MovieLens‑1M,MovieLens‑10M等】【RMSE等推荐指标】【推荐模型】
 
+36. **Cycle Representation Learning for Inductive Relation Prediction** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/yan22a/yan22a.pdf)]
 
+    训练集与测试集实体不重叠，模型不能借助训练期间看到的实体embedding，仅能通过关系模式（rules）来泛化至测试图中全新实体；方法采用 entity-agnostic learning，重点学习循环结构（cycles）及其组合，而不是具体实体embedding。【关系预测】【FB15k‑237, NELL‑995, WN18RR等】【AUC‑PR, Hits@10】【GNN】
+
+37. **Inductive Matrix Completion: No Bad Local Minima and a Fast Algorithm** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/zilber22a/zilber22a.pdf)]
+
+    一种基于优化的矩阵补全方法。【矩阵补全】【相关数据集】【rel‑RMSE】【相关基线】
    
 ## Others
    
@@ -254,3 +268,7 @@
 15. **Provable Guarantees for Decision Tree Induction: The Agnostic Setting** [ICML2020] [[paper link](https://proceedings.mlr.press/v119/blanc20a/blanc20a.pdf)]
 
     与决策树。
+    
+16. **ModLaNets: Learning Generalisable Dynamics via Modularity and Physical Inductive Bias** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/lu22c/lu22c.pdf)]
+
+    与动力单元。
