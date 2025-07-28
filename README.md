@@ -54,6 +54,10 @@
 7. **Inductive Biases and Variable Creation in Self-Attention Mechanisms** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/edelman22a/edelman22a.pdf)]
 
     该论文旨在从理论角度揭示Transformer自注意力模块的inductive bias。Inductive bias 的定义：模型的结构假设引导其在有限样本下偏向某类函数，从而实现泛化。在本作中，提出的sparse variable creation概念恰恰是Transformer的一种inductive bias：偏向于表示输入中少数子集上的稀疏依赖函数。该bias从理论上限制了模型的容量（norm-bound + covering bounds），并导致泛化样本复杂度只与s而非T线性相关，是一种隐含inductive偏好。【】【】【】【】
+
+8. **The SSL Interplay: Augmentations, Inductive Bias, and Generalization** [ICML2023] [[paper link](https://openreview.net/pdf?id=d2aohFmZoB)]
+
+    数据增强（Augmentations）和归纳偏置（Inductive Biases）在自监督学习中的作用。（1）卷积神经网络的平移不变性：卷积操作本身就带有一种自然的归纳偏置，即对平移的不变性。文章探讨了这种归纳偏置如何与数据增强方法（如裁剪、旋转）相互作用，帮助模型在训练过程中有效学习。（2）对称性、稀疏性等偏置：通过在网络设计中引入对称性、稀疏性等结构性归纳偏置，模型能够更加高效地从数据中提取信息。（3）数据增强中的归纳偏置：不同的增强方法（如颜色变换、旋转等）也引入了不同的归纳偏置，文章讨论了如何选择适合特定任务的增强策略，并通过归纳偏置优化模型性能。【自监督学习】【CIFAR-100, ImageNet等】【ACC】【CNN, Transformers等等】
    
 ## Evaluations
 
@@ -222,6 +226,18 @@
 41. **Understanding Contrastive Learning Requires Incorporating Inductive Biases** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/saunshi22a/saunshi22a.pdf)]
 
       为对比学习引入归纳偏置。【分类任务】【CIFAR-100, ImageNet】【ACC】【图像对比学习模型】
+    
+42. **Graph Inductive Biases in Transformers without Message Passing** [ICML2023] [[paper link](https://openreview.net/pdf?id=HjMdlNgybR)]
+
+      文章提出了一种新方法，在Transformer中引入图的归纳偏置，具体来说，利用位置编码（Positional Encoding）和图结构编码来捕捉图中的节点关系，而不依赖于传统的消息传递机制。【图表示学习】【Cora,Citeseer,PubMed等】【分类准确率】【Transformers,GNN】
+    
+43. **INGRAM: Inductive Knowledge Graph Embedding via Relation Graphs** [ICML2023] [[paper link](https://openreview.net/pdf?id=OoOpO0u4Xd)]
+
+      文章提出了INGRAM方法，它通过引入关系图来为每种关系构建一个独立的图结构，并通过该图来嵌入知识图谱中的实体和关系。通过提出一种inductive方法，使得模型能够在遇到新关系或实体时，无需重新训练整个模型，而是能够快速适应新信息。【知识图谱嵌入】【FB15k,WN18等】【Hits@K】【INGRAM模型】
+
+44. **Meta-Learning the Inductive Bias of Simple Neural Circuits** [ICML2023] [[paper link](https://openreview.net/pdf?id=757L5dtuah)]
+
+      文章提出了一种基于元学习的框架来自动学习神经网络的归纳偏置。具体来说，通过设计一个简单的神经电路模型，并通过元学习算法，使得网络能够根据不同的任务自动调整其归纳偏置。【元学习】【Omniglot,Mini-ImageNet】【ACC】【神经电路模型】
    
 ## Others
    
