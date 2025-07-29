@@ -53,11 +53,25 @@
 
 7. **Inductive Biases and Variable Creation in Self-Attention Mechanisms** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/edelman22a/edelman22a.pdf)]
 
-    该论文旨在从理论角度揭示Transformer自注意力模块的inductive bias。Inductive bias 的定义：模型的结构假设引导其在有限样本下偏向某类函数，从而实现泛化。在本作中，提出的sparse variable creation概念恰恰是Transformer的一种inductive bias：偏向于表示输入中少数子集上的稀疏依赖函数。该bias从理论上限制了模型的容量（norm-bound + covering bounds），并导致泛化样本复杂度只与s而非T线性相关，是一种隐含inductive偏好。【】【】【】【】
+    该论文旨在从理论角度揭示Transformer自注意力模块的inductive bias。Inductive bias 的定义：模型的结构假设引导其在有限样本下偏向某类函数，从而实现泛化。在本作中，提出的sparse variable creation概念恰恰是Transformer的一种inductive bias：偏向于表示输入中少数子集上的稀疏依赖函数。该bias从理论上限制了模型的容量（norm-bound + covering bounds），并导致泛化样本复杂度只与s而非T线性相关，是一种隐含inductive偏好。
 
 8. **The SSL Interplay: Augmentations, Inductive Bias, and Generalization** [ICML2023] [[paper link](https://openreview.net/pdf?id=d2aohFmZoB)]
 
     数据增强（Augmentations）和归纳偏置（Inductive Biases）在自监督学习中的作用。（1）卷积神经网络的平移不变性：卷积操作本身就带有一种自然的归纳偏置，即对平移的不变性。文章探讨了这种归纳偏置如何与数据增强方法（如裁剪、旋转）相互作用，帮助模型在训练过程中有效学习。（2）对称性、稀疏性等偏置：通过在网络设计中引入对称性、稀疏性等结构性归纳偏置，模型能够更加高效地从数据中提取信息。（3）数据增强中的归纳偏置：不同的增强方法（如颜色变换、旋转等）也引入了不同的归纳偏置，文章讨论了如何选择适合特定任务的增强策略，并通过归纳偏置优化模型性能。【自监督学习】【CIFAR-100, ImageNet等】【ACC】【CNN, Transformers等等】
+
+9. **Position: The No Free Lunch Theorem, Kolmogorov Complexity, and the Role of Inductive Biases in Machine Learning** [ICML2024] [[paper link](https://openreview.net/pdf?id=EaJ7nqJ2Fa)]
+
+    simplicity bias（即偏好简单假设），并将其视为一种inductive bias，主张神经网络结构与训练过程（尤其是 SGD）天然偏向于低Kolmogorov复杂度的函数解释，这本身即体现inductive bias的作用。
+
+10. **Towards Understanding Inductive Bias in Transformers: A View From Infinity** [ICML2024] [[paper link](https://openreview.net/pdf?id=HOMXUneCTR)]
+
+    为什么Transformer在训练样本有限的情况下也能泛化？论文核心即在探讨Transformer 的inductive bias：通过 GP prior（kernel）定义其偏好函数空间，即定义其 inductive bias；EK谱分解里的eigenvalues与eigenfunctions表征哪些函数更易学习，哪些难以学习，是inductive bias的具体体现；基于置换对称性的表示论结构，说明 Transformer 更倾向于学习对置换不变或高度对称的函数，这是模型的归纳偏好直接机制。
+
+11. **What needs to go right for an induction head? A mechanistic study of in-context learning circuits and their formation** [ICML2024] [[paper link](https://openreview.net/pdf?id=O8rrXl71D5)]
+
+    深入理解Transformer中in‑context learning（ICL）的机制，induction head是match‑and‑copy操作的attention head，用于识别上下文token并复制它们，是in‑context learning的关键induction operator。
+
+    
    
 ## Evaluations
 
@@ -238,6 +252,18 @@
 44. **Meta-Learning the Inductive Bias of Simple Neural Circuits** [ICML2023] [[paper link](https://openreview.net/pdf?id=757L5dtuah)]
 
       文章提出了一种基于元学习的框架来自动学习神经网络的归纳偏置。具体来说，通过设计一个简单的神经电路模型，并通过元学习算法，使得网络能够根据不同的任务自动调整其归纳偏置。【元学习】【Omniglot,Mini-ImageNet】【ACC】【神经电路模型】
+
+45. **SLOG: An Inductive Spectral Graph Neural Network Beyond Polynomial Filter** [ICML2024] [[paper link](https://openreview.net/pdf?id=0SrNCSklZx)]
+
+      通过对子图进行采样并仅在子图上应用实值阶滤波器，避免对整图进行谱分解，使模型能够处理图中未见过的新节点。这种设计使 SLOG 具备真正的归纳式推理能力。【图节点分类】【图数据集】【ACC】【SLOG模型】
+
+46. **Tripod: Three Complementary Inductive Biases for Disentangled Representation Learning** [ICML2024] [[paper link](https://openreview.net/pdf?id=0iXp5P77ho)]
+
+      论文关注为什么无监督表示学习难以实现因子化disentanglement。前人已有多种 inductive bias，如 latent quantization、latent independence（total correlation）和decoder的Hessian正则化，单独使用时都有助益，但组合时往往难以训练、性能没有实质提升。动机即是：能否将三种互补的 inductive bias 有效融合在一个autoencoder中，借此精确限定latent空间结构，从而实现更可靠的disentangled表征学习。 inductive bias来引导模型disentanglement。三条腿分别作用于：latent空间压缩（量化）、latent变量集体独立性、decoder function中latent相互影响最小化，分别对应encoder、latent空间、decoder的inductive bias体现。【无监督的disentangled表征学习】【四个图像disentanglement数据集】【InfoMEC】【Tripod】
+
+47. **Confronting Reward Overoptimization for Diffusion Models: A Perspective of Inductive and Primacy Biases** [ICML2024] [[paper link](https://openreview.net/pdf?id=v2o9rRJcEv)]
+
+      利用diffusion模型的temporal inductive bias：确保reward优化与模型多步生成过程对齐，避免仅关注最终图像评分的偏差。【文生图】【Stable Diffusion v1.4】【sample efficiency】【TDPO】
    
 ## Others
    
