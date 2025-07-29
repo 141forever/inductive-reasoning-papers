@@ -1,10 +1,14 @@
 # The Paper Collection of Inductive Reasoning
 
+
+
 ## Importance
 
 1.  **When Is Inductive Inference Possible?** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/a8808b75b299d64a23255bc8d30fb786-Paper-Conference.pdf)]
 
       归纳推理的小综述。
+
+
     
 
 ## Benchmarks, Datasets and Tasks
@@ -20,8 +24,12 @@
 3.  **A large-scale benchmark for few-shot program induction and synthesis** [ICML2021] [[paper link](https://proceedings.mlr.press/v139/alet21a/alet21a.pdf)]
    
       PROGES，一个程序归纳benchmark。
+    
+4.  **What Has a Foundation Model Found? Inductive Bias Reveals World Models** [ICML2025] [[paper link](https://openreview.net/pdf?id=i9npQatSev)]
+   
+      通过构造与已知世界模型（如牛顿力学）一致的合成数据集，测试基础模型在新任务上的适应能力，进而评估其归纳偏差是否与世界模型一致。
 
-4.  **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
+5.  **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
    
       提出了一种基于数列的类比推理合成数据管线，以code为呈现形式构建了一批SFT合成数据，有效的提高了LLMs的类比推理和code推理能力。
    
@@ -71,7 +79,17 @@
 
     深入理解Transformer中in‑context learning（ICL）的机制，induction head是match‑and‑copy操作的attention head，用于识别上下文token并复制它们，是in‑context learning的关键induction operator。
 
-    
+12. **When Diffusion Models Memorize: Inductive Biases in Probability Flow of Minimum-Norm Shallow Neural Nets** [ICML2025] [[paper link](https://openreview.net/pdf?id=WD2CKUrxmx)]
+
+    diffusion中最小范数解的选择实际上是一种inductive bias：模型偏好ℓ₂-minimization的denoiser，从而影响生成轨迹。Moonlight的score flow和probability flow的收敛特性体现出对训练样本结构的inductive preference：如正交几何结构引导流向训练点或组合点。early stopping time scheduler本质也是一种inductive bias：它决定模型 bias towards generalization（选择 manifold 点）或 memorization（停在训练样本）。
+
+13. **Beyond Induction Heads: In-Context Meta Learning Induces Multi-Phase Circuit Emergence** [ICML2025] [[paper link](https://openreview.net/pdf?id=Xw01vF13aV)]
+
+      先前的研究将诱导头（induction heads）与 ICL通过准确率的突然跃升联系起来，但这仅能解释在上下文中包含答案时的ICL。然而，实际应用中的ICL特性是模型能够从上下文中元学习如何解决任务，而不仅仅是复制上下文中的答案。如何在训练过程中获得这种能力仍然是一个未解之谜。本研究旨在通过分析模型在训练过程中的电路动态，实验性地阐明这种元学习能力是如何获得的。
+
+14. **Stability and Generalization Capability of Subgraph Reasoning Models for Inductive Knowledge Graph Completion** [ICML2025] [[paper link](https://openreview.net/pdf?id=NE6Px91RkQ)]
+
+      传统的图神经网络（GNN）在处理知识图谱（KG）补全任务时，通常假设训练和推理阶段的图结构相同。然而，在实际应用中，推理阶段可能会遇到新的实体和关系，这要求模型具备归纳能力。子图推理模型通过利用目标三元组周围的子图进行推理，已在归纳知识图谱补全（Inductive KGC）任务中取得了显著的实证成功。然而，这些模型的理论性质，如稳定性和泛化能力，尚未得到充分研究。因此，本文旨在首次从理论上分析子图推理模型的稳定性与其泛化能力之间的关系。本文通过引入稳定性度量和泛化界限，从理论上分析了子图推理模型的稳定性与其泛化能力之间的关系。
    
 ## Evaluations
 
@@ -264,7 +282,23 @@
 47. **Confronting Reward Overoptimization for Diffusion Models: A Perspective of Inductive and Primacy Biases** [ICML2024] [[paper link](https://openreview.net/pdf?id=v2o9rRJcEv)]
 
       利用diffusion模型的temporal inductive bias：确保reward优化与模型多步生成过程对齐，避免仅关注最终图像评分的偏差。【文生图】【Stable Diffusion v1.4】【sample efficiency】【TDPO】
-   
+
+48. **Inductive Moment Matching** [ICML2025] [[paper link](https://openreview.net/pdf?id=pwNSUo7yUb)]
+
+      现有的扩散模型（Diffusion）和流匹配模型（Flow Matching）虽然能生成高质量图像，但推理时需要大量采样步骤，导致推理慢。模型通过自身生成的样本来匹配目标分布，类似数学归纳法自我引导学习。【文生图】【ImageNet‑256×256和CIFAR‑10】【FID】【IMM】
+
+49. **Customizing the Inductive Biases of Softmax Attention using Structured Matrices** [ICML2025] [[paper link](https://openreview.net/pdf?id=Roc5O1ECEt)]
+
+      如何定制attention的归纳偏好，既能处理高维输入，又能显式编码邻近依赖信息，从而提升性能。本文实现了BTT与MLR分别提供对输入中高维依赖结构和距离依赖结构的inductive bias。【in‑context回归任务】【高维输入回归数据集】【MSE】【Transformer】
+
+50. **iN2V: Bringing Transductive Node Embeddings to Inductive Graphs** [ICML2025] [[paper link](https://openreview.net/pdf?id=BYakLzKJDz)]
+
+      传统的图节点嵌入方法，如 Node2Vec（N2V），通常依赖于图的整体结构进行训练，因此属于传递性（transductive）方法，即在训练期间需要访问整个图，包括测试节点。然而，在实际应用中，图结构可能会发生变化，出现新的节点和边，这些新的节点在训练期间是不可见的。因此，如何将传递性节点嵌入方法扩展到归纳性（inductive）设置，使其能够为训练期间未见过的节点生成有效的嵌入。【图节点分类】【Cora,Citeseer和PubMed等等】【ACC】【GNN】
+
+51. **GenZSL: Generative Zero-Shot Learning Via Inductive Variational Autoencoder** [ICML2025] [[paper link](https://openreview.net/pdf?id=AYxiZfJN9V)]
+
+      生成式零样本学习（Generative ZSL）常借助GAN、VAE 等生成视觉特征，但多数方法 直接从强语义向量生成样本，对新类别泛化能力有限。本文目标是通过从相似已见类“归纳”出新类样本。本文提出GenZSL：一类具有归纳能力的变分自编码器模型。它不从零生成目标类样本，而是通过从相似已见类中“归纳（induct）”合成新类样本，模拟人类概念迁移。【图零样本分类】【AwA2等等】【ACC】【GenZSL模型】
+    
 ## Others
    
 1. **Inductive Representation Learning on Large Graphs** [NIPS2017] [[paper link](https://arxiv.org/pdf/1706.02216)]
@@ -330,3 +364,7 @@
 16. **ModLaNets: Learning Generalisable Dynamics via Modularity and Physical Inductive Bias** [ICML2022] [[paper link](https://proceedings.mlr.press/v162/lu22c/lu22c.pdf)]
 
     与动力单元。
+
+17. **Inductive Gradient Adjustment for Spectral Bias in Implicit Neural Representations** [ICML2025] [[paper link](https://openreview.net/pdf?id=pYMZQtkp3F)]
+
+    从训练动力学视角出发，设计不依赖模型架构变化的 梯度调整策略，使MLP能有效学习高频分量。
