@@ -298,6 +298,10 @@
 51. **GenZSL: Generative Zero-Shot Learning Via Inductive Variational Autoencoder** [ICML2025] [[paper link](https://openreview.net/pdf?id=AYxiZfJN9V)]
 
       生成式零样本学习（Generative ZSL）常借助GAN、VAE 等生成视觉特征，但多数方法 直接从强语义向量生成样本，对新类别泛化能力有限。本文目标是通过从相似已见类“归纳”出新类样本。本文提出GenZSL：一类具有归纳能力的变分自编码器模型。它不从零生成目标类样本，而是通过从相似已见类中“归纳（induct）”合成新类样本，模拟人类概念迁移。【图零样本分类】【AwA2等等】【ACC】【GenZSL模型】
+
+52. **Deep Gaussian Embedding of Graphs: Unsupervised Inductive Learning via Ranking** [ICLR2018] [[paper link](https://openreview.net/pdf?id=r1ZdKJ-0W)]
+
+      传统图嵌入方法把每个节点表示为低维向量，但这忽略了“表示的不确定性” —— 即当节点信息有冲突或多样性时，单一点向量难以表达这一不确定程度。此外，现有大多数方法为transductive（传导式），训练时不能自然泛化到新的、未见过的节点，需要重新训练或依赖其结构信息。作者因此提出一种将节点嵌入为高斯分布的方法，并结合属性信息，实现不依赖已有图结构也能表示新节点。【链接预测，节点分类】【Cora,DBLP等等】【AUC,F1】【G2G模型】
     
 ## Others
    
