@@ -302,6 +302,10 @@
 52. **Deep Gaussian Embedding of Graphs: Unsupervised Inductive Learning via Ranking** [ICLR2018] [[paper link](https://openreview.net/pdf?id=r1ZdKJ-0W)]
 
       传统图嵌入方法把每个节点表示为低维向量，但这忽略了“表示的不确定性” —— 即当节点信息有冲突或多样性时，单一点向量难以表达这一不确定程度。此外，现有大多数方法为transductive（传导式），训练时不能自然泛化到新的、未见过的节点，需要重新训练或依赖其结构信息。作者因此提出一种将节点嵌入为高斯分布的方法，并结合属性信息，实现不依赖已有图结构也能表示新节点。【链接预测，节点分类】【Cora,DBLP等等】【AUC,F1】【G2G模型】
+
+53. **DEEP REINFORCEMENT LEARNING WITH RELATIONAL INDUCTIVE BIASES** [ICLR2019] [[paper link](https://openreview.net/pdf?id=HkxaFoC9KQ)]
+
+      传统的model‑free深度强化学习（如 CNN+A2C/DQN）在样本效率、泛化能力以及可解释性方面存在缺陷，尤其难以在组合性变化的环境中迁移和泛化。本文将图像输入编码为一组实体向量，然后通过多头点积自注意力模块进行迭代推理，学习实体间的关系。这相当于一个图神经网络或Transformer风格的关系推理层。生成关系感知的表示后，再由actor‑critic模型输出策略与价值估计。【Box‑World，星际2】【这俩数据集】【游戏中得分】【自己训练的Relational Agent】
     
 ## Others
    
