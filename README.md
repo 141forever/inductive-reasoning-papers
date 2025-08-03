@@ -322,6 +322,26 @@
 57. **Inductive representation learning on temporal graphs** [ICLR2020] [[paper link](https://arxiv.org/abs/2002.07962)]
 
       现实世界中大量图结构数据具有连续时间变化特性（例如社交网络、用户–商品交互、人–物项购买等），同时随着节点与边的不断新增、删除、特征变化，图结构也会随之演化。已有的大多数图嵌入方法仅能处理静态图或离散快照，缺乏处理连续时间演化与节点新增的能力。文章强调，在工业大规模动态图下，模型需要具备 Inductive inference（新节点/新时间点的嵌入推断能力）和 time-feature interactions 排列。故提出新的模型架构来解决：对时间编码与邻域聚合一体化设计，实现平滑连接到 GraphSage／GAT 思路，但扩展到 时序图，并且支持 Inductive 嵌入生成。【Future Link Prediction】【Reddit,维基等等】【AUC】【TGAT各种变体】
+
+58. **Synthesizing Programmatic Policies that Inductively Generalize** [ICLR2020] [[paper link](https://openreview.net/pdf?id=S1l8oANFDH)
+
+      深度强化学习虽在多个控制任务上取得进展，但其策略通常“过拟合”训练环境，难以应对诸如样本大小变化、目标数量变化、地点变化等在测试时才遇到的情况，尤其是需要反复某种子行为才能达成的任务；作者将此类能力称为 “归纳泛化（inductive generalization）” —— 能够对任意次数的重复行为（例如多次绕行、拉杆上山等）自动扩展策略；他们发现，程序化的有限状态机(policy as state machine) 天然支持这种行为的循环与分支，从而具有更强的泛化能力；但此类策略很难通过传统梯度网络直接学习，因为其兼具离散控制结构与连续参数部分；故论文提出一种学习范式：基于program synthesis + teacher‑student imitation 的“自适应教学”方法，用有限规则描述policy结构，让策略学到可泛化的 “程序”，而不是绑定到特定范围数据的神经网络。【归纳泛化】【六个归纳泛化场景】【成功率】【一些RL模型】
+
+59. **GraphSAINT: Graph Sampling Based Inductive Learning Method** [ICLR2020] [[paper link](https://arxiv.org/pdf/1907.04931)
+
+      当下的 GCN 结构在大图上训练时面临**“邻域指数增长”（neighbor explosion）**问题：随着网络层数增加，每个节点的多跳邻居数量迅速膨胀。现有的图像层采样（layer sampling）方法（如 GraphSAGE、FastGCN、S‑GCN、AS‑GCN 等）虽有一定减轻邻域扩展的效果，但仍面临准确率下降、训练开销大、架构兼容性差等问题。因此，论文提出：从“采样图”而非“采样层”入手，改为先抽取图子集，再构建完整的 GCN 并进行训练，从根本上解决扩展性与准确性之间的冲突。【节点分类】【六个节点分类数据集】【F1】【GraphSAINT】
+
+60. **Inductive and Unsupervised Representation Learning on Graph Structured Objects** [ICLR2020] [[paper link](https://openreview.net/pdf?id=rkem91rtDB)
+
+      许多图结构任务（比如图分类、检索、异常检测）缺少标签或难以获取标签，因此迫切需要一种方法能够在没有监督信号（unsupervised）且能处理未见图（inductive） 的情况下生成图的向量表示。【图分类图聚类】【七个数据集】【ACC】【自己的模型】
+
+61. **Learn to Explain Efficiently via Neural Logic Inductive Learning** [ICLR2020] [[paper link](https://arxiv.org/pdf/1910.02481)
+
+      在接受噪声和大规模 KB 的同时，用可学习且高效的方法生成更长、更丰富、且具有全局一致性的符号 FOL 规则作为解释。【KG补全】【ILP benchmark等】【MRR,Hit@10】【NLIL模型】
+    
+62. **Implementing Inductive bias for different navigation tasks through diverse RNN attractors** [ICLR2020] [[paper link](https://arxiv.org/pdf/2002.02496)
+
+      动物／人工智能在导航任务中需要某种内部表示（cognitive map），通常假设是欧几里得 metric 地图；但这种“地图”形式在不同导航任务中并非最优。PosNet 的 RNN 形成 “plane/continuous attractor”，便于位置积分与 metric 推理；MemNet 则形成 “discrete attractors”，易于编码地标记忆与 topological 推断。【grid路径任务】【15×15离散grid arena】【Trial-level score】【RNN LSTM各种net】
     
 ## Others
    
