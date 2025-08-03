@@ -314,6 +314,14 @@
 55. **Are Pre-trained Language Models Aware of Phrases? Simple but Strong Baselines for Grammar Induction** [ICLR2020] [[paper link](https://arxiv.org/abs/2002.00737)]
 
       不修改模型结构、不微调，只使用预训练语言模型的隐表示（hidden states）来进行语法归纳任务。【无监督语法归纳】【WSJ,multiNLI等】【F1】【Bert等】
+
+56. **Inductive Matrix Completion Based on Graph Neural Networks** [ICLR2020] [[paper link](https://arxiv.org/pdf/1904.12058)]
+
+      矩阵补全（Matrix completion）方法（如传统的矩阵分解或 GNN-based 推断）多为 transductive：它们依赖学习特定用户／物品的潜在嵌入，因此无法推广到训练中未见过的新用户、新物品，且常需使用侧信息（例如用户年龄或电影类型）以实现inductive性能。通过纯粹从评分矩阵构建的二部图中提取local enclosing subgraph（以特定(user, item)为中心的局部子图），并用GNN直接学习子图 → rating的映射，从而让模型具备对新用户／新物品或新评分矩阵的直接迁移能力。【矩阵补全】【Flixster,DOUBAN,MovieLens等等】【RMSE】【IGMC】
+
+57. **Inductive representation learning on temporal graphs** [ICLR2020] [[paper link](https://arxiv.org/abs/2002.07962)]
+
+      现实世界中大量图结构数据具有连续时间变化特性（例如社交网络、用户–商品交互、人–物项购买等），同时随着节点与边的不断新增、删除、特征变化，图结构也会随之演化。已有的大多数图嵌入方法仅能处理静态图或离散快照，缺乏处理连续时间演化与节点新增的能力。文章强调，在工业大规模动态图下，模型需要具备 Inductive inference（新节点/新时间点的嵌入推断能力）和 time-feature interactions 排列。故提出新的模型架构来解决：对时间编码与邻域聚合一体化设计，实现平滑连接到 GraphSage／GAT 思路，但扩展到 时序图，并且支持 Inductive 嵌入生成。【Future Link Prediction】【Reddit,维基等等】【AUC】【TGAT各种变体】
     
 ## Others
    
