@@ -306,6 +306,14 @@
 53. **DEEP REINFORCEMENT LEARNING WITH RELATIONAL INDUCTIVE BIASES** [ICLR2019] [[paper link](https://openreview.net/pdf?id=HkxaFoC9KQ)]
 
       传统的model‑free深度强化学习（如 CNN+A2C/DQN）在样本效率、泛化能力以及可解释性方面存在缺陷，尤其难以在组合性变化的环境中迁移和泛化。本文将图像输入编码为一组实体向量，然后通过多头点积自注意力模块进行迭代推理，学习实体间的关系。这相当于一个图神经网络或Transformer风格的关系推理层。生成关系感知的表示后，再由actor‑critic模型输出策略与价值估计。【Box‑World，星际2】【这俩数据集】【游戏中得分】【自己训练的Relational Agent】
+
+54. **An Inductive Bias for Distances: Neural Nets that Respect the Triangle Inequality** [ICLR2020] [[paper link](https://arxiv.org/abs/2002.05825)]
+
+      距离度量在机器学习中无处不在——用于相似度、损失函数、学习目标等。三角不等式既是理论收敛与最优性的基础，也是很有用的归纳偏置。然而，大多数深度度量学习方法仅通过欧氏距离在潜在空间中满足三角不等式，但很多实际场景中的距离（如图中最短路径、RL 中的状态距离）是非对称或无法嵌入欧氏空间的，普通方法无法建模。本文因此提出新的神经网络架构，在结构上就保证满足三角不等式，以更好地刻画这些复杂距离。【图距离建模】【图数据集,RL环境】【各种距离函数】【作者自己提出的三个模型】
+
+55. **Are Pre-trained Language Models Aware of Phrases? Simple but Strong Baselines for Grammar Induction** [ICLR2020] [[paper link](https://arxiv.org/abs/2002.00737)]
+
+      不修改模型结构、不微调，只使用预训练语言模型的隐表示（hidden states）来进行语法归纳任务。【无监督语法归纳】【WSJ,multiNLI等】【F1】【Bert等】
     
 ## Others
    
