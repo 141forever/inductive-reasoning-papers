@@ -90,6 +90,18 @@
 14. **Stability and Generalization Capability of Subgraph Reasoning Models for Inductive Knowledge Graph Completion** [ICML2025] [[paper link](https://openreview.net/pdf?id=NE6Px91RkQ)]
 
       传统的图神经网络（GNN）在处理知识图谱（KG）补全任务时，通常假设训练和推理阶段的图结构相同。然而，在实际应用中，推理阶段可能会遇到新的实体和关系，这要求模型具备归纳能力。子图推理模型通过利用目标三元组周围的子图进行推理，已在归纳知识图谱补全（Inductive KGC）任务中取得了显著的实证成功。然而，这些模型的理论性质，如稳定性和泛化能力，尚未得到充分研究。因此，本文旨在首次从理论上分析子图推理模型的稳定性与其泛化能力之间的关系。本文通过引入稳定性度量和泛化界限，从理论上分析了子图推理模型的稳定性与其泛化能力之间的关系。
+
+15. **The Inductive Bias of ReLU Networks on Orthogonally Separable Data** [ICLR2021] [[paper link](https://openreview.net/pdf?id=krz7T0xU9Z_)]
+
+      理解 ReLU 神经网络的隐式归纳偏置（inductive bias）：即训练算法（gradient flow）在无限多零训练误差解中会偏向哪个，并决定其泛化能力。此前线性模型（如 Logistic regression）已有 max‑margin 偏置理论，但对于非线性的 ReLU 网络尚无类似明确定理。无论网络宽度多大，gradient flow 最终会使 neuron 聚焦于正负两个子集的 max-margin 划分方向，具有普适性。
+
+16. **What they do when in doubt: a study of inductive biases in seq2seq learners** [ICLR2021] [[paper link](https://arxiv.org/abs/2006.14953)]
+
+      seq2seq 模型广泛应用于翻译、对话等任务，但对其 归纳偏置（inductive bias） 仅有有限理解——即训练数据不足时它们会倾向哪种“规则”进行泛化？系统比较不同 seq2seq 架构（LSTM、Transformer、CNN）在面对高度歧义训练数据时的泛化偏好（即喜欢哪类规则）。不同架构之间表现出稳定且系统的偏好：LSTM 和 Transformer 更偏向 hierarchical induction（层次结构），CNN 更偏向 linear / sequential generalization（线性位置规则）。同时，CNN（以及 LSTM）更倾向 compositional reasoning（组合泛化），Transformer 则偏向 memorization。【四个合成任务】【四种模式合成任务对应数据集】【FPA, description length】【LSTM/CNN/Transformer】
+
+17. **Predicting Inductive Biases of Pre-Trained Models** [ICLR2021] [[paper link](https://openreview.net/pdf?id=mNtmhaDkAr)]
+
+      当前主流 预训练‑微调模型 在 NLP 任务中广受成功，但研究发现两种分析方法产生的结论常常矛盾：Probing classifier 表明预训练模型中能提取丰富的语言结构特征；Challenge set 分析却显示微调后的模型往往使用训练集中常见的启发式（spurious heuristic），未使用潜在语言知识。t：target feature（理论上应当依赖的结构语言特征，如语法结构）。s：spurious feature（与目标标签相关但非语法结构的启发式特征，如特定词语出现）。因此，作者提出假设：对于某个特征t，其是否被 fine‑tuned 模型采纳，取决于两个因素：在预训练表示中该特征的 extractability（可提取性）；在微调数据中该特征作为标签线索的 co‑occurrence frequency（证据量）。作者将 probing 中的 feature extractability 视为预训练模型的 inductive bias，即模型更容易使用的特征。【synthetic NLI/P probing tasks与自然语言推理challenge‑set】【多种合成数据与真实的NLI数据集】【测量是否模型依赖t还是s】【Bert和GPT系列】
    
 ## Evaluations
 
@@ -339,9 +351,13 @@
 
       在接受噪声和大规模 KB 的同时，用可学习且高效的方法生成更长、更丰富、且具有全局一致性的符号 FOL 规则作为解释。【KG补全】【ILP benchmark等】【MRR,Hit@10】【NLIL模型】
     
-62. **Implementing Inductive bias for different navigation tasks through diverse RNN attractors** [ICLR2020] [[paper link](https://arxiv.org/pdf/2002.02496)
+62. **Implementing Inductive bias for different navigation tasks through diverse RNN attractors** [ICLR2020] [[paper link](https://arxiv.org/pdf/2002.02496)]
 
       动物／人工智能在导航任务中需要某种内部表示（cognitive map），通常假设是欧几里得 metric 地图；但这种“地图”形式在不同导航任务中并非最优。PosNet 的 RNN 形成 “plane/continuous attractor”，便于位置积分与 metric 推理；MemNet 则形成 “discrete attractors”，易于编码地标记忆与 topological 推断。【grid路径任务】【15×15离散grid arena】【Trial-level score】【RNN LSTM各种net】
+
+63. **Inductive Representation Learning in Temporal Networks via Causal Anonymous Walks** [ICLR2021] [[paper link](https://arxiv.org/pdf/2101.05974)]
+
+      现实世界中的temporal networks（社交互动、通信日志等）遵循诸如三角闭合、前馈控制环路等动态演化规律，而这些规律通常独立于节点身份（node identity），是系统的结构性laws。要对新网络泛化，仅靠记忆节点编号是不够的。因此，论文的核心动机是设计一种能够捕捉网络动态规律（motifs）、同时对节点身份保持匿名、还能对新网络实现 归纳式泛化的representation learning方法。【Temporal link prediction】【Reddit, Wikipedia等】【AUC】【CAW系列】
     
 ## Others
    
