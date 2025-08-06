@@ -122,8 +122,23 @@
 21. **Strong inductive biases provably prevent harmless interpolation** [ICLR2023] [[paper link](https://arxiv.org/pdf/2301.07605)]
     
     传统观点认为，对噪声的拟合会损害泛化，因此应该避免“插值”（interpolation）。然而在过参数模型中，许多模型即使完美拟合噪声仍能泛化良好（即 benign overfitting 或 harmless interpolation）。本文提出：是否能做到 harmless interpolation，强烈依赖学习器的归纳偏好强度——太强的 inductive bias 反而阻碍在噪声上的 harmless 插值，而偏弱的 inductive bias 则可能需要拟合部分噪声才能泛化良好。
-      
 
+22. **Geometric Inductive Biases of Deep Networks: The Role of Data and Architecture** [ICLR2025] [[paper link](https://arxiv.org/pdf/2410.12025)]
+    
+    几何不变性假设（GIH）：该假设揭示了神经网络在输入空间的几何结构具有架构依赖的诱导偏置，即在特定方向上的曲率保持不变。这种几何结构的演化决定了模型的决策边界和泛化能力，体现了模型在输入空间中的归纳偏置。
+
+23. **Generalization through variance: how noise shapes inductive biases in diffusion models** [ICLR2025] [[paper link](https://arxiv.org/pdf/2504.12532)]
+
+    扩散模型（diffusion models）为何能够超越训练集生成新样本？这是一个令人疑惑的现象，因为理论上训练目标是学习训练分布的 score 函数，且网络表达能力足够强大到可以完全记忆训练数据。作者认为关键在于 DSM（denoising score matching）目标的一个特性：它并不是直接逼近真实 score，而是一个带噪声、在期望上等于真实 score的“代理 score”。这种噪声带来的方差成为模型泛化的重要来源。于是提出了“through variance generalization（通过方差实现泛化）”这一现象。
+    
+24. **Combining Induction and Transduction for Abstract Reasoning** [ICLR2025] [[paper link](https://arxiv.org/pdf/2411.02272)]
+
+    人类通常 先归纳出一个潜在函数（rule），再用它解释示例并预测新输入；而神经网络则可直接 对测试输入进行预测（transduction），无需明确函数构建。作者探讨一个核心问题：在样本极少时，**首先找到潜在函数是否更优？或者直接预测结果更有效？这两种范式究竟有何不同？验证它们各擅所长：Induction 擅长精确计算、多概念复合；Transduction 更擅长处理含有不确定、模糊感知规则的场景；演示这两种范式互补，并通过集成方式提升整体性能，接近人类水平。【ARC】【ARC为基础的合成任务】【准确率】【Induction和Transduction两种模型】
+
+    
+25. **Language Models Need Inductive Biases to Count Inductively** [ICLR2025] [[paper link](https://arxiv.org/pdf/2405.20131)]
+
+      Counting（计数） 是多跳推理、算法模拟、形式语言识别的核心能力。现有语言模型在训练长度有限、测试长度超出训练范围（long‑length OOD）时往往无法正确计数。作者聚焦一个更基础的问题：不同架构的语言模型能否“归纳”计数原理，以实现长度泛化？哪些 inductive bias 是必须的？。传统 RNN 自带归纳偏好，可自然泛化计数；Transformer 需要依赖某种位置编码才能支撑 OOD 泛化 —— 说明这些位置编码本身定义了一种 inductive bias；实验还揭示：现代 RNN（为并行化训练设计）反而丢失这种 inductive bias，性能下降。【count】【对应数据集】【准确率】【RNN/LSTM, Transformers, S4以及 RWKV】
 
    
 ## Evaluations
@@ -445,6 +460,16 @@
 78. **Integrating Planning and Deep Reinforcement Learning via Automatic Induction of Task Substructures** [ICLR2024] [[paper link](https://openreview.net/pdf?id=PR6RMsxuW7)]
 
       尽管深度学习在高维决策任务中取得了显著进展，但在稀疏奖励和目标导向任务中仍面临学习效率低和泛化能力差的问题。经典规划的优势与局限：经典规划方法擅长处理具有层次结构的任务，通过符号知识进行高层次规划，但大多数方法依赖于预定义的子任务假设，限制了其在未知环境中的应用。提出一种框架，将 DRL 与经典规划相结合，通过从少量示范中自动诱导任务结构和子结构，克服上述挑战。【稀疏奖励和目标导向的任务】【对应数据集】【对应性能】【多种深度学习方法】
+
+79. **LVSM: A Large View Synthesis Model with Minimal 3D Inductive Bias** [ICLR2025] [[paper link](https://arxiv.org/pdf/2410.17242)]
+
+      传统的视图合成方法（如 NeRF、3DGS）依赖于固定的 3D 表示和渲染方程，限制了模型的泛化能力和可扩展性。挑战：如何在不依赖传统 3D 偏置的情况下，实现高质量的视图合成。【Novel View Synthesis】【多个数据集】【信噪比】【LVSM模型】
+
+80. **Decision Tree Induction Through LLMs via Semantically-Aware Evolution** [ICLR2025] [[paper link](https://arxiv.org/pdf/2503.14217)]
+
+      决策树具有较强的可解释性和适用性，但传统生成方法（如 CART）容易陷入贪心子优化；优秀的全局搜索算法（如 exact methods）计算复杂度高且受限于小问题规模。遗传编程（GP）虽能寻找更全局最优解，却缺乏语义引导，搜索效率低、易陷入无意义变化。因此作者提出将大语言模型（LLM）中蕴含的语义先验知识纳入 GP 操作中，以提升决策树结构搜索的效率和泛化能力。【分类与回归任务】【对应数据集】【MSE】【LLEGO】
+
+
     
 ## Others
    
