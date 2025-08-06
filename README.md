@@ -362,19 +362,19 @@
 
       现实世界中大量图结构数据具有连续时间变化特性（例如社交网络、用户–商品交互、人–物项购买等），同时随着节点与边的不断新增、删除、特征变化，图结构也会随之演化。已有的大多数图嵌入方法仅能处理静态图或离散快照，缺乏处理连续时间演化与节点新增的能力。文章强调，在工业大规模动态图下，模型需要具备 Inductive inference（新节点/新时间点的嵌入推断能力）和 time-feature interactions 排列。故提出新的模型架构来解决：对时间编码与邻域聚合一体化设计，实现平滑连接到 GraphSage／GAT 思路，但扩展到 时序图，并且支持 Inductive 嵌入生成。【Future Link Prediction】【Reddit,维基等等】【AUC】【TGAT各种变体】
 
-58. **Synthesizing Programmatic Policies that Inductively Generalize** [ICLR2020] [[paper link](https://openreview.net/pdf?id=S1l8oANFDH)
+58. **Synthesizing Programmatic Policies that Inductively Generalize** [ICLR2020] [[paper link](https://openreview.net/pdf?id=S1l8oANFDH)]
 
       深度强化学习虽在多个控制任务上取得进展，但其策略通常“过拟合”训练环境，难以应对诸如样本大小变化、目标数量变化、地点变化等在测试时才遇到的情况，尤其是需要反复某种子行为才能达成的任务；作者将此类能力称为 “归纳泛化（inductive generalization）” —— 能够对任意次数的重复行为（例如多次绕行、拉杆上山等）自动扩展策略；他们发现，程序化的有限状态机(policy as state machine) 天然支持这种行为的循环与分支，从而具有更强的泛化能力；但此类策略很难通过传统梯度网络直接学习，因为其兼具离散控制结构与连续参数部分；故论文提出一种学习范式：基于program synthesis + teacher‑student imitation 的“自适应教学”方法，用有限规则描述policy结构，让策略学到可泛化的 “程序”，而不是绑定到特定范围数据的神经网络。【归纳泛化】【六个归纳泛化场景】【成功率】【一些RL模型】
 
-59. **GraphSAINT: Graph Sampling Based Inductive Learning Method** [ICLR2020] [[paper link](https://arxiv.org/pdf/1907.04931)
+59. **GraphSAINT: Graph Sampling Based Inductive Learning Method** [ICLR2020] [[paper link](https://arxiv.org/pdf/1907.04931)]
 
       当下的 GCN 结构在大图上训练时面临**“邻域指数增长”（neighbor explosion）**问题：随着网络层数增加，每个节点的多跳邻居数量迅速膨胀。现有的图像层采样（layer sampling）方法（如 GraphSAGE、FastGCN、S‑GCN、AS‑GCN 等）虽有一定减轻邻域扩展的效果，但仍面临准确率下降、训练开销大、架构兼容性差等问题。因此，论文提出：从“采样图”而非“采样层”入手，改为先抽取图子集，再构建完整的 GCN 并进行训练，从根本上解决扩展性与准确性之间的冲突。【节点分类】【六个节点分类数据集】【F1】【GraphSAINT】
 
-60. **Inductive and Unsupervised Representation Learning on Graph Structured Objects** [ICLR2020] [[paper link](https://openreview.net/pdf?id=rkem91rtDB)
+60. **Inductive and Unsupervised Representation Learning on Graph Structured Objects** [ICLR2020] [[paper link](https://openreview.net/pdf?id=rkem91rtDB)]
 
       许多图结构任务（比如图分类、检索、异常检测）缺少标签或难以获取标签，因此迫切需要一种方法能够在没有监督信号（unsupervised）且能处理未见图（inductive） 的情况下生成图的向量表示。【图分类图聚类】【七个数据集】【ACC】【自己的模型】
 
-61. **Learn to Explain Efficiently via Neural Logic Inductive Learning** [ICLR2020] [[paper link](https://arxiv.org/pdf/1910.02481)
+61. **Learn to Explain Efficiently via Neural Logic Inductive Learning** [ICLR2020] [[paper link](https://arxiv.org/pdf/1910.02481)]
 
       在接受噪声和大规模 KB 的同时，用可学习且高效的方法生成更长、更丰富、且具有全局一致性的符号 FOL 规则作为解释。【KG补全】【ILP benchmark等】【MRR,Hit@10】【NLIL模型】
     
@@ -413,6 +413,38 @@
 70. **Graph Signal Sampling for Inductive One‑Bit Matrix Completion: a Closed‑Form Solution** [ICLR2023] [[paper link](https://arxiv.org/pdf/2302.03933)]
 
       现代推荐系统中，经常在线上出现 新用户，他们在测试阶段可能只有正反馈（“喜欢”即1），而没有负反馈。传统的 one‑bit matrix completion 无法处理这种 inductive 设置（测试时出现新列只有正例）。作者动机是提出一个 可推广的新用户预测框架，能够在仅获取部分正反馈的情形下，准确推断一个新用户对所有物品的兴趣倾向。【Inductive Top‑N推荐】【Netflix】【HR@50等】【GS】
+
+71. **Phenomenal Yet Puzzling: Testing Inductive Reasoning Capabilities of Language Models with Hypothesis Refinement** [ICLR2024] [[paper link](https://arxiv.org/pdf/2310.08559)]
+
+      论文提出了一种模拟人类归纳推理过程的 三步迭代假设精炼方法：Hypothesis Proposing：LM 根据少量示例生成多个候选规则或假设；Selection：使用 task-specific 符号解释器（symbolic interpreter）检测每个假设能覆盖多少已知例子，挑选覆盖度高者；Refinement：LM 基于反馈进一步修改所选假设，迭代数轮直至收敛。最终得到一个符合多数示例并具有泛化潜在能力的规则，并用它预测 unseen instances。【inductive任务】【因果关系归纳（causal induction）,语言式组合指令归纳（如 MiniSCAN）,符号操作归纳（Rule）,视觉概念归纳（ARC mini versions）】【预测准确率】【GPT‑3.5, GPT‑4,Claude-2】
+
+72. **Abstractors and relational cross-attention: An inductive bias for explicit relational reasoning in Transformers** [ICLR2024] [[paper link](https://arxiv.org/pdf/2304.00195)]
+
+      传统 Transformer 建模物体之间的关系时，关系信息往往与对象的视觉或属性特征混合表示，导致模型无法显式地进行关系推理。作者认为，为支持从少量数据中进行归纳推理，需要一类结构性inductive bias，即把关系信息与对象特征解耦，使模型能够专注于关系信息进行抽象和泛化。 【判别性关系任务】【合成 relational reasoning benchmark】【ACC】【Transformer+Abstractor】
+
+73. **Geometrically Aligned Transfer Encoder for Inductive Transfer in Regression Tasks** [ICLR2024] [[paper link](https://arxiv.org/pdf/2310.06369)]
+
+      当前大多数迁移学习方法聚焦于图像或语言分类任务，而 回归任务（特别是分子性质预测）鲜有能有效迁移的方法；回归任务中，即使源任务相关但任务定义不同，目标数据样本稀缺也带来挑战；标准迁移学习方法在处理 latent 表示几何结构差异时往往无视几何对齐，难以实现知识跨任务流动；为此，作者提出了一种基于黎曼几何的迁移方法，针对回归任务设计 inductive transfer 框架。 【分子性质回归任务】【PubChem,Ochem,CCCB】【RMSE】【GATE模型】
+
+74. **A 2‑Dimensional State Space Layer for Spatial Inductive Bias** [ICLR2024] [[paper link](https://openreview.net/pdf?id=BGkqypmGvm)]
+
+      计算机视觉模型通常需要具备合适的 二维空间归纳偏好（2‑D inductive bias），如位置感知、空间局部性、平移与排列不变性。传统 CNN 本身具有强局部空间偏好；但 Transformer 通常作为一维序列处理图像并借助 positional encoding，其归纳偏好较弱。本文旨在设计可嵌入 Transformer 的新层，弥补其在视觉场景中的空间结构弱偏好。 【分类】【ImageNet‑1K等】【ACC】【ViT等】
+
+75. **Conformal Inductive Graph Neural Networks** [ICLR2024] [[paper link](https://arxiv.org/pdf/2407.09173)]
+
+      虽然 Conformal Prediction（CP） 为传统模型提供了无分布假设下的覆盖保证，适用于 transductive 节点分类，但其要求的 exchangeability（可交换性） 在 inductive（测试阶段出现新节点）场景中破坏，主要原因是 message passing 导致 calibration 分数分布 shift。因此，现有 CP 方法无法在 inductive setting（例如 新节点加入图结构后预测）保证覆盖率。作者动机在于构建一种适用于 inductive GNN 设置 的 CP 方法，既可满足 new node/edge 到来时的覆盖保证，又不损失统计效率。 【节点分类】【多个经典图分类数据集】【真实标签覆盖率】【NodeEx CP+GNN】
+
+76. **Hypothesis Search: Inductive Reasoning with Language Models** [ICLR2024] [[paper link](https://arxiv.org/pdf/2309.05660)]
+
+      Abstract Hypothesis Proposal：让 LLM 生成多个自然语言层面的抽象假设；Hypothesis Filtering / Summarization：通过 LLM 或 minimal 人工筛选，缩小假设集；Concrete Program Implementation：将每个假设转化为可执行的 Python 程序，并验证其是否能正确解释已知样本。 【ARC与列表变换】【对应数据集】【ACC】【GPT3.5和4】
+    
+77. **Label-Focused Inductive Bias over Latent Object Features in Visual Classification** [ICLR2024] [[paper link](https://openreview.net/pdf?id=cH3oufN8Pl)]
+
+      输入域偏置问题：现有的视觉分类模型通常依赖于输入图像中的视觉相似性来学习特征，这种方法可能引入与人类标注者基于世界知识所定义的隐式输出域之间的冲突。这种冲突可能限制模型在推理阶段的泛化能力。目标：提出一种方法，通过构建仅由输出标签区分的特征，来减少输入域偏置对模型推理的影响，从而提高模型的泛化能力。【分类任务】【CIFAR-10等等】【ACC】【ViT】
+
+78. **Integrating Planning and Deep Reinforcement Learning via Automatic Induction of Task Substructures** [ICLR2024] [[paper link](https://openreview.net/pdf?id=PR6RMsxuW7)]
+
+      尽管深度学习在高维决策任务中取得了显著进展，但在稀疏奖励和目标导向任务中仍面临学习效率低和泛化能力差的问题。经典规划的优势与局限：经典规划方法擅长处理具有层次结构的任务，通过符号知识进行高层次规划，但大多数方法依赖于预定义的子任务假设，限制了其在未知环境中的应用。提出一种框架，将 DRL 与经典规划相结合，通过从少量示范中自动诱导任务结构和子结构，克服上述挑战。【稀疏奖励和目标导向的任务】【对应数据集】【对应性能】【多种深度学习方法】
     
 ## Others
    
@@ -491,3 +523,7 @@
 19. **Enhancing the Inductive Biases of Graph Neural ODE for Modeling Physical Systems** [ICLR2023] [[paper link](https://arxiv.org/pdf/2209.10740)]
 
     引入 Graph Neural ODE（GNODE）：对粒子系统建模时，利用 GNN 构造连续时间动力学方程，作为 NODE 执行积分预测。相比传统输入位置 + 速度，GNODE 仅将 位置作为输入 且对加速度进行预测，为 second-order bias 做准备。inductive bias 通过将物理约束与系统特性（energy conservation、Newton’s law）编码为模型架构的一部分，被强制注入 GNODE。
+
+20. **SEGNO: Generalizing Equivariant Graph Neural Networks with Physical Inductive Biases** [ICLR2024] [[paper link](https://arxiv.org/pdf/2308.13212)]
+
+    虽然等变图神经网络（Equivariant GNNs）在模拟多对象物理系统中广泛使用，但其泛化能力仍受限，因为未充分融入关键的物理归纳偏好。
