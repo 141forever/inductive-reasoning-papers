@@ -106,6 +106,18 @@
 17. **Predicting Inductive Biases of Pre-Trained Models** [ICLR2021] [[paper link](https://openreview.net/pdf?id=mNtmhaDkAr)]
 
       当前主流 预训练‑微调模型 在 NLP 任务中广受成功，但研究发现两种分析方法产生的结论常常矛盾：Probing classifier 表明预训练模型中能提取丰富的语言结构特征；Challenge set 分析却显示微调后的模型往往使用训练集中常见的启发式（spurious heuristic），未使用潜在语言知识。t：target feature（理论上应当依赖的结构语言特征，如语法结构）。s：spurious feature（与目标标签相关但非语法结构的启发式特征，如特定词语出现）。因此，作者提出假设：对于某个特征t，其是否被 fine‑tuned 模型采纳，取决于两个因素：在预训练表示中该特征的 extractability（可提取性）；在微调数据中该特征作为标签线索的 co‑occurrence frequency（证据量）。作者将 probing 中的 feature extractability 视为预训练模型的 inductive bias，即模型更容易使用的特征。【synthetic NLI/P probing tasks与自然语言推理challenge‑set】【多种合成数据与真实的NLI数据集】【测量是否模型依赖t还是s】【Bert和GPT系列】
+
+18. **Deconstructing the Inductive Biases of Hamiltonian Neural Networks** [ICLR2022] [[paper link](https://arxiv.org/pdf/2202.04836)]
+
+      物理启发型模型（如 Hamiltonian Neural Networks, HNN）因强 inductive bias 通常比普通神经网络更能泛化，但它们难以应用于不满足能量守恒或存在碰撞、摩擦等情境（如机器人与强化学习任务中常见）。作者质疑传统观点——认为 HNN 的优越表现源自对称几何结构或能量守恒；于是他们希望拆分 HNN 内部的偏置成分，理解究竟哪些 bias 在实际成功中起主导作用，以及如何在非理想系统中调整这类偏好。
+
+19. **The Inductive Bias of In-Context Learning: Rethinking Pretraining Example Design** [ICLR2022] [[paper link](https://arxiv.org/pdf/2110.04541)]
+
+    在大规模语言模型（NLM）的预训练中，通常将文本切割成连续的训练示例（chunk）进行处理。作者提出：模型对那些出现在同一个训练示例内部的句子或片段，能够学习更强的依赖关系；而跨示例的信息关联能力则显著弱於前者，这形成了一种所谓的 in‑context bias（上下文内偏好）。
+
+      
+
+
    
 ## Evaluations
 
@@ -371,10 +383,13 @@
 
       传统基于嵌入的知识图谱链接预测方法依赖于固定实体与关系的训练集，因此无法处理测试时出现的全新关系类型（即只在推理时才出现的关系）。作者提出利用子图结构与类比模式，在归纳设置中支持新关系的预测，同时带来更好的泛化与可解释性。【归纳关系预测任务】【对应数据集】【MRR/Hits@K】【GraphANGEL模型】
 
-65. **On Incorporating Inductive Biases into VAEs** [ICLR2022] [[paper link](https://arxiv.org/pdf/2106.13746)]
+66. **On Incorporating Inductive Biases into VAEs** [ICLR2022] [[paper link](https://arxiv.org/pdf/2106.13746)]
 
       在标准 VAE 中通过替换先验分布（prior）来引入 inductive bias（归纳偏好）往往效果不佳，论文提出了用 Intermediary Latent Space VAEs（InteL‑VAEs）进行改善。【图像生成】【VAE对应数据集】【ELBO】【VAE系列】
 
+67. **Embedded-model flows: Combining the inductive biases of model-free deep learning and explicit probabilistic modeling** [ICLR2022] [[paper link](https://arxiv.org/pdf/2110.06021)]
+
+      继承领域 inductive bias（如多模态、层级耦合、连续性）而保持流模型训练的灵活性。【结构化推断】【合成数据集】【对数似然, ELBO】【多EMF结构】
     
 ## Others
    
