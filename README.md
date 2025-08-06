@@ -29,7 +29,11 @@
    
       通过构造与已知世界模型（如牛顿力学）一致的合成数据集，测试基础模型在新任务上的适应能力，进而评估其归纳偏差是否与世界模型一致。
 
-5.  **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
+5. **Unsupervised Vision-Language Grammar Induction with Shared Structure Modeling** [ICLR2022] [[paper link](https://openreview.net/pdf?id=N0n_QyQ5lBF)]
+
+      无监督的视觉–语言（vision‑language, VL）语法归纳任务，即从给定的图像与其描述文字对中，同时归纳出共享的、层级化的结构（如句法树），旨在促进对图像与语言中共同结构的深层理解。任务名称：VL grammar induction。数据集名称：Flickr30k Entities。指标：CCRA。
+
+6.  **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
    
       提出了一种基于数列的类比推理合成数据管线，以code为呈现形式构建了一批SFT合成数据，有效的提高了LLMs的类比推理和code推理能力。
    
@@ -358,6 +362,19 @@
 63. **Inductive Representation Learning in Temporal Networks via Causal Anonymous Walks** [ICLR2021] [[paper link](https://arxiv.org/pdf/2101.05974)]
 
       现实世界中的temporal networks（社交互动、通信日志等）遵循诸如三角闭合、前馈控制环路等动态演化规律，而这些规律通常独立于节点身份（node identity），是系统的结构性laws。要对新网络泛化，仅靠记忆节点编号是不够的。因此，论文的核心动机是设计一种能够捕捉网络动态规律（motifs）、同时对节点身份保持匿名、还能对新网络实现 归纳式泛化的representation learning方法。【Temporal link prediction】【Reddit, Wikipedia等】【AUC】【CAW系列】
+
+64. **Neural Structured Prediction for Inductive Node Classification** [ICLR2022] [[paper link](https://arxiv.org/pdf/2204.07524)]
+
+      结合 GNN 的高容量与效率，以及 CRF 的结构输出建模能力，来改进归纳节点分类任务。【inductive节点分类】【Cora等】【ACC】【GNN+CRF】
+
+65. **Inductive Relation Prediction Using Analogy Subgraph Embeddings** [ICLR2022] [[paper link](https://openreview.net/pdf?id=PTRo58zPt3P)]
+
+      传统基于嵌入的知识图谱链接预测方法依赖于固定实体与关系的训练集，因此无法处理测试时出现的全新关系类型（即只在推理时才出现的关系）。作者提出利用子图结构与类比模式，在归纳设置中支持新关系的预测，同时带来更好的泛化与可解释性。【归纳关系预测任务】【对应数据集】【MRR/Hits@K】【GraphANGEL模型】
+
+65. **On Incorporating Inductive Biases into VAEs** [ICLR2022] [[paper link](https://arxiv.org/pdf/2106.13746)]
+
+      在标准 VAE 中通过替换先验分布（prior）来引入 inductive bias（归纳偏好）往往效果不佳，论文提出了用 Intermediary Latent Space VAEs（InteL‑VAEs）进行改善。【图像生成】【VAE对应数据集】【ELBO】【VAE系列】
+
     
 ## Others
    
@@ -428,3 +445,7 @@
 17. **Inductive Gradient Adjustment for Spectral Bias in Implicit Neural Representations** [ICML2025] [[paper link](https://openreview.net/pdf?id=pYMZQtkp3F)]
 
     从训练动力学视角出发，设计不依赖模型架构变化的 梯度调整策略，使MLP能有效学习高频分量。
+
+18. **Map Induction: Compositional spatial submap learning for efficient exploration in novel environments** [ICLR2022] [[paper link](https://arxiv.org/pdf/2110.12301)]
+
+    论文假设人类在探索未知环境时，并非一片空白地随机探索，而是会根据此前看到过的相似结构来归纳新环境的未观测区域，从而更加高效地规划路线和搜寻目标。这一认知机制可以用分层贝叶斯与程序归纳模型来模拟。
