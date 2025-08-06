@@ -115,11 +115,22 @@
 
     在大规模语言模型（NLM）的预训练中，通常将文本切割成连续的训练示例（chunk）进行处理。作者提出：模型对那些出现在同一个训练示例内部的句子或片段，能够学习更强的依赖关系；而跨示例的信息关联能力则显著弱於前者，这形成了一种所谓的 in‑context bias（上下文内偏好）。
 
+20. **A theoretical study of inductive biases in contrastive learning** [ICLR2023] [[paper link](https://arxiv.org/pdf/2211.14699)]
+    
+    文章探索模型结构中隐含的归纳偏好对 contrastive 学习重要性。即模型架构自身（如可表达性、维度限制）对学习过程施加归纳偏差，从而影响最终的聚类结构与下游性能。
+
+21. **Strong inductive biases provably prevent harmless interpolation** [ICLR2023] [[paper link](https://arxiv.org/pdf/2301.07605)]
+    
+    传统观点认为，对噪声的拟合会损害泛化，因此应该避免“插值”（interpolation）。然而在过参数模型中，许多模型即使完美拟合噪声仍能泛化良好（即 benign overfitting 或 harmless interpolation）。本文提出：是否能做到 harmless interpolation，强烈依赖学习器的归纳偏好强度——太强的 inductive bias 反而阻碍在噪声上的 harmless 插值，而偏弱的 inductive bias 则可能需要拟合部分噪声才能泛化良好。
       
 
 
    
 ## Evaluations
+
+1. **Is Forgetting Less a Good Inductive Bias for Forward Transfer?** [ICLR2023] [[paper link](https://arxiv.org/pdf/2211.14699)]
+    
+    连续学习的核心目标之一是模型能从过去任务中积累知识，以更高效地学习新任务。然而，最近研究发现：减少灾难性遗忘（catastrophic forgetting）并不一定能带来正向迁移（forward transfer）的提升。这可能源自测量 forward transfer 的方式不当。作者认为，正确的 forward transfer Measure 应当聚焦于 在固定表示下新任务的适应难易程度，而不是不同任务训练策略之间的干扰。在训练序列中每到一个新任务时，冻结当前特征提取器 (feature extractor Φ)，只用少量样本学习线性分类器（k-shot probing），评估在下一任务上的泛化准确率。这里的 inductive bias 指：在连续学习过程中，对保留过去任务知识的偏好，可以提升未来任务的迁移效率。
 
 ## Methods
 
@@ -141,7 +152,7 @@
 
 5. **On the Inductive Bias of Neural Tangent Kernels** [NIPS2019] [[paper link](https://papers.nips.cc/paper_files/paper/2019/file/c4ef9c39b300931b69a36fb3dbb8d60e-Paper.pdf)]
 
-   对于模型优化过程神经切线核（NTK）的inductive bias的探索，本文给出了一种基于核函数的提高方法。【图像分类】【CIFAR-10，MNIST】【准确率】【CNN模型】
+   对于模型优化过程神经切线核（NTK）的inductive bias的探索，本文给出了一种基于核函数的提高方法。【图像分类】【CIFAR-10, MNIST】【准确率】【CNN模型】
    
 6. **Provable Non-linear Inductive Matrix Completion** [NIPS2019] [[paper link](https://papers.nips.cc/paper_files/paper/2019/file/ce5193a069bea027a60e06c57a106eb6-Paper.pdf)]
 
@@ -390,6 +401,18 @@
 67. **Embedded-model flows: Combining the inductive biases of model-free deep learning and explicit probabilistic modeling** [ICLR2022] [[paper link](https://arxiv.org/pdf/2110.06021)]
 
       继承领域 inductive bias（如多模态、层级耦合、连续性）而保持流模型训练的灵活性。【结构化推断】【合成数据集】【对数似然, ELBO】【多EMF结构】
+
+68. **Learning Language Representations with Logical Inductive Bias** [ICLR2023] [[paper link](https://arxiv.org/abs/2302.09458)]
+
+      Transformer 在大型预训练语言模型中表现优越，这部分归因于其固有的 relational inductive bias（如 pairwise attention），但模型缺乏 逻辑推理层次的结构偏好。作者希望引入一种新的 “逻辑归纳偏好（logical inductive bias）”，使模型不仅能建模分布式语义表征，还能具备形式化的逻辑推理能力。将一阶逻辑 Horn 子句作为可学习的 神经逻辑操作符，并通过 forward chaining（前向连锁推理） 构建一个全可微的逻辑推理网络。【文本分类, NIL等】【GLUE等】【ACC, F1】【FOLNet模型】
+
+69. **LogicDP: Creating Labels for Graph Data via Inductive Logic Programming** [ICLR2023] [[paper link](https://openreview.net/pdf?id=2b2s9vd7wYv)]
+
+      现实中的图数据（如场景图和知识图）往往不完整，但图推理模型（如知识图补全、场景图补全）都需要大量训练数据才能取得好效果。人工标注成本高。现有的 Data Programming（DP）方法主要面向非结构化数据，不适用于图结构数据，也依赖专家手动编写 labeling functions（标注函数）。论文动机在于：能否自动生成图结构的标注函数，减少专家工作，并更高效地构建训练集？因此提出 LogicDP 框架。【图推理任务】【场景图数据集】【数据效率】【GNN等图推模型】
+
+70. **Graph Signal Sampling for Inductive One‑Bit Matrix Completion: a Closed‑Form Solution** [ICLR2023] [[paper link](https://arxiv.org/pdf/2302.03933)]
+
+      现代推荐系统中，经常在线上出现 新用户，他们在测试阶段可能只有正反馈（“喜欢”即1），而没有负反馈。传统的 one‑bit matrix completion 无法处理这种 inductive 设置（测试时出现新列只有正例）。作者动机是提出一个 可推广的新用户预测框架，能够在仅获取部分正反馈的情形下，准确推断一个新用户对所有物品的兴趣倾向。【Inductive Top‑N推荐】【Netflix】【HR@50等】【GS】
     
 ## Others
    
@@ -464,3 +487,7 @@
 18. **Map Induction: Compositional spatial submap learning for efficient exploration in novel environments** [ICLR2022] [[paper link](https://arxiv.org/pdf/2110.12301)]
 
     论文假设人类在探索未知环境时，并非一片空白地随机探索，而是会根据此前看到过的相似结构来归纳新环境的未观测区域，从而更加高效地规划路线和搜寻目标。这一认知机制可以用分层贝叶斯与程序归纳模型来模拟。
+
+19. **Enhancing the Inductive Biases of Graph Neural ODE for Modeling Physical Systems** [ICLR2023] [[paper link](https://arxiv.org/pdf/2209.10740)]
+
+    引入 Graph Neural ODE（GNODE）：对粒子系统建模时，利用 GNN 构造连续时间动力学方程，作为 NODE 执行积分预测。相比传统输入位置 + 速度，GNODE 仅将 位置作为输入 且对加速度进行预测，为 second-order bias 做准备。inductive bias 通过将物理约束与系统特性（energy conservation、Newton’s law）编码为模型架构的一部分，被强制注入 GNODE。
