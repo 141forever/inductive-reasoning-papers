@@ -33,7 +33,15 @@
 
       无监督的视觉–语言（vision‑language, VL）语法归纳任务，即从给定的图像与其描述文字对中，同时归纳出共享的、层级化的结构（如句法树），旨在促进对图像与语言中共同结构的深层理解。任务名称：VL grammar induction。数据集名称：Flickr30k Entities。指标：CCRA。
 
-6.  **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
+6. **GeoILP: A Synthetic Dataset to Guide Large‑Scale Rule Induction** [ICLR2025] [[paper link](https://openreview.net/pdf?id=cfGpIcOIa5)]
+
+      传统 Inductive Logic Programming（ILP）系统 通常只针对小规模、语言偏见单一的任务设计，对于包含复杂语言偏差的大规模几何归纳任务表现有限。且大多数 ILP 系统需要专家手工设定语言 bias（例如定义可用谓词、递归深度等），这限制了 ILP 的自动化应用和普适化发展。因此，论文动机在于创建一个大规模、涵盖多种语言 bias 的合成数据集，推动研究者探索无需人工干预、可自动进行规则归纳的系统。数据集名称：GeoILP。
+
+7. **MIRAGE: Evaluating and Explaining Inductive Reasoning Process in Language Models** [ICLR2025] [[paper link](https://arxiv.org/pdf/2410.09542)]
+
+      MIRAGE数据集。
+
+8.  **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
    
       提出了一种基于数列的类比推理合成数据管线，以code为呈现形式构建了一批SFT合成数据，有效的提高了LLMs的类比推理和code推理能力。
    
@@ -469,7 +477,21 @@
 
       决策树具有较强的可解释性和适用性，但传统生成方法（如 CART）容易陷入贪心子优化；优秀的全局搜索算法（如 exact methods）计算复杂度高且受限于小问题规模。遗传编程（GP）虽能寻找更全局最优解，却缺乏语义引导，搜索效率低、易陷入无意义变化。因此作者提出将大语言模型（LLM）中蕴含的语义先验知识纳入 GP 操作中，以提升决策树结构搜索的效率和泛化能力。【分类与回归任务】【对应数据集】【MSE】【LLEGO】
 
+81. **Neuron‑based Personality Trait Induction in Large Language Models** [ICLR2025] [[paper link](https://arxiv.org/pdf/2410.12327)]
 
+      目前 LLM 刚性表达 personality traits（如 Big Five），但主流方法依赖 prompt engineering（稳定性差）或 fine-tuning（资源消耗高）。作者希望探索一个更稳定、高效且可解释的方法：直接通过 操控 LLM 中的具体神经元 实现个性特质调整，而无需微调或重训练整个模型。【LLM人格】【PERSONALITYBENCH】【自动打分】【LLaMA】
+
+82. **Fully‑inductive Node Classification on Arbitrary Graphs** [ICLR2025] [[paper link](https://arxiv.org/pdf/2405.20445)]
+
+      传统的图机器学习模型只能在训练所见图上泛化，无法推广到拥有全新结构、节点特征与标签空间的图。现有 Inductive GNN 方法仍假设测试图与训练图共享特征/标签空间，限制其在不同域间迁移能力。作者提出更广泛、更实用的 “fully‑inductive” 设定：模型需在任意图（结构、feature、label 均不依赖训练图）上执行分类，无需重新训练或微调。【节点分类】【30个不同图domain数据集】【ACC】【GraphAny】
+
+83. **Differentiable Rule Induction from Raw Sequence Inputs** [ICLR2025] [[paper link](https://openreview.net/pdf?id=zDjHOsSQxd)]
+
+      传统可微分归纳逻辑编程（Differentiable ILP）方法通常依赖符号化输入，即从预训练网络或手工特征里获得离散符号标签，再学习规则。这会造成 标签泄漏（label leakage）：模型过度依赖输入中特征标签的监督，不能直接从原始连续输入（如时间序列或图像）中归纳规则。因此，作者希望构建一个 端到端可微分 pipeline，实现从 原始序列或图像输入 学习符号规则的能力，同时避免标签泄漏。【时间序列分类, 图像归纳】【UCR, MNIST】【准确率】【NeurRL】
+
+84. **Selective Induction Heads: How Transformers Select Causal Structures in Context** [ICLR2025] [[paper link](https://openreview.net/pdf?id=bnJgzAQjWf)]
+
+      Transformer 中的 induction heads 已被证明是 in‑context learning 的关键机制，它们能根据上下文复制先前出现的 tokens，实现基于因果依赖的 token 预测。以往研究使用的设置假定因果结构（如 Markov 链滞后）是固定的，无法解释自然语言和实际任务中动态变化的因果关系。构建了一种 交错的 Markov 链（Interleaved Markov Chains），在同一序列中混入多个不同滞后（lag）结构，但保持 transition probabilities 不变。训练 attention-only 的 Transformer 在每个 context 中识别当前有效的滞后结构，并且通过复制相应滞后的 token 进行预测。构建了一个简化的 三层 Transformer 架构，第 1 层估计不同滞后结构的 transition probabilities，第 2 层对这些概率进行 aggregated，最后第 3 层引入 Selective Induction Head 来选择正确滞后并复制对应 token。【交错 Markov Chain生成的synthetic序列上进行next‑token prediction】【合成数据集】【对应方法】【Attention‑only Transformer】
     
 ## Others
    
@@ -552,3 +574,8 @@
 20. **SEGNO: Generalizing Equivariant Graph Neural Networks with Physical Inductive Biases** [ICLR2024] [[paper link](https://arxiv.org/pdf/2308.13212)]
 
     虽然等变图神经网络（Equivariant GNNs）在模拟多对象物理系统中广泛使用，但其泛化能力仍受限，因为未充分融入关键的物理归纳偏好。
+
+21. **Interpretable Vision‑Language Survival Analysis with Ordinal Inductive Bias for Computational Pathology** [ICLR2025] [[paper link](https://arxiv.org/pdf/2409.09369)]
+
+    在计算病理学中，对全切片影像（WSI）进行预后生存分析（Survival Analysis，SA）通常面临两大挑战：病患数据稀缺（通常少于千人）和仅有粗粒度（病人级别）的监督标签。多实例学习（MIL）框架下，模型难以从海量切片图像中学习有效的预后表示。作者提出利用 Vision‑Language Foundation Models（如病理 VL 模型） 引入语言中的预后先验知识，以补强弱监督信号，提高数据效率与可解释性。
+    
