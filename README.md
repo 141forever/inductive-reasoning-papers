@@ -44,7 +44,17 @@
 8.  **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
    
       提出了一种基于数列的类比推理合成数据管线，以code为呈现形式构建了一批SFT合成数据，有效的提高了LLMs的类比推理和code推理能力。
-   
+
+9.  **MTR:A Dataset Fusing Inductive, Deductive, and Defeasible Reasoning** [ACL2023] [[paper link](https://aclanthology.org/2023.findings-acl.640.pdf)]
+
+     现有的数据集大多只关注单一类型的推理，提出了一个新的数据集MTR，旨在融合归纳推理、演绎推理和可废止推理，采用半自动方法生成数据集，包括逻辑生成、逻辑修正和自然语言生成。
+【关系推理任务】【MTR】【准确率】【BiLSTM、BERT等】
+
+10.  **InductionBench: LLMs Fail in the Simplest Complexity Class** [ACL2025] [[paper link](https://aclanthology.org/2025.acl-long.1287.pdf)]
+
+     提出InductionBench，一个基于子正则函数层级（subregular hierarchy）的基准测试，通过生成不同复杂度的字符串转换任务（如ISL、L-OSL、R-OSL函数），评估LLM从输入-输出对中推断规则的能力。
+【字符串到字符串的转换，要求模型从输入-输出对中推断规则】【动态生成的合成数据集】【精确率、召回率、兼容性】【LLMs】
+    
 ## Explanations and Explorations
 
 1. **A New Neural Kernel Regime: The Inductive Bias of Multi-Task Learning** [NIPS2024] [[paper link](https://papers.nips.cc/paper_files/paper/2024/file/fdff3c4130c24c40c88aa41eb52d2a27-Paper-Conference.pdf)]
