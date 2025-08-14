@@ -180,52 +180,52 @@
       探究神经语言模型（如LSTM和Transformer）是否对特定类型的语言结构具有归纳偏置（Inductive Bias）。通过概率上下文无关文法（PCFG）生成内容相同但词序不同的平行句子，以困惑度作为性能指标。发现：LSTM：对所有词序变体表现相似，无明显偏置。Transformer：对某些词序（如OVS）表现显著更好，但其偏置与自然语言的普遍词序（如SOV/SVO）无关。
 【预测下一个词】【64种人工语言（通过PCFG生成）】【困惑度（Perplexity）】【LSTM、Transformer】
 
-27.**Coloring the Blank Slate: Pre-training Imparts a Hierarchical Inductive Bias to Sequence-to-sequence Models**  [ACL2022] [[paper link](https://aclanthology.org/2022.findings-acl.106.pdf)] 
+27. **Coloring the Blank Slate: Pre-training Imparts a Hierarchical Inductive Bias to Sequence-to-sequence Models**  [ACL2022] [[paper link](https://aclanthology.org/2022.findings-acl.106.pdf)] 
 
       证明预训练seq2seq模型能够通过大规模预训练，获得层次化的归纳偏置，从而在句法转换任务中表现出对句子层次结构的敏感性。
 【疑问句生成、将主动句转换为被动句】【使用上下文无关语法生成的英语和德语句子】【序列准确率、主助动词准确率、宾语名词准确率】【预训练的seq2seq模型】
 
-28.**Measuring Inductive Biases of In-Context Learning with Underspecified Demonstrations**  [ACL2023] [[paper link](https://aclanthology.org/2023.acl-long.632.pdf)] 
+28. **Measuring Inductive Biases of In-Context Learning with Underspecified Demonstrations**  [ACL2023] [[paper link](https://aclanthology.org/2023.acl-long.632.pdf)] 
 
       研究ICL的inductive biases，在任务定义模糊的情况下，LLMs倾向于依赖哪些特征进行预测。如GPT-3更倾向情感而非标点符号。尝试多种干预方法（自然语言指令、语义标签、模板解释、去歧义示例）来引导模型偏好特定特征。
 【文本分类（情感分析、毒性检测、自然语言推理、问答）的模糊上下文学习】【情感分析：IMDb + Yelp；毒性检测：CivilComments；自然语言推理：MultiNLI；问答：BoolQ】【h-accuracy】【GPT-3】
 
-29.**How to Plant Trees in LMs: Data and Architectural  Effects on the Emergence of Syntactic Inductive Biases**  [ACL2023] [[paper link](https://aclanthology.org/2023.acl-long.629.pdf)] 
+29. **How to Plant Trees in LMs: Data and Architectural  Effects on the Emergence of Syntactic Inductive Biases**  [ACL2023] [[paper link](https://aclanthology.org/2023.acl-long.629.pdf)] 
 
       探索预训练过程中哪些因素（如模型架构和训练数据）会影响LMs在微调任务中表现出层次化句法归纳偏好。用不同参数的模型在多种数据集上实验。发现，模型深度更为关键，模型在更简单的数据（如儿童导向语料）上能更快形成层次化归纳偏好。
 【句法转换任务】【预训练数据：CHILDES（儿童导向语料）、维基百科、简化版维基百科、C4网页文本; 微调数据：基于McCoy et al.】【序列准确率、主助动词准确率、宾语准确率】【不同超参数T5】
 
-30.**Instruction Induction: From Few Examples  to Natural Language Task Descriptions** [ACL2023] [[paper link](https://aclanthology.org/2023.acl-long.108.pdf)] 
+30. **Instruction Induction: From Few Examples  to Natural Language Task Descriptions** [ACL2023] [[paper link](https://aclanthology.org/2023.acl-long.108.pdf)] 
       
       验证大语言模型能否通过归纳示例中的模式，生成可解释的自然语言指令。方法是用大模型生成指令，通过执行准确率和语义相似度评估。经过指令调优的模型（InstructGPT）能较好生成指令，达到人类性能的65.7%。
 【指令归纳（从示例生成指令）及指令执行评估】【24个任务（如复数化、反义词生成、形式化转换、句子相似度等），部分来自公开数据集（如GLUE、WordNet），部分自建（如数字求和、翻译任务）】【BERTScore（语义相似度）、执行准确率】【GPT-3系列】
 
-31.**Too Big to Fail: Larger Language Models are Disproportionately Resilient  to Induction of Dementia-Related Linguistic Anomalies** [ACL2024] 
+31. **Too Big to Fail: Larger Language Models are Disproportionately Resilient  to Induction of Dementia-Related Linguistic Anomalies** [ACL2024] 
 [[paper link](https://aclanthology.org/2024.findings-acl.380.pdf)] 
       研究LLMs是否模型规模越大，对注意力头的掩码（模拟神经退行性损伤）表现出更强的抵抗力，从而探索其在模拟阿尔茨海默病等神经退行性疾病语言异常中的潜力。发现大型语言模型表现出更强的抗干扰能力。
 【检测阿尔茨海默病相关的语言异常】【ADReSS（阿尔茨海默病语音识别挑战数据集）和WLS（威斯康星纵向研究数据集）】【困惑度、分类准确率、AUC】【GPT-2】
 
-32.**Identifying Semantic Induction Heads to Understand In-Context Learning** [ACL2024] [[paper link](https://aclanthology.org/2024.findings-acl.412.pdf)] 
+32. **Identifying Semantic Induction Heads to Understand In-Context Learning** [ACL2024] [[paper link](https://aclanthology.org/2024.findings-acl.412.pdf)] 
       
       研究LLMs中注意力头如何编码高级语义关系，以增强对模型内部机制和上下文学习（ICL）能力的理解，从而提高模型的可解释性。提出“语义归纳头”，将ICL能力分为三个层次（损失减少、格式遵循、模式发现），并研究其与语义归纳头的相关性。
 【分析注意力头对语义关系的编码能力，研究ICL能力的渐进发展】【AGENDA（知识图谱生成数据集）、SlimPajama（训练用数据集）】【关系指数、复制分数、格式准确率、预测准确率】【InternLM2-1.8B】
 
-33.**Information Locality as an Inductive Bias for Neural Language Models**  [ACL2025] [[paper link](https://aclanthology.org/2025.acl-long.1357.pdf)] 
+33. **Information Locality as an Inductive Bias for Neural Language Models**  [ACL2025] [[paper link](https://aclanthology.org/2025.acl-long.1357.pdf)] 
       
       针对神经LMs与人类认知偏好的对齐争议，提出局部熵作为指标，通过扰动自然语言和合成语言实验，证明模型与人类共享“信息局部性”这一归纳偏置。提出m-local entropy框架，通过控制变量实验验证局部统计结构对神经LMs学习难度的影响。
 【语言模型学习难度评估】【自然语言：BLLIP语料库、合成语言：PFSA生成的合成数据集】【下一符号交叉熵、KL散度】【LSTM、Transformer】
 
-34.**Do Robot Snakes Dream like Electric Sheep?  Investigating the Effects of Architectural Inductive Biases on Hallucination**  [ACL2025] [[paper link](https://aclanthology.org/2025.findings-acl.60.pdf)] 
+34. **Do Robot Snakes Dream like Electric Sheep?  Investigating the Effects of Architectural Inductive Biases on Hallucination**  [ACL2025] [[paper link](https://aclanthology.org/2025.findings-acl.60.pdf)] 
       
       针对LLMs幻觉问题，从架构的归纳偏差角度出发，对比不同模型在多样任务中的表现，揭示其与幻觉类型的关联性。方法：系统评估多种架构LLMs在标准化幻觉任务中的行为差异，结合规模与微调分析。
 【闭卷问答、摘要生成、阅读理解、指令跟随、幻觉检测、事实核查】【NQ-Open、TriviaQA、TruthfulQA、PopQA、XSUM、CNN/DM、RACE、SQuADv2、MemoTrap、IFEval、FaithDial、HaluEval、FEVER等】【精确匹配（EM）、准确率（Accuracy）、Rouge-L等】【Transformer类：LLaMA2/3、Gemma、Falcon、Mistral、Mixtral；循环/混合类：Mamba、RecurrentGemma、FalconMamba、Jamba、RWKV/Finch】
 
-35.**Can Input Attributions Explain Inductive Reasoning  in In-Context Learning?** [ACL2025] [[paper link](https://aclanthology.org/2025.findings-acl.1092.pdf)] 
+35. **Can Input Attributions Explain Inductive Reasoning  in In-Context Learning?** [ACL2025] [[paper link](https://aclanthology.org/2025.findings-acl.1092.pdf)] 
       
       探讨输入归因（IA）能否有效解释LLM在ICL中的归纳推理过程，提出设计包含歧义示例和唯一关键示例的ICL任务，比较四种IA方法和基线方法（如注意力权重、自生成解释）在识别关键示例上的表现。
 【合成归纳推理任务】【自建合成数据集】【Top-1和Top-2归因准确率】【Llama-2-7B/13B、Gemma-2-2B/9B/27B、Mistral-7B】
 
-36.**GCG-Based Artificial Languages  for Evaluating Inductive Biases of Neural Language Models**  [ACL2025] [[paper link](https://aclanthology.org/2025.conll-1.35.pdf)] 
+36. **GCG-Based Artificial Languages  for Evaluating Inductive Biases of Neural Language Models**  [ACL2025] [[paper link](https://aclanthology.org/2025.conll-1.35.pdf)] 
       
       探究LMs是否对高频语法模式（如特定词序）存在归纳偏好，使用PCFG生成人工语言而无法涵盖部分词序和复杂句法结构。提出通过广义范畴语法（GCG）构建更丰富的人工语言，通过困惑度分析LSTM和Transformer对词序的偏好动态。
 【评估神经LMs在不同词序人工语言上的学习表现】【GCG-ALs：96种人工语言（含VSO、OSV等新增词序）】【困惑度（PPL）】【LSTM、Transformer】
