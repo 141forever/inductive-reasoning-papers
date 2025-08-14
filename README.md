@@ -1000,52 +1000,52 @@
       针对单一LLM在归纳编码中的不一致性，文章通过集成学习模拟“多专家共识”，结合标签精炼优化归纳结果。方法：用多个小型LLM生成候选编码，通过moderator机制和相似性合并实现精炼，最终以复合指标评估。
 【自动化归纳编码】【1,000个“文本-编码”对（600条社会科学研究数据 + 400条SemEval-2014评论数据），另用100条ChatGPT用户评论作为独立测试集】【复合评分（核心指标）、BERTScore、ROUGE、覆盖度、新颖性】【Llama3-8B、Falcon-7B、Mistral-7B、Vicuna-7B等】
 
-170.**Patterns Over Principles: The Fragility of Inductive Reasoning in LLMs  under Noisy Observations**  [ACL2025] [[paper link](https://aclanthology.org/2025.findings-acl.1006.pdf)]
+170. **Patterns Over Principles: The Fragility of Inductive Reasoning in LLMs  under Noisy Observations**  [ACL2025] [[paper link](https://aclanthology.org/2025.findings-acl.1006.pdf)]
 
       针对LLM在噪声数据中归纳规则时的脆弱性，通过多样化假设和迭代修正来增强推理稳定性。提出Sample-steered Rule Refinement (SRR)，通过生成多样规则候选并基于执行反馈迭代优化。
 【Robust Rule Induction（从含噪声的输入-输出对中推断潜在规则）】【Arithmetic（非十进制加法）；Cryptography（替换密码）；List Functions（列表操作）】【整体正确率、噪声与无噪声条件下推理一致性】【SRR】
 
-171.**Inductive Linguistic Reasoning with Large Language Models**  [ACL2025] [[paper link](https://aclanthology.org/2025.findings-acl.1171.pdf)]
+171. **Inductive Linguistic Reasoning with Large Language Models**  [ACL2025] [[paper link](https://aclanthology.org/2025.findings-acl.1171.pdf)]
 
       针对低资源语言缺乏标注，通过类比提示让模型从少量示例中归纳语言规则，并利用同语系语言的相似性生成辅助示例，增强跨语言推理能力。方法：首先生成同语系类比示例，再结合原始示例进行上下文学习。
 【语言学谜题】【model_ing和LINGOLY】【精确匹配、ChrF2和BLEU分数】【LLMs】
 
-172.**Theorem-of-Thought: A Multi-Agent Framework for Abductive, Deductive,  and Inductive Reasoning in Language Models**  [ACL2025] [[paper link](https://aclanthology.org/2025.knowllm-1.10.pdf)]
+172. **Theorem-of-Thought: A Multi-Agent Framework for Abductive, Deductive,  and Inductive Reasoning in Language Models**  [ACL2025] [[paper link](https://aclanthology.org/2025.knowllm-1.10.pdf)]
 
       针对LLMs推理缺乏逻辑严谨性的问题，通过模拟人类多模态推理（溯因、演绎、归纳），结合贝叶斯验证，提升复杂任务的可靠性和可解释性。方法：三代理（溯因/演绎/归纳）生成结构化推理图，经NLI验证后选择最优解。
 【符号推理和数值推理】【WebOfLies、MultiArith】【答案准确率】【本文提出的Theorem-of-Thought (ToTh)框架】
 
-173.**Inductive Learning on Heterogeneous Graphs Enhanced by LLMs for  Software Mention Detection** [ACL2025] [[paper link](https://aclanthology.org/2025.sdp-1.16.pdf)]
+173. **Inductive Learning on Heterogeneous Graphs Enhanced by LLMs for  Software Mention Detection** [ACL2025] [[paper link](https://aclanthology.org/2025.sdp-1.16.pdf)]
 
       针对多语言NER/RE任务中结构化知识融合的难题，通过异构图谱归纳学习与LLM验证协同，提升模型泛化性。方法：异构图谱编码+归纳式GraphSAGE分类+LLM逻辑验证。
 【多语言命名实体识别（NER）和关系抽取（RE），聚焦软件提及检测】【SOMD 2025竞赛数据集】【Macro F1、Precision、Recall】【基础模型：GraphSAGE；LLM验证层：DeepSeek v3】
 
-174.**Learn to Memorize: Scalable Continual Learning in Semiparametric  Models with Mixture-of-Neighbors Induction Memory**  [ACL2025] [[paper link](https://aclanthology.org/2025.acl-long.1385.pdf)] 
+174. **Learn to Memorize: Scalable Continual Learning in Semiparametric  Models with Mixture-of-Neighbors Induction Memory**  [ACL2025] [[paper link](https://aclanthology.org/2025.acl-long.1385.pdf)] 
 
       针对半参数化模型记忆效率低的问题，提出MoNIM，通过结合注意力头的归纳能力和前馈网络的记忆机制，实现动态、可扩展的持续学习。方法：将非参数化记忆改造为可学习的类前馈网络旁路层。
 【语言建模和下游任务】【News Crawl-20H1、WikiEvent-20H1、ACL论文数据集】【困惑度、记忆率、准确率】【MoNIM（基于kNN-LM改进的可学习记忆模块）】
 
-175.**Programming by Examples Meets Historical Linguistics: A Large  Language Model Based Approach to Sound Law Induction** [ACL2025] [[paper link](https://aclanthology.org/2025.acl-long.1432.pdf)] 
+175. **Programming by Examples Meets Historical Linguistics: A Large  Language Model Based Approach to Sound Law Induction** [ACL2025] [[paper link](https://aclanthology.org/2025.acl-long.1432.pdf)] 
       
       提出利用LLMs的“示例编程”（Programming by Examples, PBE）能力来自动生成音变规则，并通过研究“结构”与“实质”在数据分布中的平衡，优化模型的归纳性能。
 【音变规律归纳】【包括Proto-Polynesian（Pol）和Proto-Tangkhulic（Ptk）等低资源语言的真实数据，以及生成的合成数据】【编辑距离奖励、通过率】【LLMs】
 
-176.**Semantic Frame Induction from a Real-World Corpus** [ACL2025] [[paper link](https://aclanthology.org/2025.acl-srw.72.pdf)] 
+176. **Semantic Frame Induction from a Real-World Corpus** [ACL2025] [[paper link](https://aclanthology.org/2025.acl-srw.72.pdf)] 
 
       语义框架归纳依赖FrameNet等人工标注资源，在真实语言覆盖上存在局限，通过深度度量学习和真实语料（C4）的结合，验证了语义框架归纳方法的泛化能力。方法：基于BERT嵌入和深度度量学习的聚类方法，通过掩码技术和多阶段聚类优化框架归纳效果。
 【语义框架归纳】【Colossal Clean Crawled Corpus（C4）作为真实语料，FrameNet 1.7作为评估基准】【B-cubed F1（BCF）、Purity与Inverse Purity的调和平均】【基于BERT的上下文嵌入模型】
 
-177.**Improve Rule Retrieval and Reasoning with Self-Induction and Relevance  ReEstimate** [ACL2025] [[paper link](https://aclanthology.org/2025.findings-acl.286.pdf)] 
+177. **Improve Rule Retrieval and Reasoning with Self-Induction and Relevance  ReEstimate** [ACL2025] [[paper link](https://aclanthology.org/2025.findings-acl.286.pdf)] 
 
       针对规则检索中查询与规则的语义不对齐问题，利用LLM的归纳能力从查询中抽象出潜在规则（Self-Induction Augmented Retrieval ，SIAR），并通过相关性重估优化检索结果，从而提升推理性能。
 【规则检索与推理】【Clutrr、ULogic、CAIL2018】【检索性能（Recall@1/5/10）、推理性能（Match）】【SIAR】
 
-178.**IDEA: Enhancing the Rule Learning Ability of Large Language Model  Agent through Induction, Deduction, and Abduction** [ACL2025] [[paper link](https://aclanthology.org/2025.findings-acl.698.pdf)]
+178. **IDEA: Enhancing the Rule Learning Ability of Large Language Model  Agent through Induction, Deduction, and Abduction** [ACL2025] [[paper link](https://aclanthology.org/2025.findings-acl.698.pdf)]
 
       针对LLM在交互式规则学习中的不足，文章提出IDEA框架，通过模拟人类“假设生成（溯因）-验证（演绎）-修正（归纳）”的循环，提升模型动态学习能力。
 【在交互式环境中学习隐藏规则并解决问题】【RULEARN基准，包含三种手动设计的谜题类型】【任务成功率、重复动作次数、有效归纳率】【IDEA】
 
-179.**In the LLMera, Word Sense Induction remains unsolved** [ACL2025] [[paper link](https://aclanthology.org/2025.findings-acl.882.pdf)] 
+179. **In the LLMera, Word Sense Induction remains unsolved** [ACL2025] [[paper link](https://aclanthology.org/2025.findings-acl.882.pdf)] 
 
       针对词义归纳（WSI）评估中多义词分布不自然的问题，提出基于自然分布的评估框架，并通过数据增强（如LLM生成、语料库和词典）和半监督学习（如Wiktionary）提升词义归纳的性能。
 【词义归纳】【SemCor-WSI（基于SemCor构建）、SemEval 2010 Task 14、SemEval 2013 Task 13】【F-B³、NMI、V-measure、Paired F-score等】【基于BERT和Wiktionary的半监督模型】
