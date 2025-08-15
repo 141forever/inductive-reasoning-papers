@@ -67,15 +67,15 @@
      提出Wikidata5M-SI的基准测试，用于评估知识图谱中半归纳链接预测模型。该基准基于Wikidata5M数据集。任务类型：直推式、少量样本和零样本链接预测；上下文信息：从仅依赖KG结构、包含实体提及到包含详细描述。
 【半归纳链接预测（SI-LP）】【Wikidata5M-SI】【MRR和Hits@K（K=1, 3, 10）】【图模型、文本模型、混合模型】
 
-13. Language Models as Inductive Reasoners [EACL 2024] [paper link](https://aclanthology.org/2024.eacl-long.13/)
+13. **Language Models as Inductive Reasoners** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.13/)]
 
     提出了一种从自然语言事实中归纳自然语言规则的新任务，创建了包含1.2k规则-事实对的DEER数据集。该研究使用自然语言作为知识表示，预训练语言模型作为"推理器"，提供了预训练语言模型归纳自然语言规则能力的首次全面分析。【归纳推理】【自然语言表示、预训练语言模型】【DEER数据集、规则-事实对】
 
-14. RuDSI: Graph-based Word Sense Induction Dataset for Russian [COLING2022] [paper link](https://aclanthology.org/2022.textgraphs-1.9/)
+14. **RuDSI: Graph-based Word Sense Induction Dataset for Russian** [COLING2022] [[paper link](https://aclanthology.org/2022.textgraphs-1.9/)]
 
     构建基于图的俄语词义归纳数据集，为俄语词义消歧和多义词研究提供标准评估资源。【词义归纳数据集】【俄语词义数据集RuDSI】【词义聚类质量】【图词义表示方法】
 
-15. ShadowSense: A Multi-annotated Dataset for Evaluating Word Sense Induction [COLING2024] [paper link](https://aclanthology.org/2024.lrec-main.1286/)
+15. **ShadowSense: A Multi-annotated Dataset for Evaluating Word Sense Induction** [COLING2024] [[paper link](https://aclanthology.org/2024.lrec-main.1286/)]
 
     构建多标注词义归纳评估数据集，为词义归纳方法提供标准化和多维度的评估基准。【词义归纳评估】【ShadowSense数据集】【标注一致性指标】【多重标注融合的评估框架】
 
