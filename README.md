@@ -230,6 +230,74 @@
       探究LMs是否对高频语法模式（如特定词序）存在归纳偏好，使用PCFG生成人工语言而无法涵盖部分词序和复杂句法结构。提出通过广义范畴语法（GCG）构建更丰富的人工语言，通过困惑度分析LSTM和Transformer对词序的偏好动态。
 【评估神经LMs在不同词序人工语言上的学习表现】【GCG-ALs：96种人工语言（含VSO、OSV等新增词序）】【困惑度（PPL）】【LSTM、Transformer】
 
+37. **Studying the Inductive Biases of RNNs  with Synthetic Variations of Natural Languages** [NAACL2019] [[paper link](https://aclanthology.org/N19-1356.pdf)]
+
+      研究不同语言类型学特性（如词序、形态格标记）如何影响RNN学习语法的能力。通过生成合成语言，控制变量，研究RNN的归纳偏置。
+- 多主语-宾语一致性：联合预测主语和宾语的复数特征比单独预测更好，RNN能够学习跨任务的句法知识。
+- 词序：RNN在主语-动词-宾语（SVO）顺序（如英语）中表现优于主语-宾语-动词（SOV）顺序（如日语）。
+- 显性格标记：显性格标记显著提高了复数预测的准确性，即使词序灵活。
+- 归纳偏置：RNN倾向于依赖近期信息，且在缺乏明确语法标记时表现较差。
+【预测动词的主语和宾语的复数特征】【基于英语Penn Treebank生成合成语言语料库】【Accuracy、Recall】【双向LSTM】
+
+38. **On the Inductive Bias of Masked Language Modeling: From Statistical to Syntactic Dependencies** [NAACL2021] [[paper link](https://aclanthology.org/2021.naacl-main.404.pdf)]
+
+      证明掩码语言模型MLM的 inductive bias 并非来自设计精巧的掩码策略，而是隐式优化了变量间的条件互信息，能捕捉统计依赖。提出通过Gibbs采样从MLM中估计词对的条件互信息，构建最小生成树作为句法依赖树。
+任务一：【掩码语言模型预训练：分析不同掩码策略（均匀、Cloze-like）对下游任务的影响】【SST-2（情感分析）Hyperpartisan（新闻党派分类）AGNews（新闻主题分类）】【Accuracy】【BERT】
+任务二：【无监督句法分析：从MLM中提取统计依赖并生成句法树】【Penn Treebank（WSJ语料）】【无标号无向附着分数（UUAS）】【BERT】
+
+39. **Unveiling Divergent Inductive Biases of LLMs on Temporal Data** [NAACL2024] [[paper link](https://aclanthology.org/2024.naacl-short.20.pdf)]    
+
+      通过分析LLMs的预测偏好来量化其在时间关系推理中的inductive bias。采用了两种提示格式：
+1. 问答格式（QA）：要求模型判断两个事件之间的时间关系（“BEFORE”或“AFTER”）。
+2. 文本蕴含格式（TE）：要求模型评估给定时间关系陈述的真假（“TRUE”或“FALSE”）。
+实验分为隐式事件（需从上下文中推断）和显式事件（直接提及的事件）两类。
+【时间关系分类、文本蕴含】【TimeBank、TempEval、AQUAINT、TRACIE】【模型对“BEFORE”和“AFTER”的预测偏好；模型对“TRUE”和“FALSE”的预测偏好】【GPT-3.5、GPT-4】
+
+40. **Text Annotation via Inductive Coding: Comparing Human Experts to  LLMs in Qualitative Data Analysis** [NAACL2025] [[paper link](https://aclanthology.org/2025.findings-naacl.361.pdf)]
+
+      定性数据分析（QDA）的手动编码过程耗时且易受主观偏差，LLMs为自动化编码提供可能。目前缺乏对LLMs在归纳性编码（即从数据中生成标签）表现的评估。比较LLMs在零样本、少样本和微调场景下的表现，并与人类专家的编码结果对比。
+【归纳性编码】【社会科学访谈数据、SemEval-2014的餐厅和笔记本评论数据】【语义相似性、词汇重叠、专家对标签的评分、与黄金标准的偏差、编码者间一致性】【LLMs】
+
+41. **Induction Heads as an Essential Mechanism for Pattern Matching in  In-context Learning** [NAACL2025] [[paper link](https://aclanthology.org/2025.findings-naacl.283.pdf)]
+
+      通过实验证明，大型语言模型中的“归纳头”是少样本上下文学习的核心机制，它们通过匹配和复制上下文中的模式（如“[A][B]...[A]→[B]”）实现归纳学习。方法：通过识别、消融和阻断归纳头，验证其对ICL性能的影响。
+【抽象模式识别任务（如字母序列分类）和NLP任务（如情感分析、自然语言推理）】【Letter-sequence tasks、WordSeq tasks、SuperGLUE（BoolQ, RTE等）、ETHOS、SST-2、SUBJ】【准确率、ICL收益】【Llama-3-8B和InternLM2-20B】
+
+42. **Profiling neural grammar induction on morphemically tokenised  child-directed speech** [NAACL2025] [[paper link](https://aclanthology.org/2025.cmcl-1.7.pdf)]
+
+      通过语素化分词和语言学指标，验证神经语法归纳模型是否能从儿童导向语音中归纳出合理的功能语素附着规则，发现高F1模型可能生成不符合语言认知的结构。方法：对输入分词后，用神经模型训练并提出新指标评估语言学合理性。
+【语法归纳】【CHILDES Treebank】【F1分数、depth-of-morpheme、sibling-of-morpheme】【神经模型：C-PCFG、N-PCFG、TN-PCFG（本文模型）】
+
+43. **Effects of Parameter Norm Growth During Transformer Training:  Inductive Bias from Gradient Descent** [EMNLP2021] [[paper link](https://aclanthology.org/2021.emnlp-main.133.pdf)] 
+
+      研究参数范数增长的现象，揭示梯度下降在Transformer训练中引入的归纳偏置。参数范数的增长导致模型逼近饱和网络，饱和状态下，Transformer的注意力头分为两类：局部聚焦（argmax）和全局平均（mean）。
+【研究Transformer训练过程中参数范数增长对模型语言理解能力的影响】【T5预训练数据、Wikitext-2、Penn Treebank（PTB）、Brown语料库】【范数的增长趋势、模型表示与饱和网络的余弦相似性、注意力头的分布】【T5-base、BERT、RoBERTa、XLNet，以及自定义的小型Transformer语言模型】
+
+44. **Injecting structural hints:  Using language models to study inductive biases in language learning** [EMNLP2023] [[paper link](https://aclanthology.org/2023.findings-emnlp.563.pdf)]  
+
+      探索LLMs学习语言的归纳偏差，通过控制模型的初始结构，研究哪些结构（如递归性、上下文敏感性、词汇分布）更有利于自然语言的学习。未训练的GPT-2，使用合成数据预训练，注入特定的结构偏差，在自然语言数据上微调。评估结构偏差对语言学习的影响。
+【语言模型学习】【预训练数据：合成语言（NEST、CROSS、RAND、REP）；微调数据：Wikitext-103】【测试集困惑度】【GPT-2-small】
+
+45. **Scaling Laws vs Model Architectures:  How Does Inductive Bias Influence Scaling?** [EMNLP2023] [[paper link](https://aclanthology.org/2023.findings-emnlp.825.pdf)]   
+
+      研究不同模型架构（inductive biases）对scaling laws的影响。
+- 架构对缩放行为影响显著：不同架构的缩放斜率差异较大，Vanilla Transformer整体缩放效率最高。
+- 性能与规模的非一致性：Evolved Transformer难以扩展到更大规模；Performer等线性注意力模型缩放困难。
+- 上下游性能脱节：Funnel Transformer上游表现良好，但下游任务性能较差。
+【语言模型预训练和微调】【预训练：C4英文语料库；微调：GLUE、SuperGLUE、SQuAD】【Negative Log-Perplexity、GLUE/SuperGLUE准确率、SQuAD F1分数】【Transformer变体、非Transformer架构：Lightweight /Dynamic Convolutions、MLP-Mixer】
+
+46. **Syntactic Inductive Bias in Transformer Language Models:  Especially Helpful for Low-Resource Languages?** [EMNLP2023] [[paper link](https://aclanthology.org/2023.conll-1.17.pdf)]  
+
+      探索语法归纳偏置在低资源语言（如维吾尔语）的模型预训练中的有效性。基于微型BERT，结合两种SIB方法：语法对比损失：鼓励关注语法相关的结构。语法感知注意力：限制注意力仅关注语法依赖树中相邻token。发现SIB方法在低资源语言中效果不显著，词性标注任务与SIB无显著互补性。
+【语言模型预训练（掩码建模）；下游任务：依存句法分析（UD）、命名实体识别（NER）、PrOnto基准测试】【预训练数据：各语言的Wikipedia文本，下游数据：Universal Dependencies（UD）树库、WikiAnn NER数据集、PrOnto】【句法分析：LAS。NER：Span-based F1。PrOnto：Accuracy】【BERT】
+
+47. **Inductive Bias Is in the Eye of the Beholder** [EMNLP2023] [[paper link](https://aclanthology.org/2023.genbench-1.12.pdf)]   
+
+      探讨不同序列到序列神经网络模型（如CNN、LSTM、Transformer等）的归纳偏置。测试模型在层次化泛化和计数策略之间的偏好，在组合泛化和记忆之间的偏好。
+【层次化泛化与线性/计数泛化的区分任务、组合泛化与记忆的区分任务、SCAN数据集上的组合泛化任务】【自定义的字符串映射数据集、自定义的组合任务数据集、SCAN数据集】【完美一致比例、单例一致比例】【CNN、LSTM、Transformer】
+
+
+
 ## Evaluations
 
 1. **Is Forgetting Less a Good Inductive Bias for Forward Transfer?** [ICLR2023] [[paper link](https://arxiv.org/pdf/2211.14699)]
@@ -1050,6 +1118,569 @@
       针对词义归纳（WSI）评估中多义词分布不自然的问题，提出基于自然分布的评估框架，并通过数据增强（如LLM生成、语料库和词典）和半监督学习（如Wiktionary）提升词义归纳的性能。
 【词义归纳】【SemCor-WSI（基于SemCor构建）、SemEval 2010 Task 14、SemEval 2013 Task 13】【F-B³、NMI、V-measure、Paired F-score等】【基于BERT和Wiktionary的半监督模型】
 
+180. **Unsupervised Induction of Semantic Roles  within a Reconstruction-Error Minimization Framework** [NAACL2015] [[paper link](https://aclanthology.org/N15-1001.pdf)] 
+
+      解决无监督语义角色标注（SRL）中强独立性假设和特征过于简单的问题。通过结合丰富的特征和重建误差最小化框架，无需依赖人工标注数据或语言特定知识，实现更准确的语义角色归纳。方法是结合一个预测语义角色的编码模型和一个基于角色预测论元的重建模型，通过联合优化两者的重建误差来学习。
+【无监督语义角色归纳】【PropBank、SALSA】【纯度、共现性及其调和平均数】【编码模型、重建模型】
+
+181. **Unsupervised POS Induction with Word Embeddings** [NAACL2015] [[paper link](https://aclanthology.org/N15-1144.pdf)] 
+
+      旨在通过词嵌入提升无监督词性标注的准确性，验证词嵌入如何帮助模型从归纳出语法类别（名词、动词）。方法是用高斯分布替换传统多类别分布，生成词嵌入而非词类型，结合HMM或CRF自编码器框架进行无监督学习。
+【无监督词性标注】【CoNLL-X、CoNLL 2007、Ukwabelana语料库】【V-measure（基于条件熵的外部聚类评估指标）】【高斯HMM、高斯CRF自编码器】
+
+182. **Unsupervised Morphology Induction Using Word Embeddings** [NAACL2015] [[paper link](https://aclanthology.org/N15-1186.pdf)] 
+
+      通过词嵌入自动归纳词形变化规则（如“加-ed变过去式”），无需人工干预，直接从数据中总结形态规律。方法是利用词嵌入空间的向量方向表示形态变换，构建词汇化规则图，并通过语义一致性筛选有效规则。
+【无监督形态归纳】【Wikipedia、WMT-2013、Arabic GigaWor、新闻语料】【Spearman（词相似度任务中的相关性分数）】【SkipGram】
+
+183. **Dynamic Feature Induction:  The Last Gist to the State-of-the-Art** [NAACL2016] [[paper link](https://aclanthology.org/N16-1031.pdf)] 
+
+      提出动态特征归纳方法，通过自动从数据中归纳高维特征组合，减少对手工特征工程的依赖，提升模型性能。方法是在模型预测错误时，选择强区分性特征组合并动态扩展特征空间，结合正则化和结构化学习优化特征选择。
+【词性标注和命名实体识别】【词性标注：Penn Treebank III；命名实体识别：CoNLL’03英文数据集】【准确率、F1值】【动态特征归纳模型（结合RDA和LOLS）】
+
+184. **Joint Learning Templates and Slots for Event Schema Induction** [NAACL2016] [[paper link](https://aclanthology.org/N16-1049.pdf)]  
+
+      提出一种无监督方法，从文本中归纳事件模板和槽位（如“爆炸事件”包含哪些角色），通过联合建模实体关系和句子约束，解决传统方法误差传播问题。方法是用归一化割聚类实体，结合共现、语义相似性和句子内约束，同时学习模板和槽位。
+【自动事件模式归纳（AESI）】【MUC-4】【Precision、Recall、F1】【基于归一化割的联合实体驱动模型，加入句子约束（SC）】
+
+185. **Deconfounded Lexicon Induction  for Interpretable Social Science** [NAACL2018] [[paper link](https://aclanthology.org/N18-1146.pdf)]  
+
+      提出解混淆词典归纳任务，从文本中自动提取既预测目标（如销售额）又不受混淆变量（如价格）干扰的词汇，提升社会现象分析的因果解释性。方法是通过深度残差化或对抗训练分离文本与混淆变量的影响，从中归纳高解释性词汇。
+【解混淆词典归纳】【CFPB消费者投诉、斯坦福大学课程描述、Rakuten电商商品描述】【预测性能提升、词典与混淆变量的相关性】【DR（深度残差化）+BOW（词频）/ATTN（注意力机制）、A（对抗选择器）+BOW/ATTN】
+
+186. **Word Emotion Induction for Multiple Languages as  a Deep Multi-Task Learning Problem** [NAACL2018] [[paper link](https://aclanthology.org/N18-1173.pdf)]  
+
+      提出多任务学习框架，从小规模标注数据中归纳词级情感规律（如“sunshine”高Valence），联合预测VAD三维度，解决数据稀缺问题并提升跨语言泛化能力。方法是通过共享隐藏层的神经网络联合学习情感维度，利用词嵌入和正则化避免过拟合。
+【词级情感预测】【9种语言的11个情感词典】【Pearson相关系数衡量预测值与人工标注的一致性】【MTLNN（多任务学习神经网络）】
+
+187. **Unsupervised Induction of Linguistic Categories  with Records of Reading, Speaking, and Writing** [NAACL2018] [[paper link](https://aclanthology.org/N18-1184.pdf)] 
+
+      利用人类阅读、说话、打字的多模态数据（如眼动、键盘停顿），通过表征融合增强无监督词性和句法分析，解决低资源语言标注稀缺问题，验证小词典下的有效性。方法：通过CCA/SVD-IS或拼接融合多模态特征，结合词典约束的二阶HMM模型归纳语法类别。
+【无监督词性标注和句法组块归纳】【眼动：Dundee Corpus、GECO Corpus；语音：CHILDES（Brent/Providence）；键盘日志：Killourhy & Maxion；文本：Ontonotes 5.0、Penn Treebank】【标注准确率】【多模态二阶隐马尔可夫模型】
+
+188. **Verb Alternations and Their Impact on Frame Induction** [NAACL2018] [[paper link](https://aclanthology.org/N18-4003.pdf)] 
+
+      旨在解决动词交替现象在自动构建语义框架时的挑战，提出了一种通过嵌入框架关联动词不同用法的方法，体现了从具体语料中归纳语义关系的思路。方法：提出了一种半监督的框架归纳方法，将动词的核心语义嵌入到更高层框架中以表示交替关系。
+【自动构建语义框架资源】【FrameNet和PropBank】【分布语义方法】【基于嵌入框架的半监督方法，结合预定义的交替规则和分布语义分析】
+
+189. **Efficient Graph-based Word Sense Induction  by Distributional Inclusion Vector Embeddings** [NAACL2018] [[paper link](https://aclanthology.org/W18-1706.pdf)] 
+
+      旨在高效地从无标注文本中归纳多义词的不同词义，通过全局主题分组和局部图聚类，避免了传统方法的计算瓶颈。方法：使用DIVE（分布包含向量嵌入）将词汇分组为基础索引，构建目标词相关的图并聚类，最后转换为词义嵌入。
+【无监督词义归纳（WSI）】【WaCkypedia、TWSI、SemEval-2013 task 13】【Precision@1、F1/Tau】【基于DIVE的图聚类方法】
+
+190. **Imposing Label-Relational Inductive Bias  for Extremely Fine-Grained Entity Typing** [NAACL2019] [[paper link](https://aclanthology.org/N19-1084.pdf)]
+
+      细粒度实体类型标注中，传统方法依赖预定义的类型层次结构，提出通过数据驱动的标签关系建模，捕捉类型间的隐含相关性。这种数据驱动的归纳方式使模型能够泛化到未见过的自由形式类型。
+【细粒度实体类型标注，预测句子中实体提及的语义类型】【Ultra-Fine、OntoNotes】【Ultra-Fine：MRR、精确率、召回率、F1值；OntoNotes：准确率、F1值】【Label_GCN】
+
+191. **Mutual Information Maximization for Simple and Accurate  Part-Of-Speech Induction** [NAACL2019] [[paper link](https://aclanthology.org/N19-1113.pdf)]
+
+      旨在通过互信息最大化从无标注文本中归纳词性标签，提出变分下界目标，以简单架构实现高效无监督学习。方法是通过变分近似优化互信息下界，结合上下文窗口和词形LSTM编码，直接学习标签与上下文的统计依赖关系。
+【无监督词性标注】【45-tag Penn WSJ、12-tag Universal Treebank、CoNLL-X/2007】【多对一准确率、V-measure】【基于变分互信息下界的神经网络模型】
+
+192. **Single Document Summarization  as Tree Induction** [NAACL2019] [[paper link](https://aclanthology.org/N19-1173.pdf)]
+
+      提出将摘要任务重新定义为树归纳问题，通过Sumo模型从文档中自动学习多根依赖树结构，同时生成高质量摘要。方法：结合结构化注意力和迭代优化算法，逐步细化文档的树结构，最终生成以摘要句为根、支撑句为子树的依赖树。
+【单文档抽取式摘要】【CNN/DailyMail、NYT】【ROUGE-1/2/L、人工评估】【Sumo（基于结构化注意力和迭代优化的多根依赖树模型）】
+
+193. **Unsupervised Latent Tree Induction with  Deep Inside-Outside Recursive Autoencoders** [NAACL2019] [[paper link](https://aclanthology.org/N19-1116.pdf)]
+
+      提出了一种无监督方法DIORA，通过归纳学习从文本中自动发现句法结构，解决了监督方法依赖标注数据的问题。方法：DIORA结合内部-外部动态规划和自编码目标，无监督地学习句法树和成分表示。
+【无监督句法分析】【WSJ、MultiNLI、WSJ-10、WSJ-40】【F1分数】【DIORA（Deep Inside-Outside Recursive Autoencoders）】
+
+194. **Cross-lingual CCG Induction** [NAACL2019] [[paper link](https://aclanthology.org/N19-1160.pdf)]
+
+      提出跨语言方法，利用英语解析器和平行语料库，自动为目标语言归纳CCG语法和解析模型，解决了无监督学习效果差的问题。方法：通过词对齐和推导投影，将源语言的CCG结构迁移到目标语言，训练目标语言解析器。
+【跨语言CCG语法归纳和解析】【PASCAL基准数据集、Tatoeba平行语料库】【无标记依存准确率（UAS）】【跨语言CCG归纳模型（基于词对齐和推导投影）】
+
+195. **Inductive Topic Variational Graph Auto-Encoder for Text Classification** [NAACL2021] [[paper link](https://aclanthology.org/2021.naacl-main.333.pdf)]
+
+      基于GCN文本分类需预定义包含所有文档的全局图，无法处理训练时未见的文档（Inductive Learning）。提出为每个文档单独构建文档-词关系图，支持新文档的归纳推理。
+任务一：【监督/半监督文本分类】【20NewsGroups、Ohsumed（医学摘要）、R8、R52（路透社新闻）、MR（电影评论）】【Micro Precision/Recall/F1、Accuracy】【GCN】
+任务二：【无监督主题建模：学习文档和词的主题分布】【20NewsGroups、Ohsumed、R8、R52、MR】【主题连贯性（Topic Coherence）、困惑度（Perplexity）】【GCN】
+
+196. **Video-aided Unsupervised Grammar Induction** [NAACL2021] [[paper link](https://aclanthology.org/2021.naacl-main.119.pdf)]
+
+      通过利用视频中的多模态动态信息（如动作、音频等），改进无监督语法归纳任务，让模型能自动从数据中学习更准确的句法结构，尤其是动词短语这类动态内容。方法：提出MMC-PCFG模型，用多模态Transformer整合视频特征，结合文本匹配损失优化语法规则归纳。
+【视频辅助的无监督语法归纳】【DiDeMo、YouCook2、MSRVTT】【Corpus-level F1 (C-F1) 和 Sentence-level F1 (S-F1)】【MMC-PCFG（多模态复合概率上下文无关文法模型）】
+
+197. **Production vs Perception:  The Role of Individuality in Usage-Based Grammar Induction** [NAACL2021] [[paper link](https://aclanthology.org/2021.cmcl-1.19.pdf)]
+
+      通过对比个体生产与群体感知的语法归纳，发现个体数据会生成更多独特构式，揭示语言学习中个体差异的重要性。方法：基于计算构式语法，从多语域语料中提取语法和词汇表征，并通过增长曲线和相似性分析量化差异。
+【对比生产型和感知型语法归纳的差异】【学术文章（AC-IND、AC-AGG）、书籍（PG-IND、PG-AGG）、推特（TW-AGG）、网页（CC-AGG）、维基百科（WI-AGG）、新闻（NW-AGG）】【语法和词汇的增长曲线参数、Jaccard距离】【基于计算构式语法（Computational Construction Grammar）的语法归纳模型】
+
+198. **Exploiting Inductive Bias in Transformers for Unsupervised  Disentanglement of Syntax and Semantics with VAEs** [NAACL2022] [[paper link](https://aclanthology.org/2022.naacl-main.423.pdf)] 
+
+      利用Transformer注意力机制中的归纳偏置，设计一种无需显式监督信号即可分离文本中的句法和语义信息。用两个潜在变量分别控制键和值，改进注意力，将键和值的生成解耦，迫使模型分别学习句法和语义表示。
+【句法与语义解纠缠、句法与语义迁移】【ParaNMT】【语义相似性：METEOR分数、基于ParaBART的余弦相似度；句法相似性：句法树编辑距离、模板匹配准确率】【提出的QKVAE：基于Transformer的VAE】
+
+199. **StATIK: Structure and Text for Inductive Knowledge Graph Completion** [NAACL2022] [[paper link](https://aclanthology.org/2022.findings-naacl.46.pdf)]
+
+      提出一种归纳的混合模型，结合图结构和文本描述，以完成知识图谱补全。提出StATIK模型，通过BERT提取实体和关系的文本描述，再聚合局部图结构信息，通过邻居采样和消息传递生成实体表示。
+【归纳式知识图谱补全】【WN18RR、FB15k-237、Wikidata-5M】【MRR、Hits@1/3/10】【StATIK】
+
+200. **Unsupervised Slot Schema Induction for Task-oriented Dialog** [NAACL2022] [[paper link](https://aclanthology.org/2022.naacl-main.86.pdf)]
+
+      通过无监督方法从对话数据中自动归纳槽位模式，避免了人工设计的成本，让系统能快速适应新领域。方法：结合语言模型的注意力机制和PCFG的结构约束提取候选短语，再通过多步聚类生成槽位模式。
+【无监督槽位模式归纳】【MultiWOZ、SGD】【精确率、召回率、F1值】【基于LM和PCFG的无监督槽位模式归纳模型】
+
+201. **Event Schema Induction with Double Graph Autoencoders** [NAACL2022] [[paper link](https://aclanthology.org/2022.naacl-main.147.pdf)]
+
+      提出通过捕捉事件图中的全局依赖关系，从具体事件实例中归纳出高质量且逻辑合理的事件模式。方法：使用双图自动编码器，分阶段学习事件骨架和实体关系，确保生成的模式具有全局一致性。
+【事件模式归纳】【General-IED、Car-IED、Suicide-IED】【事件类型匹配F1、事件序列匹配F1、节点/边类型分布的KL散度、最大公共子图】【Double Graph Autoencoders (DoubleGAE)】
+
+202. **Minimally-Supervised Relation Induction from Pre-trained Language  Model** [NAACL2022] [[paper link](https://aclanthology.org/2022.findings-naacl.135.pdf)]
+
+      提出了一种极小监督下的关系归纳方法，通过BERT生成高质量模板和伪句子，从少量种子实体对中归纳出通用的语义关系。方法：结合BERT的掩码预测、注意力机制和积分梯度，迭代优化模板并训练分类器，实现高精度的关系归纳。
+【极小监督关系归纳】【Google Analogy Test Set (GATS)、Bigger Analogy Test Set (BATS)、DiffVec】【精确率、召回率、F1分数】【IST（Iteratively-Selected Templates from PLM）】
+
+203. **Jointly Learning Guidance Induction and Faithful Summary Generation  via Conditional Variational Autoencoders** [NAACL2022] [[paper link](https://aclanthology.org/2022.findings-naacl.180.pdf)] 
+
+      提出了一种联合学习关键短语归纳和摘要生成的方法，通过归纳源文档的关键信息生成更忠实的事实性摘要。方法：基于条件变分自编码器（CVAE），联合训练关键短语预测和摘要生成，避免依赖外部工具。
+【抽象摘要】【XSUM、CNNDM】【ROUGE（R1、R2、RL）、BERTScore、事实一致性指标】【GISG（基于BART的CVAE框架）】
+
+204. **Distilling Hypernymy Relations from Language Models: On the  Effectiveness of Zero-Shot Taxonomy Induction** [NAACL2022] [[paper link](ttps://aclanthology.org/2022.starsem-1.13.pdf)]
+
+      用语言模型“猜”出术语的上下位关系（比如“猫是动物的一种”），无需额外训练，直接通过提示和评分归纳出分类法。方法：用BERT/GPT-2等模型给提示句打分或填词，选最靠谱的答案当上下位关系。
+【分类法学习】【SemEval的TExEval-1和TExEval-2】【精确度、召回率、F1值】【基于LLMs的零样本方法】
+
+205. **Improved Induction of Narrative Chains via Cross-Document Relations** [NAACL2022] [[paper link](https://aclanthology.org/2022.starsem-1.18.pdf)]
+
+      通过案例间的引用关系，让法律叙事链（比如“犯罪-判刑”事件序列）的自动归纳更准确。方法：改进了PMI算法，加入跨文档统计（如被引用案例中的事件）。
+【叙事链归纳】【美国联邦法院案例】【Recall@1/5/50、MRR】【四种跨文档PMI变体】
+
+
+206. **Deja vu: Contrastive Historical Modeling with Prefix-tuning for Temporal Knowledge Graph Reasoning**
+[NAACL2024] [[paper link](https://aclanthology.org/2024.findings-naacl.75.pdf)] 
+
+      基于预训练语言模型的时序知识图谱推理，需要昂贵的训练，难以适应少样本归纳式设置。提出用对比学习拉近相关历史对的表示距离，在冻结的PLM中引入可训练的时间前缀令牌，通过prefix-tuning注入时间信息。
+【时序知识图谱推理（TKGR），包括转导式（预测已知实体间缺失事实）和少样本归纳式（预测新实体间关系）两种设置。】【转导式：ICEWS14、ICEWS18、ICEWS05-15、ICEWS14*、WIKI、YAGO。少样本归纳式：ICEWS14-OOG、ICEWS18-OOG、ICEWS0515-OOG。】【MRR、Hits@N】【GPT-3.5、GPT-4】
+
+207. **A(More) Realistic Evaluation Setup for Generalisation of Community Models on Malicious Content Detection**
+[NAACL2024] [[paper link](https://aclanthology.org/2024.findings-naacl.30.pdf)] 
+
+      恶意内容检测模型实际应用中效果不佳，提出了一种inductive的评估设置，以测试模型在动态社交图中的泛化能力。提出Few-shot子图采样，通过局部探索生成支持子图，模拟真实场景中有限的标注数据和局部上下文。
+【恶意内容检测】【用于预训练：GossipCop；用于测试任务：CoAID，TwitterHateSpeech】【F1-score、Matthews Correlation Coefficient (MCC)（综合评估分类性能）、Area Under the Precision-Recall curve (AUPR)（多阈值评估）】【提出一种基于梯度的元学习方法】
+
+208. **Re-evaluating the Need for Multimodal Signals  in Unsupervised Grammar Induction** [NAACL2024] [[paper link](https://aclanthology.org/2024.findings-naacl.70.pdf)]
+
+
+      验证多模态信号（如图像、视频）是否对无监督语法归纳是必要的。先前研究认为多模态输入能提升性能，但仅与弱文本基线对比。本文质疑这一结论，提出在大量文本数据下，纯文本方法可能足够。方法是用预训练语言模型提取文本特征，结合概率文法模型（C-PCFG）归纳句法结构。
+【无监督语法归纳】【MSCOCO（图像描述）、DiDeMo、YouCook2、MSRVTT（视频描述）、HowTo100M（大规模视频文本）】【Corpus-F1、Sentence-F1、困惑度、平均分支因子】【LC-PCFG（纯文本，结合LLM嵌入）】
+
+209. **HowLexicalisBilingualLexiconInduction?** [NAACL2024] [[paper link](https://aclanthology.org/2024.findings-naacl.273.pdf)]
+
+      现有双语词典归纳方法忽略了词汇特征（如词频、词性）的作用，提出通过这些简单但有效的特征提升性能。方法是用预训练模型（XLM-R）初筛候选词，再用XGBoost结合词频、词性等特征重新排序，选出最佳翻译。
+【双语词典归纳】【XLING】【准确率】【LETOR（XLM-RoBERTa + XGBoost，结合词频、词性特征）】
+
+210. **Improving Word Sense Induction through Adversarial Forgetting of  Morphosyntactic Information** [NAACL2024] [[paper link](https://aclanthology.org/2024.starsem-1.19.pdf)]
+
+      发现BERT的词表示中包含过多与词义无关的噪声信息（如形态和句法特征），这些信息干扰了无监督的词义归纳（WSI）。为了解决这个问题，作者提出了一种对抗训练方法，通过“遗忘门”移除这些噪声，生成更干净的词表示，从而提升聚类效果。
+【无监督词义归纳】【训练遗忘门：Brown Corpus；WSI评估：SemCor】【聚类性能：调整兰德指数、纯度、逆纯度、V-Measure；信息移除效果：词预测的困惑度和特征探测的准确率】【基于对抗训练的遗忘门（forget-gate），生成形态不变和句法不变表示】
+
+211. **Generating Diverse Hypotheses for Inductive Reasoning [NAACL2025] [[paper link](https://aclanthology.org/2025.naacl-long.429.pdf)]
+
+      LLMs在归纳推理任务中生成多个假设时，经常产生语义冗余。提出Mixture of Concepts (MoC)的方法模拟人类归纳推理，先生成一系列语义非冗余的概念列表，然后基于每个概念生成对应的假设。
+【归纳推理】【List Functions、MiniARC、MBPP+、Playgol-str】【Accuracy、假设的多样性】【LLMs】
+
+212. **ARISE: Iterative Rule Induction and Synthetic Data Generation for Text  Classification [NAACL2025] [[paper link](https://aclanthology.org/2025.findings-naacl.359.pdf)]
+
+      通过归纳泛化从数据中提取规则，并结合合成数据生成，提升文本分类任务的性能，解决了合成数据方差不足的问题。方法：迭代生成规则和合成数据，通过规则过滤和自举优化模型。
+【文本分类】【Discovery、CDR、ANLI（全样本）；FewMany Benchmark（少样本）；MASSIVE（多语言）】【准确率】【ARISE（结合规则归纳和合成数据生成的框架）】
+
+213. **Reordering Grammar Induction** [EMNLP2015] [[paper link](https://aclanthology.org/D15-1005.pdf)]
+
+      通过归纳学习从平行语料中自动提取重排序规则和句法结构，提出了一种单步无监督的预排序方法，提升了机器翻译的调序能力。方法：基于排列树（PETs）初始化PCFG，通过非终端符号分裂和MBR解码优化重排序结果。
+【机器翻译中的预排序】【NTCIR-8 Patent Translation (PATMT) Task】【内部评估：Kendall τ（衡量重排序预测准确性）；外部评估：BLEU、METEOR、TER、RIBES（衡量翻译质量）】【Reordering PCFG】
+
+214. **Visual Bilingual Lexicon Induction with Transferred ConvNet Features** [EMNLP2015] [[paper link](https://aclanthology.org/D15-1015.pdf)]
+
+      提出用CNN提取图像特征，通过视觉相似性自动归纳双语词典，解决了平行语料稀缺的问题，并发现视觉方法在部分语言对上优于传统语言模型。方法：用预训练的CNN提取图像特征，计算跨语言单词的视觉相似度来匹配翻译对。
+【双语词典归纳】【Bergsma500和Vulic1000】【MRR、Precision at N】【CNN】
+
+215. **Script Induction as Language Modeling** [EMNLP2015] [[paper link](https://aclanthology.org/D15-1195.pdf)]
+
+      提出用判别式语言模型（LBL）解决叙事填空任务，发现其显著优于传统统计方法，表明脚本归纳可能更适合语言建模框架。方法：用Log-Bilinear模型建模事件序列的上下文关系，通过概率预测缺失事件。
+【叙事填空测试】【Concretely Annotated Gigaword（纽约时报语料）】【平均排名、MRR、Recall@10、Recall@50】【Log-Bilinear语言模型】
+
+216. **Using Left-corner Parsing to Encode Universal Structural Constraints  in Grammar Induction** [EMNLP2016] [[paper link](https://aclanthology.org/D16-1004.pdf)]
+
+      提出通过左角解析量化中心嵌套程度，限制语法归纳模型的搜索空间，从而更有效地从无标注数据中归纳出合理的依存结构，验证了语言普遍性假设对无监督学习的价值。方法：用左角解析的栈深度约束模型搜索空间，排除高中心嵌套的语法树，优化依存语法模型（DMV）。
+【无监督依存语法归纳】【Universal Dependencies】【无标记依存正确率、未标记括号结构的精确率/召回率/F1】【基于左角解析的DMV，结合栈深度约束】
+
+217. **Relation Schema Induction using Tensor Factorization with Side  Information** [EMNLP2016] [[paper link](https://aclanthology.org/D16-1040.pdf)]
+
+      提出SICTF模型，通过张量分解从文本中自动归纳关系模式，减少人工干预，验证了侧信息和非负约束对提升归纳效果的重要性。方法：联合分解OpenIE三元组张量和侧信息矩阵，学习非负潜在因子以表示关系模式。
+【关系模式归纳】【MEDLINE（医学文献）和StackOverflow（技术问答）】【人工标注的诱导模式准确率（RSI accuracy）】【SICTF（非负耦合张量分解模型）】
+
+218. **NITE: ANeural Inductive Teaching Framework for Domain-Specific NER** [EMNLP2017] [[paper link](https://aclanthology.org/D17-1280.pdf)]
+
+      领域特定命名实体识别（DNER）数据不足，提出NITE框架（Neural Inductive Teaching Framework），通过教师-学生模型和多示例学习实现知识迁移，通过迁移现有模型的知识，提升DNER中的性能。
+【疾病命名实体识别】【NCBI疾病语料库】【精确率、召回率、F1值】【教师模型：DNorm（基于特征工程的领域SOTA模型）；学生网络：CLC（CNN-BiLSTM-CRF）】
+
+219. **Zero-Shot Activity Recognition with Verb Attribute Induction** [EMNLP2017] [[paper link](https://aclanthology.org/D17-1099.pdf)]
+
+      通过从词典和词嵌入中归纳动词的通用属性（如“喝酒”涉及手臂和短时间），利用这些属性帮助计算机识别从未见过的动作（如“豪饮”）。方法：用双向GRU分析词典定义，结合词嵌入预测动词属性，再用于零样本分类。
+【零样本活动识别】【动作属性标注数据集；imSitu（图像数据集）；辅助数据：Wordnik词典、MPII电影描述】【属性预测准确率（micro/macro-averaged）；零样本分类的Top-1和Top-5准确率】【BGRU+GloVe联合编码词典和词嵌入，预测属性后用于零样本分类】
+
+220. **Dependency Grammar Induction with Neural Lexicalization and Big  Training Data** [EMNLP2017] [[paper link](https://aclanthology.org/D17-1176.pdf)]
+
+      通过结合大数据和神经网络，让计算机从海量句子中归纳出词汇化的依存语法规则（比如“动词常支配名词”），即使某些词罕见也能准确预测句法结构。方法：用神经网络扩展传统语法模型，通过分批训练和智能初始化提升学习效率。
+【无监督依存语法归纳】【英语：WSJ10、BLLIP语料库；中文：CTB 6.0（中文树库）】【有向依存准确率】【L-NDMV（词汇化神经DMV）】
+
+221. **Earth Mover’s Distance Minimization for  Unsupervised Bilingual Lexicon Induction** [EMNLP2017] [[paper link](https://aclanthology.org/D17-1207.pdf)]
+
+      研究在不依赖跨语言监督数据（如平行语料或种子词典）的情况下，实现无监督的双语词典归纳。传统方法需要跨语言对齐信息，而本文提出仅利用单语数据即可建立语言间的词向量映射。用WGAN和EMDOT交替优化，最小化双语词向量分布的推土机距离，实现无监督词典归纳。
+【无监督双语词典归纳】【单语词向量训练数据：Wikipedia可比语料；评测词典：LDC汉语-英语词典、Open Multilingual WordNet等】【F1分数（支持多翻译对匹配）】【WGAN + EMDOT（无监督）】
+
+222. **Knowledge Distillation for Bilingual Dictionary Induction** [EMNLP2017] [[paper link](https://aclanthology.org/D17-1264.pdf)]
+
+      针对双语词典归纳任务中低资源语言因种子词典不足导致映射函数性能低的问题，提出利用高资源语言的翻译路径作为“教师”，通过知识蒸馏提升低资源语言的映射函数性能，减少对大规模种子词典的依赖。
+【无监督/低资源双语词典归纳】【训练数据：多语言Wikipedia词向量、Google Translate生成的种子词典；测试数据：人工标注词典】【Top-1/5/10准确率】【知识蒸馏模型（THIS）】
+
+223. **Cross-Lingual Induction and Transfer of Verb Classes  Based on Word Vector Space Specialisation** [EMNLP2017] [[paper link](https://aclanthology.org/D17-1270.pdf)]
+
+      旨在利用英语VerbNet的丰富资源，通过归纳跨语言的动词分类模式，自动为资源稀缺的语言构建VerbNet风格的分类，减少对目标语言特征工程的依赖。方法：通过跨语言词向量空间专业化技术，将英语VerbNet的知识转移到目标语言，并用聚类算法完成分类。
+【跨语言动词分类】【英语：Polyglot Wikipedia；目标语言：法语（frWaC）等；外部资源：BabelNet、PanLex（用于跨语言约束）】【F-1分数】【初始词向量：SGNS、专业化模型：基于ParaGRAM框架的Attract-Repel方法、聚类算法：MINCut谱聚类】
+
+224. **Cross-Lingual Word Representations: Induction and Evaluation** [EMNLP2017] [[paper link](https://aclanthology.org/D17-3007.pdf)]
+
+      旨在介绍如何通过归纳跨语言数据中的模式，学习通用的词向量表示，支持多语言NLP任务，尤其是资源稀缺的语言。方法：总结了从多种数据源（如平行语料、词典等）诱导跨语言词向量的技术，并讨论了其评估和应用。
+【跨语言词表示学习及其评估与应用】【平行语料（如翻译对）、可比语料、非对齐单语数据、词典（如BabelNet）、图像、眼动数据】【包括内在评估（如词相似度、类比任务）和外在评估（如下游NLP任务性能）】【基于词典对齐的模型、基于句子/文档对齐的模型、结合单语和多语数据的模型】
+
+225. **A Discriminative Latent-Variable Model for Bilingual Lexicon Induction** [EMNLP2018] [[paper link](https://aclanthology.org/D18-1042.pdf)]
+
+      通过归纳单语词嵌入中的跨语言模式，结合二分图匹配先验，自动构建高精度双语词典，尤其适用于资源稀缺语言。方法：提出判别式隐变量模型，用Viterbi EM算法优化词嵌入对齐，强制1:1匹配以解决中心词问题。
+【双语词典诱导】【标准语言对：English–Italian（Dinu et al., 2015）低资源语言对：English–{Turkish, Bengali, Hindi}、Estonian–Finnish（使用fastText词向量和Wikipedia语料）】【Precision@1、Spearman相关系数】【基于二分图匹配先验的隐变量模型】
+
+226. **Depth-bounding is effective: Improvements and evaluation of  unsupervised PCFG induction** [EMNLP2018] [[paper link](https://aclanthology.org/D18-1292.pdf)]
+
+      无监督PCFG诱导方法在搜索空间过大时容易陷入局部最优解，而递归深度限制被认为可以模拟人类认知记忆限制，提升文法诱导的准确性。本文验证深度限制的有效性，并开发一种高效的基于图表的贝叶斯PCFG诱导模型。
+【无监督句法分析】【英语：Penn Treebank；中文：Chinese Treebank 5.0；德语：NEGRA 2.0】【无标记PARSEVAL】【深度受限的贝叶斯PCFG诱导模型】
+
+227. **Word Sense Induction with Neural biLM and Symmetric Patterns** [EMNLP2018] [[paper link](https://aclanthology.org/D18-1523.pdf)]
+
+      基于n-gram语言模型的词义归纳（WSI）无法充分利用上下文和目标词本身的信息。神经双向语言模型（biLM）如何有效结合上下文和目标词信息仍需探索。提出用双向语言模型生成替代词，加上动态对称模式提升信息利用，最后聚类归纳出词义。
+【词义归纳】【SemEval 2013 Task 13数据集】【Fuzzy Normalized Mutual Information和 Fuzzy B-Cubed ，以及几何平均】【基于ELMo biLM和动态对称模式的WSI模型】
+
+228. **Grammar Induction with Neural Language Models:  AnUnusual Replication** [EMNLP2018] [[paper link](https://aclanthology.org/D18-1544.pdf)]
+
+      探索神经语言模型PRPN是否能在无监督条件下从语言建模任务中归纳出有意义的句法结构，实验证明PRPN确实能学出合理的语法树。方法：用PRPN模型在语言建模任务上训练，通过F1分数和困惑度评估其语法归纳能力。
+【无监督语法归纳】【WSJ（Penn Treebank）、WSJ10（短句子集）、AliNLI（SNLI + MultiNLI合并）】【语言建模困惑度、无标注解析F1分数】【PRPN】
+
+229. **Rule induction for global explanation of trained models** [EMNLP2018] [[paper link](https://aclanthology.org/W18-5411.pdf)]
+
+      提出了一种归纳方法（规则归纳），通过分析模型的行为数据生成易懂的规则，从而全局解释模型的预测逻辑。方法：通过梯度加权特征并离散化，再用规则归纳算法（RIPPER-k）提取if-then-else规则。
+【4类文本分类】【20 newsgroups数据集】【宏平均F1分数】【规则归纳的解释模型（使用RIPPER-k算法）】
+
+230. **Interpretable Structure Induction Via Sparse Attention** [EMNLP2018] [[paper link](https://aclanthology.org/W18-5450.pdf)]
+
+      为了解决神经网络注意力机制难以解释的问题，文章提出通过归纳学习稀疏和结构化的注意力模式（如删减无关词、聚类相关词），使模型决策更透明。方法：用稀疏投影、语言学正则化和组合优化（如SparseMAP）改造注意力机制，生成简洁且可解释的权重分布。
+【通用NLP任务】【SNLI】【注意力权重的稀疏性和结构化程度】【注意力机制】
+
+231. **Unsupervised Bilingual Lexicon Induction via Latent Variable Models** [EMNLP2018] [[paper link](https://aclanthology.org/D18-1062.pdf)]
+
+      提出一种无监督方法，通过归纳学习跨语言词向量的潜在语义结构，仅用单语数据就能构建高质量双语词典。方法：用变分自编码器映射词向量到共享潜在空间，并通过对抗训练对齐分布
+【无监督双语词典归纳】【LDC2002L27、MUSE】【Top-1准确率】【基于潜在变量和对抗训练的跨语言词对齐模型】
+
+232. **Instance-based  Inductive Deep Transfer Learning by Cross-Dataset  Querying with Locality Sensitive Hashing** [EMNLP2019] [[paper link](https://aclanthology.org/D19-6120.pdf)]
+     
+      解决标注数据问题。提出基于实例的归纳迁移学习方法，从外部数据集中检索相似实例并融合其表征。在目标模型训练中，引入约束目标实例与检索实例的表征相似性。
+【新闻分类】【20 Newsgroups（News20）、BBC、BBC Sports】【准确率、F1分数】【实例融合Bi-LSTM】
+
+233. **Supervised and Nonlinear Alignment of Two Embedding Spaces for  Dictionary Induction in Low Resourced Languages** [EMNLP2019] [[paper link](https://aclanthology.org/D19-1076.pdf)]
+     
+      针对低资源语言，提出一种非线性映射方法（LLMap），通过归纳学习词向量空间的局部结构差异，显著提升双语词典构建的准确性。方法：结合鲁棒Procrustes分析（RGP）和局部线性神经网络（LLNF），实现分段线性映射以适配不同语言区域的特征。
+【双语词典归纳】【MUSE】【Precision@1/5/10】【LLMap】
+
+234. **Don’t Forget the Long Tail! A Comprehensive Analysis of Morphological  Generalization in Bilingual Lexicon Induction** [EMNLP2019] [[paper link](https://aclanthology.org/D19-1090.pdf)] 
+
+     研究双语词典模型是否能像人类一样从常见词归纳出罕见词形的翻译，为此构建了新数据集并发现模型在低频形态上表现差，但加入形态约束后有所提升。方法：通过控制变量实验评估模型泛化能力，并简单添加形态对齐约束改进模型。
+【双语词典归纳】【自建的40个形态完整词典】【精确度@1】【BLI模型+形态约束】
+
+235. **A Regularization-based Framework for Bilingual Grammar Induction** [EMNLP2019] [[paper link](https://aclanthology.org/D19-1148.pdf)]
+
+      提出无需外部资源的双语语法归纳方法，通过正则化让两种语言的解析器互相学习，利用语言间的相似性提升性能，体现了从已知语言到新语言的归纳能力。方法：在无监督解析器上添加参数、边得分或解析树的正则项，强制双语模型共享知识。
+【双语语法归纳】【Universal Dependencies】【有向依存准确率】【Convex-MST解析器，三种正则化方法】
+
+236. **Cross-lingual Semantic Specialization via Lexical Relation Induction** [EMNLP2019] [[paper link](https://aclanthology.org/D19-1226.pdf)]
+
+      提出一种跨语言方法，利用英语的词汇关系为资源贫乏语言生成语义特化约束，通过翻译和过滤实现知识迁移，显著提升目标语言的词向量质量。方法：先翻译源语言约束到目标语言，再用关系预测模型过滤噪声，最后单语特化目标词向量。
+【跨语言语义特化】【多语言词相似度数据集】【Spearman、准确率】【本文CLSRI】
+
+237. **Lost in Evaluation:  Misleading Benchmarks for Bilingual Dictionary Induction** [EMNLP2019] [[paper link](https://aclanthology.org/D19-1328.pdf)]
+
+      揭露MUSE数据集在BDI评估中的缺陷（专有名词干扰和目标词缺失），通过人工分析和实验证明这些缺陷扭曲模型比较，呼吁改进评估方法。方法：标注数据词性、过滤噪声后重评估模型性能，并手动验证预测结果。
+【双语词典归纳的评估可靠性分析】【MUSE数据集】【精确率@1】【RCSLS、VecMap（VM-S）、MUSE等】
+
+238. **Induction Networks for Few-Shot Text Classification** [EMNLP2019] [[paper link](https://aclanthology.org/D19-1403.pdf)]
+
+      为了解决少样本文本分类中样本多样性干扰的问题，提出了一种能够从少量样本中归纳出类别通用表示的方法（Induction Networks），从而提升模型对未见类别的分类能力。方法总结：通过动态路由算法将样本特征归纳为类别表示，并结合编码和关系模块完成分类任务。
+【少样本文本分类】【ARSC 、ODIC】【准确率】【本文Induction Networks】
+
+239. **Dialog Intent Induction with Deep Multi-View Clustering** [EMNLP2019] [[paper link](https://aclanthology.org/D19-1413.pdf)]
+
+      为了解决对话系统中意图难以预先定义的问题，提出了一种从对话数据中自动归纳用户意图的方法（Av-Kmeans），通过联合利用用户查询和对话上下文的多视角信息，提升意图发现的准确性。方法总结：通过交替优化多视角表示和聚类，将用户查询与对话上下文的语义信息协同归纳为意图类别。
+【对话意图归纳】【Twitter航空公司客户支持数据集和AskUbuntu问题意图聚类数据集】【精确率、召回率、F1分数、无监督聚类准确率】【交替视角k均值聚类（Av-Kmeans）】
+
+240. **Multilingual Grammar Induction with Continuous Language  Identification** [EMNLP2019] [[paper link](https://aclanthology.org/D19-1576.pdf)]
+
+      为解决多语言语法归纳中语言相似性难以定义的问题，提出了一种通过语言嵌入自动学习句法共性的方法（G/I模型），无需依赖语言谱系知识即可实现语法参数的跨语言共享。方法总结：用语言嵌入表示语言身份，通过神经网络预测语法参数，并联合语言识别任务优化嵌入，从而归纳出跨语言的通用句法模式。
+【多语言无监督依存语法归纳】【Universal Dependency Treebank 1.4】【无标记依存准确率】【基于语言嵌入的多语言语法模型（G）】
+
+241. **Automatic Taxonomy Induction and Expansion** [EMNLP2019] [[paper link](https://aclanthology.org/D19-3005.pdf)]
+
+      为解决知识图谱构建中分类体系人工标注成本高的问题，提出了一种混合自动归纳与人机协作的系统（KGIS），通过多策略提取“is-a”关系并支持人工优化，实现了高效的知识归纳。方法总结：结合语言学规则、语义网和神经网络（SPON）自动提取分类关系，并通过交互式表格（SSS）嵌入人工反馈，形成闭环的知识归纳流程。
+【自动分类体系归纳与扩展】【SemEval 2018 Hypernym Detection英文领域语料、NeurIPS会议论文语料】【人工验证的准确率】【KGIS系统】
+
+242. **Latent semantic network induction in the context of linked example senses** [EMNLP2019] [[paper link](https://aclanthology.org/D19-5523.pdf)]
+
+      利用Wiktionary的开放数据，通过归纳词条间的关系自动构建语义网络，填补传统专家标注资源的不足，并验证其语义结构的有效性。方法：基于关系消歧和集合层次归纳，从具体词条定义中提取抽象语义关系，形成有向无环图。
+【关系消歧和语义网络构建】【Wiktionary的英语部分】【宏/微召回率、精确率、F0.1分数；与WordNet的相似性对比】【基于集合交集的层次归纳算法】
+
+243. **Learning Explainable Linguistic Expressions with Neural Inductive Logic  Programming for Sentence Classification** [EMNLP2020] [[paper link](https://aclanthology.org/2020.emnlp-main.345.pdf)]
+
+      提出神经符号归纳学习模型RuleNN，学习可解释的一阶逻辑规则的神经网络。先构建逻辑谓词、然后用谓词生成模块和子句生成模块学习组合谓词。
+【句子分类】【Contracts、TREC】【AUC-PR、F1分数】【RuleNN】
+
+244. **Be More with Less: Hypergraph Attention Networks for  Inductive Text Classification** [EMNLP2020] [[paper link](https://aclanthology.org/2020.emnlp-main.399.pdf)]
+
+      GNN文本分类任务，提出文档级超图避免构建全局大图，支持归纳式学习，可直接处理新文档。通过超图建模高阶单词交互，避免二元关系的语义损失。
+【文本分类】【20NG（20-Newsgroups）、R8/R52（Reuters）、Ohsumed（医学文献）、MR（Movie Review）】【准确率】【提出的HyperGAT】
+
+245. **“A Little Birdie Told Me ... ”- Inductive Biases for Rumour Stance  Detection on Social Media** [EMNLP2020] [[paper link](https://aclanthology.org/2020.wnut-1.31.pdf)]
+
+      现有方法未考虑社交媒体特有的用户行为和语言风格，通过引入归纳偏置来改进立场检测任务。
+【立场分类】【Macro F1F1分数】【准确率】【基于BERT的模型，结合Late Fusion、TF-IDF特征】
+
+
+246. **Accurate Word Alignment Induction from Neural Machine Translation** [EMNLP2020] [[paper link](https://aclanthology.org/2020.emnlp-main.42.pdf)]
+
+      旨在改进神经机器翻译中的词对齐问题，提出一种归纳方法，通过调整对齐步骤和引入监督学习，显著提升了对齐效果。方法：Shift-Att通过调整对齐步骤从注意力权重中提取对齐信息，而Shift-AET通过增加对齐模块并利用监督学习进一步优化对齐准确性。
+【词对齐】【German-English】【Alignment Error Rate 和 BLEU】【Shift-Att 和 Shift-AET】
+
+247. **Connecting the Dots: Event Graph Schema Induction  with Path Language Modeling** [EMNLP2020] [[paper link](https://aclanthology.org/2020.emnlp-main.50.pdf)]
+
+      提出了一种归纳方法（PathLM），从事件实例中学习高频且连贯的路径模式，构建事件图模式，以更好地理解事件间的复杂关联，并提升信息抽取效果。
+【事件图模式归纳】【ACE 2005】【实例覆盖率、实例连贯性、信息抽取任务（F1分数）】【PathLM】
+
+248. **Semi-supervised New Event Type Induction and Event Detection** [EMNLP2020] [[paper link](https://aclanthology.org/2020.emnlp-main.53.pdf)]
+
+      提出一种半监督归纳方法（SS-VQ-VAE），利用少量标注数据自动发现新事件类型，同时提升事件检测性能，减少对人工标注的依赖。方法总结：通过向量量化和变分自编码器联合学习事件类型的离散表示，结合半监督目标函数实现新类型的归纳和检测。
+【半监督新事件类型归纳和事件检测】【ACE 2005】【事件检测：精确率、召回率、F1值；新类型归纳：标准化互信息、Fowlkes Mallows指数、同质性】【SS-VQ-VAE】
+
+249. **Improving Bilingual Lexicon Induction for Low Frequency Words** [EMNLP2020] [[paper link](https://aclanthology.org/2020.emnlp-main.100.pdf)]
+
+      分析低频词翻译的瓶颈（边际和中心性），提出两种归纳方法（铰链损失和HNN），显著提升双语词典归纳中低频词的性能。方法总结：通过优化变换矩阵的边际约束和均匀化目标词检索概率，解决低频词翻译的核心问题。
+【双语词典归纳和单语词典归纳】【FastText的Wiki和Crawl词向量、MUSE库中的英语-法语和英语-芬兰语数据】【翻译准确率、边际值、中心性度量】【结合铰链损失和HNN的改进方法】
+
+250. **Analogous Process Structure Induction for Sub-event Sequence Prediction** [EMNLP2020] [[paper link](https://aclanthology.org/2020.emnlp-main.119.pdf)]
+
+      现有的NLP研究多关注于“横向”事件预测（如预测下一个事件），而忽略了事件的“纵向”关系（如子事件序列的抽象和类比）。因此，提出通过类比已知过程的子事件结构，来预测新过程的子事件序列。
+【预测新过程的子事件序列】【从WikiHow网站收集的过程图】【事件级别的ROUGE】【APSI】
+
+251. **Structured Attention for Unsupervised Dialogue Structure Induction** [EMNLP2020] [[paper link](https://aclanthology.org/2020.emnlp-main.148.pdf)]
+
+      对话结构（如语义结构和交互结构）自动归纳的现有方法多依赖人工标注或忽略结构化依赖关系。通过无监督方式学习对话的潜在结构，提升模型的解释性和泛化能力。提出“结构化注意力变分循环神经网络”（SVRNN），通过结合结构化注意力机制与VRNN，无监督地学习对话的语义结构和交互结构。
+【无监督对话结构学习】【SimDial（模拟对话）和Ubuntu Chat Corpus】【语义结构：结构欧氏距离和结构交叉熵；交互结构：BLEU、说话者/受话者识别准确率】【SVRNN】
+
+252. **LNMAP: Departures from Isomorphic Assumption in Bilingual Lexicon  Induction Through Non-Linear Mapping in Latent Space** [EMNLP2020] [[paper link](https://aclanthology.org/2020.emnlp-main.215.pdf)] 
+
+      基于线性映射的BLI方法假设不同语言的词嵌入空间具有相似的几何结构，提出不依赖同构假设的半监督方法，用非线性映射在潜在空间中学习更灵活的词嵌入对齐。提出LNMap，通过两个独立的自编码器将源语言和目标语言的词嵌入映射到各自的潜在空间，然后利用少量种子词典学习潜在空间之间的非线性映射。
+【双语词典归纳】【MUSE和VecMap】【P@1】【LNMap】
+
+253. **Semi-Supervised Bilingual Lexicon Induction  with Two-way Interaction** [EMNLP2020] [[paper link](https://aclanthology.org/2020.emnlp-main.238.pdf)]
+
+      通过设计双向交互机制（POT和BLU）提升半监督双语词典归纳的性能，利用有限标注数据归纳先验知识，并结合未标注数据的结构信息扩展学习能力。方法：提出基于消息传递的循环（CSS）和并行（PSS）半监督框架，通过监督与无监督模块的交互优化词向量对齐。
+【双语词典归纳】【MUSE和VecMap】【P@1】【基于POT和BLU的CSS和PSS框架】
+
+254. **AnEvaluation Method for Diachronic Word Sense Induction** [EMNLP2020] [[paper link](https://aclanthology.org/2020.findings-emnlp.284.pdf)]
+
+      提出基于生物医学标注数据的评估框架，直接量化历时词义归纳模型（如NEO和SCAN）在词义聚类和动态演变检测中的性能，揭示模型从数据中归纳词义规律的优劣。方法：通过构建大规模时间标注数据集并设计多维度指标（如聚类分类、时序距离），系统评估生成式概率模型对词义演变的建模能力。
+【历时词义归纳】【基于Medline和UMLS构建的生物医学多义词历时数据集】【聚类分类（F1、MAE）、涌现检测（精确率、召回率）、时序距离（DTW、欧氏距离）】【词义归纳模型】
+
+255. **Improved Latent Tree Induction with Distant Supervision via Span Constraints** [EMNLP2021] [[paper link](https://aclanthology.org/2021.emnlp-main.395.pdf)]
+
+      提出利用低成本span约束（如实体边界）提升无监督句法分析性能，通过PS-SVM从部分标注中归纳句法结构规律，在新闻和生物医学领域显著缩小与监督模型的差距。方法：在DIORA中注入span约束并设计PS-SVM损失，以远程监督优化无监督句法树的生成。
+【无监督成分句法分析】【WSJ Penn Treebank、CRAFT、Ontonotes】【成分匹配准确率、约束覆盖度】【DIORA + PS-SVM】
+
+256. **The Future is not One-dimensional: Complex Event Schema Induction by  Graph Modeling for Event Prediction** [EMNLP2021] [[paper link](https://aclanthology.org/2021.emnlp-main.422.pdf)] 
+
+      提出了一种基于图建模的时序复杂事件模式归纳方法，从实例中抽象出概率化模式以支持事件预测。通过自回归图生成模型（结合GNN和复制机制）构建事件图，捕捉事件间的时间与参数依赖关系。
+【时序复杂事件模式归纳】【General Schema Learning Corpus、IED Schema Learning Corpus】【 事件匹配F1、事件序列匹配F1、参数连接匹配F1、实例图困惑度、模式引导事件预测的MRR】【时序事件图模型】
+
+257. **Corpus-based Open-Domain Event Type Induction** [EMNLP2021] [[paper link](https://aclanthology.org/2021.emnlp-main.441.pdf)]
+
+      提出了一种无监督的事件类型归纳方法ETypeClus，通过从语料中自动聚类谓词-宾语对生成事件类型，显著降低了人工标注需求，体现了从数据中归纳知识的核心思想。方法: 结合谓词消歧和潜在空间聚类，将P-O对嵌入球形空间并生成事件类型。
+【开放域事件类型归纳】【ACE 2005、ERE、Pandemic Dataset】【人工评估和聚类质量指标】【ETypeClus】
+
+258. **An Analysis of Euclidean vs. Graph-Based Framing for  Bilingual Lexicon Induction from Word Embedding Spaces** [EMNLP2021] [[paper link](https://aclanthology.org/2021.findings-emnlp.64.pdf)] 
+
+      对比了欧几里得与图结构方法在双语词典归纳中的表现，提出结合两者的框架，通过从种子数据中归纳映射关系，显著提升了低资源场景的性能。方法: 结合正交Procrustes（线性变换）与种子图匹配（邻域结构对齐），通过迭代和随机性优化映射质量。
+【双语词典归纳】【MUSE】【精确率、召回率】【迭代Procrustes、迭代SGM】
+
+259. **Unsupervised Chunking as Syntactic Structure Induction  with a Knowledge-Transfer Approach** [EMNLP2021] [[paper link](https://aclanthology.org/2021.findings-emnlp.307.pdf)]
+
+      通过归纳无监督解析模型中的分块模式，设计HRNN模型以提升无监督分块的性能，从而解决低资源语言的语言结构发现问题。方法：提出了一种基于知识迁移和分层循环神经网络的方法，通过启发式规则诱导标签并利用HRNN学习分块模式。
+【无监督分块】【CoNLL-2000（英语）、CoNLL-2003（德语）、English Web Treebank（评论领域）】【短语F1分数和标签准确率】【分层循环神经网络（HRNN）】
+
+260. **Character-based PCFG Induction for Modeling the Syntactic Acquisition  of Morphologically Rich Languages** [EMNLP2021] [[paper link](https://aclanthology.org/2021.findings-emnlp.371.pdf)] 
+
+      通过引入基于字符的PCFG模型，验证子词信息对句法结构归纳的作用，尤其是在形态丰富的语言中，从而支持分布式语言习得理论。方法：提出了一种基于字符序列的神经PCFG模型，与单词模型对比，证明其优越性。
+【无监督PCFG归纳】【儿童导向语料库、多语言树库】【Recall-Homogeneity（结合召回率和同质性）】【NeuralChar（基于字符的PCFG）和NeuralWord（基于单词的PCFG）】
+
+261. **Dependency Induction Through the Lens of Visual Perception** [EMNLP2021] [[paper link](https://aclanthology.org/2021.conll-1.2.pdf)]
+
+      通过结合词语具体性和视觉信息，从多模态数据中归纳更准确的句法结构，解决纯文本模型的局限性。方法：扩展神经L-PCFG，引入词语具体性评分和视觉语义角色标签作为先验，联合优化依存和成分分析。
+【无监督依存结构和成分结构的联合语法归纳】【MSCOCO】【依存分析：定向附着分数和无向附着分数；成分分析：F1分数（语料库级和句子级）】【Concrete L-PCFG（词语具体性）、Coupling（视觉启发式）】
+
+262. **Inductive Relation Prediction with Logical Reasoning Using  Contrastive Representations** [EMNLP2022] [[paper link](https://aclanthology.org/2022.emnlp-main.286.pdf)]   
+
+      提升知识图谱关系预测方法利用隐含逻辑规则进行归纳的能力，通过关系路径建模逻辑规则中的关系语义，利用对比学习缓解逻辑规则监督不足的问题。
+【归纳式关系预测】【WN18RR、FB15K-237、NELL-995】【AUC-PR、Hits@10】【提出的LogCo】
+
+263. **An Adaptive Logical Rule Embedding Model for Inductive Reasoning over Temporal Knowledge Graphs** [EMNLP2022] [[paper link](https://aclanthology.org/2022.emnlp-main.493.pdf)]  
+
+      提出自适应逻辑规则嵌入模型（ALRE-IR），旨在结合嵌入和逻辑规则两种方法的优点，自适应地提取和评估逻辑规则，实现高效且可解释的时间知识图谱归纳推理。
+【时间知识图谱的外推推理】【ICEWS0515、ICEWS14、ICEWS18】【MRR、Hits@1、Hits@3、Hits@10】【ALRE-IR】
+
+264. **Simplified Graph Learning for Inductive Short Text Classification [EMNLP2022] [[paper link](https://aclanthology.org/2022.emnlp-main.735.pdf)]  
+
+      提出一种基于层次图学习的归纳式短文本分类方法SimpleSTC。从WikiText中提取高频词，基于点间互信息构建词图，用GNN学习词的嵌入，将短文本表示为词嵌入的聚合，用余弦相似度动态构建文本图，传播标签进行分类。
+【归纳式短文本分类】【Twitter、MR（电影评论）、Snippets（搜索片段）、TagMyNews（新闻标题）】【Micro-Accuracy（ACC）和Macro-F1】【SimpleSTC】
+
+265. **Constructing Highly Inductive Contexts for Dialogue Safety through Controllable Reverse Generation** [EMNLP2022] [[paper link](https://aclanthology.org/2022.findings-emnlp.270.pdf)] 
+
+      大型预训练语言模型容易生成有毒或带有偏见的内容。通过逆向生成方法，构造高诱导性（highly inductive）的数据集BAD+，暴露预训练对话模型（如Blender、DialoGPT）的安全缺陷。
+【对话模型的安全性检测与去毒】【BAD+】【诱导成功率、毒性分数、多样性指标】【Blender、DialoGPT、Plato2】
+
+266. **Bilingual Lexicon Induction for Low-Resource Languages  using Graph Matching via Optimal Transport** [EMNLP2022] [[paper link](https://aclanthology.org/2022.emnlp-main.164.pdf)]
+
+      提出GOAT方法，通过最优传输改进双语词典归纳任务，解决低资源和非同构嵌入空间下的泛化（归纳）问题。方法总结：基于图匹配和Sinkhorn算法的平滑优化，实现更鲁棒的双语词对齐。
+【双语词典归纳】【MUSE双语词典、fastText词嵌入】【Precision@1】【GOAT】
+
+267. **Fast-R2D2:  APretrained Recursive Neural Network based on Pruned CKY  for Grammar Induction and Text Representation** [EMNLP2022] [[paper link](https://aclanthology.org/2022.emnlp-main.181.pdf)]
+
+      通过全局剪枝策略改进基于图的模型R2D2模型，解决其局部最优和推理速度问题，并在无监督语法归纳任务中验证了方法的有效性。方法：提出Fast-R2D2，通过自上而下解析器联合训练优化剪枝过程，提升性能和效率。
+【无监督语法归纳和文本表示】【英文使用WikiText103和Penn Treebank (PTB)，中文使用中文维基百科和Chinese Penn Treebank (CTB)】【句子级别的无标记F1分数、成分召回率】【Fast-R2D2】
+
+268. **Finding Dataset Shortcuts with Grammar Induction** [EMNLP2022] [[paper link](https://aclanthology.org/2022.emnlp-main.293.pdf)]
+
+      通过语法归纳自动发现NLP数据集中的捷径模式，揭示模型对虚假相关的依赖，并提出缓解方法。方法：提出基于PCFG/SCFG的语法归纳框架，通过互信息筛选高频子树作为捷径特征。
+【自动检测NLP数据集中的捷径】【IMDb（情感分析）、SUBJ（主观性分类）、SNLI（自然语言推理）、QQP（复述检测）】【互信息】【基于PCFG/SCFG的语法归纳方法】
+
+269. **RAPO:AnAdaptive Ranking Paradigm for Bilingual Lexicon Induction** [EMNLP2022] [[paper link](https://aclanthology.org/2022.emnlp-main.606.pdf)]
+
+      通过个性化适配和严格正交映射提升双语词典归纳任务的性能，解决全局映射和排序能力不足的问题。方法：RAPO结合个性化偏移、Householder投影和排序损失，显著提升了双语词典的生成准确率。
+【双语词典归纳】【MUSE】【Precision@1】【RAPO】
+
+270. **Automatic Rule Induction for Efficient Semi-Supervised Learning** [EMNLP2022] [[paper link](https://aclanthology.org/2022.findings-emnlp.3.pdf)]
+
+      通过自动规则归纳增强预训练模型在小样本任务中的性能和可解释性，解决了黑箱模型和人工规则设计的局限性。方法：ARI通过低容量模型生成符号化规则，并利用注意力机制将其与预训练模型结合，实现了规则与神经网络的协同优化。
+【序列分类和关系抽取任务】【AGNews、CDR、ChemProt、IMDB、SciCite、SemEval、SMS、TREC、Youtube】【二元分类任务使用F1分数，多分类任务使用宏平均F1分数】【ARI】
+
+271. **Improving Bilingual Lexicon Induction with Cross-Encoder Reranking** [EMNLP2022] [[paper link](https://aclanthology.org/2022.findings-emnlp.302.pdf)]
+
+      通过归纳CLWE空间中的词汇知识，结合交叉编码器改进双语词典归纳任务，显著提升跨语言词对齐的准确性。方法：基于极化分数微调mPLM作为交叉编码器，重排序CLWE的相似度结果。
+【双语词典归纳】【XLING和PanLex-BLI】【Precision@1】【BLICEr（基于XLM-R或mBERT的交叉编码器）】
+
+272. **The Effects of Corpus Choice and Morphosyntax on  Multilingual Space Induction** [EMNLP2022] [[paper link](https://aclanthology.org/2022.findings-emnlp.304.pdf)]
+
+      通过扰动语料和统计分析，归纳语言模型在多语言空间构建中的偏差，发现其能力主要源于词汇分布统计而非语法结构。方法：轻量BERT在扰动语料上训练，通过词翻译和句子检索评估跨语言能力，结合聚类与相关性分析。
+【多语言空间构建，通过词翻译和句子检索评估】【Wikipedia和Common Craw】【词翻译准确率、句子检索准确率】【轻量级BERT变体】
+
+273. **Multilingual SubEvent Relation Extraction:  ANovel Dataset and Structure Induction Method** [EMNLP2022] [[paper link](https://aclanthology.org/2022.findings-emnlp.407.pdf)]
+
+      通过归纳文本中的关键上下文结构（图表示）和构建多语言数据集，提升子事件关系抽取的泛化能力。方法：基于最优传输对齐依赖路径与非依赖路径词，构建图结构并用GCN学习表示。
+【子事件关系抽取】【HiEve、IC（英语）和自建多语言数据集mSubEvent】【Parent-Child（PC）、Child-Parent（CP）及其平均F1分数】【OT-SRE（基于RoBERTa/GCN+OT）】
+
+274. **Combining Noisy Semantic Signals with Orthographic Cues:  Cognate Induction for the Indic Dialect Continuum** [EMNLP2022] [[paper link](https://aclanthology.org/2022.conll-1.9.pdf)]
+
+      为解决低资源Indic方言的同源词识别问题，本文提出结合噪声语义嵌入与拼写规则的无监督归纳方法，构建首个大规模方言语料库HinDialect并验证方法的有效性。方法：通过双语嵌入筛选候选词，再优化拼写距离（JW或EM学习）以识别同源词。
+【无监督同源词识别】【单语语料：自爬取的HinDialect语料；评估词典：从Languages Home网站构建的20种语言与Hindi的合成双语词典】【精确率、跨语言嵌入整合度、Recall@K】【SEM_JW、SEM_EMT】
+
+275. **FinePrompt: Unveiling the Role of Finetuned  Inductive Bias on Compositional Reasoning in GPT-4** [EMNLP2023] [[paper link](https://aclanthology.org/2023.findings-emnlp.245.pdf)]  
+
+      通过利用微调模型中已验证的归纳偏差，提升GPT-4在组合推理任务中的性能，同时减少人工设计提示的负担。提出了FinePrompt方法，通过以下三种策略将微调模型的归纳偏差转化为提示：
+- Attribute-Infused Prompt：注入任务相关的属性（如算术规则或不等式定义）作为提示的一部分。
+- Pipeline-Infused Prompt：将复杂任务分解为子问题序列，模仿微调模型中的流水线方法。
+- Graph-Infused Prompt：将图结构中的连接信息（如实体或句子间的关系）嵌入到提示中。
+【多跳问答和文本数值推理】【MuSiQue（多跳问答）和DROP（数值推理）】【DROP：答案精确匹配和F1分数；MuSiQue：答案F1和支持段落F1】【GPT-4】
+
+276. **Inductive Relation Inference of Knowledge Graph Enhanced by Ontology Information** [EMNLP2023] [[paper link](https://aclanthology.org/2023.findings-emnlp.431.pdf)] 
+
+      知识图谱中，基于结构的归纳推理方法（如GraIL）在处理新实体时缺乏足够的邻居信息，并且忽略知识图谱中的本体信息。提出通过融合本体信息来增强知识图谱的归纳推理能力。利用本体类型信息增强节点初始化，通过类型约束捕获缺失的本体信息。
+【知识图谱的归纳链接预测】【YAGO21K-610和DB45K-165】【MRR、Hits@1、Hits@10】【基于GNN的子图推理框架】
+
+277. **IAG: Induction-Augmented Generation Framework for Answering  Reasoning Questions** [EMNLP2023] [[paper link](https://aclanthology.org/2023.emnlp-main.1.pdf)]
+
+      解决开放域问答中隐式推理问题，提出归纳增强生成（IAG）框架，结合检索和归纳推理。两种实现：IAG-GPT：直接使用GPT-3生成的归纳知识辅助生成答案。IAG-Student：通过知识蒸馏和TailBack优化训练学生模型，替代GPT-3以减少推理时的依赖。
+【开放域问答】【CSQA2.0（常识问答）和StrategyQA（策略推理问答）】【准确率】【IAG-GPT、IAG-Student】
+
+278. **On Bilingual Lexicon Induction with Large Language Models** [EMNLP2023] [[paper link](https://aclanthology.org/2023.emnlp-main.595.pdf)]
+
+      探索多语言大模型在双语词典归纳任务中的潜力，通过零样本和少样本提示方法，结合归纳推理提升翻译准确性。方法：基于提示和微调的BLI方法，通过检索近邻词对作为上下文示例优化模型输出。
+【双语词典归纳】【XLING和PanLex-BLI】【Precision@1】【LLMs】
+
+279. **CESAR: Automatic Induction of Compositional Instructions  for Multi-turn Dialogs** [EMNLP2023] [[paper link](https://aclanthology.org/2023.emnlp-main.717.pdf)]
+
+      通过归纳原子任务的组合规则，自动生成复杂对话任务数据，以提升公开模型在组合任务上的性能。方法：CESAR框架通过模块化任务指令，实现程序化的任务组合生成。
+【多轮对话任务】【InstructDial++】【原子任务使用准确率、Rouge-L等】【CESAR】
+
+280. **Adaptive Structure Induction for Aspect-based Sentiment Analysis with  Spectral Perspective** [EMNLP2023] [[paper link](https://aclanthology.org/2023.findings-emnlp.79.pdf)]
+
+      通过频谱方法从预训练语言模型中归纳适应性结构，以提升基于方面的情感分析性能。方法：提出基于频域过滤和自动频率选择的图结构学习方法，优化多尺度语言表示的结构归纳能力。
+【基于方面的情感分析】【SemEval 2014、Twitter】【Accuracy和Macro-F1】【基于PLMs（BERT、RoBERTa）的GSL模块，结合FLT和AFS】
+
+281. **Complex Event Schema Induction with Knowledge-Enriched  Diffusion Model** [EMNLP2023] [[paper link](https://aclanthology.org/2023.findings-emnlp.319.pdf)]
+
+      通过LLMs的知识增强和离散扩散模型，从实例图中归纳复杂事件模式，解决知识覆盖不足和错误传播问题。方法：提出结合Python风格提示的实例图扩展、非自回归离散扩散生成和实体关系预测的三阶段框架。
+【复杂事件模式归纳】【IED Schema Learning Corpus】【事件类型匹配F1、事件序列匹配F1、节点/边类型分布的KL散度、实体关系连接匹配】【KDM】
+
+282. **A Structure-Aware Generative Adversarial Network for Bilingual Lexicon  Induction** [EMNLP2023] [[paper link](https://aclanthology.org/2023.findings-emnlp.721.pdf)]
+
+      通过显式建模词嵌入的拓扑结构和学习灵活的映射函数，提升双语词典归纳的准确性，尤其是在非同构语言对上。方法：SA-GAN结合GCN、对抗训练和局部映射，显式捕捉结构信息并减少对同构假设的依赖。
+【双语词典归纳】【MUSE数据集】【Precision@1】【SA-GAN】
+
+283. **Grammar induction pretraining for language modeling in low resource  contexts** [EMNLP2023] [[paper link](https://aclanthology.org/2023.conll-babylm.5.pdf)]
+
+      通过无监督语法归纳提取语法信息融入语言模型，提升低资源下的泛化能力。实验发现性能提升可能来自分词器而非语法嵌入本身。方法：用compound-PCFG模型归纳语法结构并初始化语言模型，对比随机嵌入和基线模型。
+【低资源语言模型预训练及评估】【BabyLM严格小数据集】【BLiMP（语言学最小对基准）】【基于语法归纳嵌入初始化的OPT-125M-like模型】
+
+284. **Strengthening Structural Inductive Biases by Pre-training to Perform Syntactic Transformations** [EMNLP2024] [[paper link](https://aclanthology.org/2024.emnlp-main.645.pdf)]  
+
+      提出方法STEP，通过在预训练阶段让Transformer学习执行基于依赖树的句法转换任务来增强其结构化归纳偏置让其更好地处理句法相关的任务。预训练阶段模型接收一个描述转换的前缀和输入句子，预测转换后的依赖树。
+【句法转换任务、分块任务、语义解析任务】【预训练数据：C4语料库；下游任务数据集：StylePTB（句法转换）、CoNLL-2000（分块）、SLOG（语义解析）、ATIS（航班查询语义解析）】【精确匹配准确率、BLEU、TER】【STEP】
+
+285. **Inductive-Deductive Strategy Reuse for Multi-Turn Instructional Dialogues** [EMNLP2024] [[paper link](https://aclanthology.org/2024.emnlp-main.964.pdf)]  
+
+      让两个LLM交互自动生成对话（一个模拟用户提问，另一个作为系统回答），可以生成多轮指令对话数据。提出了一种归纳-演绎策略复用方法（IDEAS），提升用户模拟器的能力。归纳阶段从真实对话中提取策略，并通过聚类和抽象生成高层策略。演绎阶段用户模拟器选择合适的策略，并通过质量控制模块确保指令质量。
+【指令生成、回答生成】【ShareGPT和UltraChat】【指令评估：适当性、连贯性、深度、洞察力、多样性；模型评估：AlpacaEval、MT-Bench、MT-Bench++、MT-Eval】【LLMs】
+
+286. **Explicit Inductive Inference using Large Language Models** [EMNLP2024] [[paper link](https://aclanthology.org/2024.findings-emnlp.926.pdf)]  
+
+      LLMs在归纳推理中存在“认证偏差”，导致模型在判断前提P是否蕴含假设H时，过度依赖假设H本身的真实性，而忽略了前提P与H之间的逻辑关系。提出EIDI，为P中实体分配类型标签，消除谓词歧义。用LLM生成新的前提P'，并推导出对应的假设H'，对新的P'→H'推理问题进行预测。
+【判断两个二元谓词之间的蕴含关系】【Levy/Holt数据集】【AUCnorm】【GPT-3.5-Turbo和Llama3-70B-instruct】
+     
+287. **INDUCT-LEARN: Short Phrase Prompting with Instruction Induction** [EMNLP2024] [[paper link](https://aclanthology.org/2024.emnlp-main.297.pdf)]
+
+      针对低资源场景，提出Induct-Learn框架，通过LLMs的归纳能力从少量示例生成伪指令和推理链，提升模型任务表现并降低依赖人工成本。方法：三阶段框架（归纳指令→生成伪CoT→推理），结合语义归纳与拼写优化。
+【指令归纳与少样本推理】【BBH-Induct、Evals-Induct】【精确匹配准确率、跨语言嵌入整合度、Fill Rate】【Induct-Learn】
+
+288. **SHIELD: LLM-Driven Schema Induction for Predictive Analytics in EV  Battery Supply Chain Disruptions** [EMNLP2024] [[paper link](https://aclanthology.org/2024.emnlp-industry.24.pdf)]
+
+      提出 SHIELD，让 LLM 与专家协作“归纳”出供应链事件图谱，再用该图谱在新闻中预测断供风险，显著提升可解释性与准确率。方法：用 LLM 归纳层次化事件图谱 → 结合 GCN/逻辑约束在新闻上做可解释断供预测。
+【EV 电池供应链断供事件检测与风险预测】【Schema Learning Dataset、EV Supply Chain News Dataset】【Precision、Recall、F-score、专家主观评分】【GPT-4o、Llama3-3b/70b（schema 归纳），RoBERTa-large（事件抽取），GCN+逻辑约束+指代消解（预测）】
+
+289. **Text2Model: Text-based Model Induction  for Zero-shot Image Classification** [EMNLP2024] [[paper link](https://aclanthology.org/2024.findings-emnlp.8.pdf)]
+
+      提出一种动态生成任务特定分类模型的方法（T2M-HN），解决了传统零样本学习中固定表示空间的局限性，并通过归纳能力支持复杂文本描述和多模态数据分类。方法总结：基于超网络的框架，输入文本描述生成分类模型，利用等变性和不变性设计提升泛化性能。
+【零样本图像分类、3D点云分类、动作识别】【AwA（动物图像）、SUN（场景图像）、CUB（鸟类图像）、ModelNet-40（3D点云）、BABEL 120（3D骨骼动作数据）】【准确率、调和平均数、AUC】【T2M-HN】
+
+290. **Leveraging Grammar Induction for Language Understanding and  Generation** [EMNLP2024] [[paper link](https://aclanthology.org/2024.findings-emnlp.259.pdf)]
+
+      提出了一种无监督语法归纳方法，通过自诱导语法结构增强Transformer模型的语言理解和生成能力，解决了传统方法依赖外部解析器的问题，并验证了其在归纳学习中的有效性。方法总结：通过语法解析器生成语法掩码指导注意力机制，结合BPE嵌入和混合损失函数优化语法归纳过程。
+【机器翻译（MT）和自然语言理解】【机器翻译：IWSLT14-De/En、NC11-De/En、ASPEC-Zh/Ja；自然语言理解：GLUE（包含CoLA、SST-2、MNLI等子任务）】【BLEU、准确率/F1/Matthews相关系数】【基于语法掩码的语法感知Transformer】
 
 ## Others
    
