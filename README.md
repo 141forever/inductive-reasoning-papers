@@ -247,10 +247,7 @@
 
 39. **Unveiling Divergent Inductive Biases of LLMs on Temporal Data** [NAACL2024] [[paper link](https://aclanthology.org/2024.naacl-short.20.pdf)]    
 
-      通过分析LLMs的预测偏好来量化其在时间关系推理中的inductive bias。采用了两种提示格式：
-1. 问答格式（QA）：要求模型判断两个事件之间的时间关系（“BEFORE”或“AFTER”）。
-2. 文本蕴含格式（TE）：要求模型评估给定时间关系陈述的真假（“TRUE”或“FALSE”）。
-实验分为隐式事件（需从上下文中推断）和显式事件（直接提及的事件）两类。
+      通过分析LLMs的预测偏好来量化其在时间关系推理中的inductive bias。采用了两种提示格式：问答格式（QA）：要求模型判断两个事件之间的时间关系（“BEFORE”或“AFTER”）。文本蕴含格式（TE）：要求模型评估给定时间关系陈述的真假。实验分为隐式事件（需从上下文中推断）和显式事件（直接提及的事件）两类。
 【时间关系分类、文本蕴含】【TimeBank、TempEval、AQUAINT、TRACIE】【模型对“BEFORE”和“AFTER”的预测偏好；模型对“TRUE”和“FALSE”的预测偏好】【GPT-3.5、GPT-4】
 
 40. **Text Annotation via Inductive Coding: Comparing Human Experts to  LLMs in Qualitative Data Analysis** [NAACL2025] [[paper link](https://aclanthology.org/2025.findings-naacl.361.pdf)]
