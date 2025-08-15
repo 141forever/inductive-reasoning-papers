@@ -1227,12 +1227,12 @@
       发现BERT的词表示中包含过多与词义无关的噪声信息（如形态和句法特征），这些信息干扰了无监督的词义归纳（WSI）。为了解决这个问题，作者提出了一种对抗训练方法，通过“遗忘门”移除这些噪声，生成更干净的词表示，从而提升聚类效果。
 【无监督词义归纳】【训练遗忘门：Brown Corpus；WSI评估：SemCor】【聚类性能：调整兰德指数、纯度、逆纯度、V-Measure；信息移除效果：词预测的困惑度和特征探测的准确率】【基于对抗训练的遗忘门（forget-gate），生成形态不变和句法不变表示】
 
-211. **Generating Diverse Hypotheses for Inductive Reasoning [NAACL2025] [[paper link](https://aclanthology.org/2025.naacl-long.429.pdf)]
+211. **Generating Diverse Hypotheses for Inductive Reasoning** [NAACL2025] [[paper link](https://aclanthology.org/2025.naacl-long.429.pdf)]
 
       LLMs在归纳推理任务中生成多个假设时，经常产生语义冗余。提出Mixture of Concepts (MoC)的方法模拟人类归纳推理，先生成一系列语义非冗余的概念列表，然后基于每个概念生成对应的假设。
 【归纳推理】【List Functions、MiniARC、MBPP+、Playgol-str】【Accuracy、假设的多样性】【LLMs】
 
-212. **ARISE: Iterative Rule Induction and Synthetic Data Generation for Text  Classification [NAACL2025] [[paper link](https://aclanthology.org/2025.findings-naacl.359.pdf)]
+212. **ARISE: Iterative Rule Induction and Synthetic Data Generation for Text  Classification** [NAACL2025] [[paper link](https://aclanthology.org/2025.findings-naacl.359.pdf)]
 
       通过归纳泛化从数据中提取规则，并结合合成数据生成，提升文本分类任务的性能，解决了合成数据方差不足的问题。方法：迭代生成规则和合成数据，通过规则过滤和自举优化模型。
 【文本分类】【Discovery、CDR、ANLI（全样本）；FewMany Benchmark（少样本）；MASSIVE（多语言）】【准确率】【ARISE（结合规则归纳和合成数据生成的框架）】
@@ -1631,161 +1631,162 @@
       提出了一种无监督语法归纳方法，通过自诱导语法结构增强Transformer模型的语言理解和生成能力，解决了传统方法依赖外部解析器的问题，并验证了其在归纳学习中的有效性。方法总结：通过语法解析器生成语法掩码指导注意力机制，结合BPE嵌入和混合损失函数优化语法归纳过程。
 【机器翻译（MT）和自然语言理解】【机器翻译：IWSLT14-De/En、NC11-De/En、ASPEC-Zh/Ja；自然语言理解：GLUE（包含CoLA、SST-2、MNLI等子任务）】【BLEU、准确率/F1/Matthews相关系数】【基于语法掩码的语法感知Transformer】
 
-291. Unsupervised Does Not Mean Uninterpretable: The Case for Word Sense Induction and Disambiguation [EACL 2017] [paper link](https://aclanthology.org/E17-1009/)
+291. **Unsupervised Does Not Mean Uninterpretable: The Case for Word Sense Induction and Disambiguation** [EACL 2017] [[paper link](https://aclanthology.org/E17-1009/)]
 
       提出了一个无监督、无需知识库的词义归纳与消歧方法，该方法在三个层面上可解释：词义清单、词义特征表示和消歧过程。实验表明该模型在准确率上与最先进的词义嵌入模型相当，同时提供了人类可读的决策解释能力。【词义归纳与消歧】【可解释性、三层解释框架】【ego-network clustering、hypernym labeling】
 
-292. From Segmentation to Analyses: a Probabilistic Model for Unsupervised Morphology Induction [EACL 2017] [paper link](https://aclanthology.org/E17-1032/)
+292. **From Segmentation to Analyses: a Probabilistic Model for Unsupervised Morphology Induction** [EACL 2017] [[paper link](https://aclanthology.org/E17-1032/)]
 
       提出了一个概率模型来解决无监督形态学归纳中的稀疏数据问题，该模型不仅进行表面形式分割，还提供形态学分析，能够抽象出功能相似词素中的拼写差异。改进了MorphoChains系统，使taking和take的分析能够相互连接。【无监督形态学归纳】【概率模型、MorphoChains改进】【形态学分析、词素抽象】
 
-293. The ContrastMedium Algorithm: Taxonomy Induction From Noisy Knowledge Graphs With Just A Few Links [EACL 2017] [paper link](https://aclanthology.org/E17-1056/)
+293. **The ContrastMedium Algorithm: Taxonomy Induction From Noisy Knowledge Graphs With Just A Few Links** [EACL 2017] [[paper link](https://aclanthology.org/E17-1056/)]
 
       提出了ContrastMedium算法，能够将噪声语义网络转换为完整、清洁的分类体系。该算法无需显式人工监督（如手动选择根节点和叶节点），通过利用参考分类法的结构信息实现嵌入式分类结构识别。【分类体系归纳】【噪声知识图谱处理、结构化信息利用】【ContrastMedium算法、SemEval基准测试】
 
-294. Bilingual Lexicon Induction by Learning to Combine Word-Level and Character-Level Representations [EACL 2017] [paper link](https://aclanthology.org/E17-1102/)
+294. **Bilingual Lexicon Induction by Learning to Combine Word-Level and Character-Level Representations** [EACL 2017] [[paper link](https://aclanthology.org/E17-1102/)]
 
       将双语词典归纳问题框架化为分类任务，设计了由循环长短期记忆网络和深度前馈网络组成的神经网络分类架构。研究表明词级和字符级表示各自都能提升BLI的最先进结果，而两者结合在分类模型中达到最佳效果。【双语词典归纳】【神经网络分类架构、词级与字符级表示融合】【LSTM、深度前馈网络】
 
-295. Unsupervised Dialogue Act Induction using Gaussian Mixtures [EACL 2017] [paper link](https://aclanthology.org/E17-2078/)
+295. **Unsupervised Dialogue Act Induction using Gaussian Mixtures** [EACL 2017] [[paper link](https://aclanthology.org/E17-2078/)]
 
       提出了一种新的无监督对话行为归纳方法，将对话建模为隐马尔可夫模型，发射概率由高斯混合模型估计。使用Gibbs采样进行后验推理，在标准Switchboard-DAMSL语料库上的实验显示该算法优于其他无监督算法。【对话行为归纳】【隐马尔可夫模型、高斯混合模型】【Gibbs采样、Switchboard-DAMSL语料库】
 
-296. Bootstrapping Unsupervised Bilingual Lexicon Induction [EACL 2017] [paper link](https://aclanthology.org/E17-2098/)
+296. **Bootstrapping Unsupervised Bilingual Lexicon Induction** [EACL 2017] [[paper link](https://aclanthology.org/E17-2098/)]
 
       开发了一种新颖的方法，通过基于频率和词汇相似性识别相关语言词汇表中的同源词来创建种子词典。将双向自助法应用于学习基于上下文向量空间之间线性映射的方法，在三个语言对上的实验结果显示相比先前工作有一致性改进。【无监督双语词典归纳】【同源词识别、双向自助法】【线性映射、上下文向量空间】
 
-297. Semantic Frame Induction with Deep Metric Learning [EACL 2023] [paper link](https://aclanthology.org/2023.eacl-main.134/)
+297. **Semantic Frame Induction with Deep Metric Learning** [EACL 2023] [[paper link](https://aclanthology.org/2023.eacl-main.134/)]
 
       提出了一种有监督的语义框架归纳方法，假设存在部分谓词的框架标注数据，利用深度度量学习对上下文化词嵌入模型进行微调。实验表明该方法在FrameNet上的聚类评估分数比基线方法提高了约8个点或更多。【语义框架归纳】【深度度量学习、有监督学习】【FrameNet、聚类评估、微调】
 
-298. Semi-supervised New Event Type Induction and Description via Contrastive Loss-Enforced Batch Attention [EACL 2023] [paper link](https://aclanthology.org/2023.eacl-main.275/)
+298. **Semi-supervised New Event Type Induction and Description via Contrastive Loss-Enforced Batch Attention** [EACL 2023] [[paper link](https://aclanthology.org/2023.eacl-main.275/)]
 
       提出了一种新颖的半监督新事件类型归纳方法，使用掩码对比损失通过数据小批量的注意力机制学习事件提及之间的相似性。该方法将发现的聚类通过流形逼近进行解缠，并扩展到两个新任务：预测发现聚类的类型名称和将其链接到FrameNet框架。【半监督事件类型归纳】【掩码对比损失、批量注意力机制】【流形逼近、FrameNet链接】
 
-299. Zero-Shot On-the-Fly Event Schema Induction [EACL 2023 Findings] [paper link](https://aclanthology.org/2023.findings-eacl.53/)
+299. **Zero-Shot On-the-Fly Event Schema Induction** [EACL 2023 Findings] [[paper link](https://aclanthology.org/2023.findings-eacl.53/)]
 
       提出了一种利用大语言模型生成源文档的新方法，该方法可以根据高级事件定义预测特定事件、论元和它们之间的关系，构建描述整个复杂事件的模式。该模型可以在零样本情况下即时生成任何主题的完整模式，无需人工数据收集。【零样本事件模式归纳】【大语言模型、即时生成】【事件模式构建、无人工数据收集】
 
-300. Unsupervised part-of-speech induction for language description: Modeling documentation materials in Kolyma Yukaghir [Field Matters 2023] [paper link](https://aclanthology.org/2023.fieldmatters-1.3/)
+300. **Unsupervised part-of-speech induction for language description: Modeling documentation materials in Kolyma Yukaghir** [Field Matters 2023] [[paper link](https://aclanthology.org/2023.fieldmatters-1.3/)]
 
       提出了一种无监督词性归纳方法，用于为科雷马尤卡吉尔语（Kolyma Yukaghir）的语言描述建模文档材料。该研究专注于濒危语言的词性标注任务，使用无监督学习方法处理语言文档材料。【无监督词性归纳】【濒危语言建模、语言文档】【科雷马尤卡吉尔语、实地语言学应用】
 
-301. CEO: Corpus-based Open-Domain Event Ontology Induction [EACL 2024 Findings] [paper link](https://aclanthology.org/2024.findings-eacl.64/)
+301. **CEO: Corpus-based Open-Domain Event Ontology Induction** [EACL 2024 Findings] [[paper link](https://aclanthology.org/2024.findings-eacl.64/)]
 
       提出了一种新颖的基于语料库的事件本体归纳模型CEO，用于放宽预定义事件本体的限制。该模型利用摘要数据集的远程监督检测语料库级别的显著事件，并利用外部事件知识强制短距离内的事件具有相近的嵌入。【事件本体归纳】【语料库级别、远程监督】【外部事件知识、嵌入相似性】
 
-302. Relation Induction in Word Embeddings Revisited [COLING2018] [paper link](https://aclanthology.org/C18-1138/)
+302. **Relation Induction in Word Embeddings Revisited** [COLING 2018] [[paper link](https://aclanthology.org/C18-1138/)]
 
       重新审视词嵌入中的关系归纳问题，系统分析现有方法并提出改进策略，提升关系发现的准确性和鲁棒性。【关系归纳】【词嵌入关系数据集】【关系发现准确率】【词向量空间几何分析模型】
 
-303. Induction of a Large-Scale Knowledge Graph from the Regesta Imperii [COLING2018] [paper link](https://aclanthology.org/W18-4518/)
+303. **Induction of a Large-Scale Knowledge Graph from the Regesta Imperii** [COLING 2018] [[paper link](https://aclanthology.org/W18-4518/)]
 
       从中世纪历史文档Regesta Imperii中自动构建大规模知识图谱，展示历史文本的结构化知识提取能力。【知识图谱归纳】【Regesta Imperii历史文档】【知识抽取精度和三元组质量】【命名实体识别和关系抽取流水线】
 
-304. Cross-Lingual Emotion Lexicon Induction using Representation Alignment in Low-Resource Settings [COLING2020] [paper link](https://aclanthology.org/2020.coling-main.517/)
+304. **Cross-Lingual Emotion Lexicon Induction using Representation Alignment in Low-Resource Settings** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.517/)]
 
       在低资源环境下通过表示对齐技术进行跨语言情感词典归纳，解决资源稀缺语言的情感分析问题。【跨语言情感词典归纳】【多语言情感数据集】【情感词汇覆盖率和F1分数】【跨语言词嵌入对齐模型】
 
-305. A Simple and Effective Approach to Robust Unsupervised Bilingual Dictionary Induction [COLING2020] [paper link](https://aclanthology.org/2020.coling-main.526/)
+305. **A Simple and Effective Approach to Robust Unsupervised Bilingual Dictionary Induction** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.526/)]
 
       提出简单有效的鲁棒无监督双语词典归纳方法，通过改进对齐策略提升跨语言词汇映射的准确性。【无监督双语词典归纳】【MUSE, VecMap数据集】【P@1, P@5, P@10】【改进的词嵌入对齐算法】
 
-306. Data Selection for Bilingual Lexicon Induction from Specialized Comparable Corpora [COLING2020] [paper link](https://aclanthology.org/2020.coling-main.527/)
+306. **Data Selection for Bilingual Lexicon Induction from Specialized Comparable Corpora** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.527/)]
 
       研究专业化可比语料库中双语词典归纳的数据选择策略，优化领域特定词汇的提取效果。【双语词典归纳】【专业领域可比语料库】【词汇抽取精度和覆盖率】【数据过滤和选择算法】
 
-307. Combining Word Embeddings with Bilingual Orthography Embeddings for Bilingual Dictionary Induction [COLING2020] [paper link](https://aclanthology.org/2020.coling-main.531/)
+307. **Combining Word Embeddings with Bilingual Orthography Embeddings for Bilingual Dictionary Induction** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.531/)]
 
       结合词嵌入和双语正字法嵌入进行双语词典归纳，利用拼写信息增强跨语言词汇对齐效果。【双语词典归纳】【多语言词典数据集】【词汇对齐准确率】【多模态嵌入融合模型】
 
-308. BME-TUW at SR'20: Lexical grammar induction for surface realization [COLING2020] [paper link](https://aclanthology.org/2020.msr-1.2/)
+308. **BME-TUW at SR'20: Lexical grammar induction for surface realization** [COLING 2020] [[paper link](https://aclanthology.org/2020.msr-1.2/)]
 
       开发用于表面实现任务的词汇语法归纳方法，在SR'20共享任务中展示自动语法规则学习能力。【词汇语法归纳】【SR'20表面实现数据集】【BLEU分数】【统计语法归纳系统】
 
-309. Lexical Induction of Morphological and Orthographic Forms for Low-Resourced Languages [COLING2020] [paper link](https://aclanthology.org/2020.msr-1.5/)
+309. **Lexical Induction of Morphological and Orthographic Forms for Low-Resourced Languages** [COLING 2020] [[paper link](https://aclanthology.org/2020.msr-1.5/)]
 
       针对低资源语言进行形态学和正字法形式的词汇归纳，处理形态变化复杂语言的词汇扩展问题。【形态学归纳】【低资源语言数据集】【词汇扩展覆盖率】【无监督形态学习模型】
 
-310. BOS at SemEval-2020 Task 1: Word Sense Induction via Lexical Substitution for Lexical Semantic Change Detection [COLING2020] [paper link](https://aclanthology.org/2020.semeval-1.20/)
+310. **BOS at SemEval-2020 Task 1: Word Sense Induction via Lexical Substitution for Lexical Semantic Change Detection** [COLING 2020] [[paper link](https://aclanthology.org/2020.semeval-1.20/)]
 
       通过词汇替换进行词义归纳用于词汇语义变化检测，在SemEval-2020任务中检测词义的历时演化。【词义归纳】【SemEval-2020 Task 1数据集】【语义变化检测准确率】【基于上下文的词义归纳模型】
 
-311. Bilingual Lexicon Induction across Orthographically-distinct Under-Resourced Dravidian Languages [COLING2020] [paper link](https://aclanthology.org/2020.vardial-1.6/)
+311. **Bilingual Lexicon Induction across Orthographically-distinct Under-Resourced Dravidian Languages** [COLING 2020] [[paper link](https://aclanthology.org/2020.vardial-1.6/)]
 
       针对书写系统差异显著的欠资源德拉威语族语言进行双语词典归纳，处理正字法差异带来的对齐挑战。【双语词典归纳】【德拉威语族数据集】【跨文字系统对齐精度】【字符级和音素级对齐模型】
 
-312. Team Rouges at SemEval-2020 Task 12: Cross-lingual Inductive Transfer to Detect Offensive Language [COLING2020] [paper link](https://aclanthology.org/2020.semeval-1.290/)
+312. **Team Rouges at SemEval-2020 Task 12: Cross-lingual Inductive Transfer to Detect Offensive Language** [COLING 2020] [[paper link](https://aclanthology.org/2020.semeval-1.290/)]
 
       使用跨语言归纳迁移检测攻击性语言，在多语言环境下识别仇恨言论和攻击性内容。【跨语言归纳迁移】【SemEval-2020 Task 12数据集】【F1分数】【跨语言迁移学习分类器】
 
-313. Resource Constrained Dialog Policy Learning Via Differentiable Inductive Logic Programming [COLING2020] [paper link](https://aclanthology.org/2020.coling-main.597/)
+313. **Resource Constrained Dialog Policy Learning Via Differentiable Inductive Logic Programming** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.597/)]
 
       通过可微归纳逻辑编程学习资源受限环境下的对话策略，结合符号推理和神经网络的优势。【对话策略学习】【对话数据集】【对话成功率】【神经符号混合推理模型】
 
-314. ConTextING: Granting Document-Wise Contextual Embeddings to Graph Neural Networks for Inductive Text Classification [COLING2022] [paper link](https://aclanthology.org/2022.coling-1.100/)
+314. **ConTextING: Granting Document-Wise Contextual Embeddings to Graph Neural Networks for Inductive Text Classification** [COLING 2022] [[paper link](https://aclanthology.org/2022.coling-1.100/)]
 
       将文档级上下文嵌入引入图神经网络进行归纳文本分类，提升图结构文本分类的性能。【归纳文本分类】【文本分类基准数据集】【分类准确率和F1分数】【GNN与文档嵌入融合模型】
 
-315. ArcaneQA: Dynamic Program Induction and Contextualized Encoding for Knowledge Base Question Answering [COLING2022] [paper link](https://aclanthology.org/2022.coling-1.148/)
+315. **ArcaneQA: Dynamic Program Induction and Contextualized Encoding for Knowledge Base Question Answering** [COLING 2022] [[paper link](https://aclanthology.org/2022.coling-1.148/)]
 
       结合动态程序归纳和上下文化编码解决知识库问答问题，提升复杂查询的回答准确性。【动态程序归纳】【知识库问答数据集】【EM分数和F1分数】【程序合成与神经编码器结合模型】
 
-316. Cross-lingual Feature Extraction from Monolingual Corpora for Low-resource Unsupervised Bilingual Lexicon Induction [COLING2022] [paper link](https://aclanthology.org/2022.coling-1.469/)
+316. **Cross-lingual Feature Extraction from Monolingual Corpora for Low-resource Unsupervised Bilingual Lexicon Induction** [COLING 2022] [[paper link](https://aclanthology.org/2022.coling-1.469/)]
 
       从单语语料库中提取跨语言特征用于低资源无监督双语词典归纳，缓解平行数据稀缺问题。【跨语言特征提取】【低资源语言对数据集】【词汇对齐精度】【单语特征对齐与投影模型】
 
-317. Prior Relational Schema Assists Effective Contrastive Learning for Inductive Knowledge Graph Completion [COLING2024] [paper link](https://aclanthology.org/2024.lrec-main.1139/)
+317. **Prior Relational Schema Assists Effective Contrastive Learning for Inductive Knowledge Graph Completion** [COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1139/)]
 
       利用先验关系模式辅助对比学习进行归纳知识图谱补全，提升关系推理的准确性和泛化能力。【归纳知识图谱补全】【归纳式KG数据集】【链接预测准确率】【关系感知对比学习模型】
 
-318. Prompt-fused Framework for Inductive Logical Query Answering [COLING2024] [paper link](https://aclanthology.org/2024.lrec-main.1152/)
+318. **Prompt-fused Framework for Inductive Logical Query Answering** [COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1152/)]
 
       提出提示融合框架进行归纳逻辑查询回答，结合提示学习和逻辑推理解决复杂查询问题。【归纳逻辑查询】【逻辑查询数据集】【查询回答准确率】【提示增强的逻辑推理模型】
 
-319. Categorial Grammar Induction with Stochastic Category Selection [COLING2024] [paper link](https://aclanthology.org/2024.lrec-main.258/)
+319. **Categorial Grammar Induction with Stochastic Category Selection** [COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.258/)]
 
       使用随机类别选择进行范畴语法归纳，提供无监督语法结构学习的新方法。【范畴语法归纳】【语法归纳数据集】【语法解析准确率】【概率范畴语法归纳算法】
 
-320. Linguistic Rule Induction Improves Adversarial and OOD Robustness in Large Language Models [COLING2024] [paper link](https://aclanthology.org/2024.lrec-main.924/)
+320. **Linguistic Rule Induction Improves Adversarial and OOD Robustness in Large Language Models** [COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.924/)]
 
       通过语言规则归纳提升大语言模型的对抗性和分布外鲁棒性，增强模型在异常输入下的表现。【语言规则归纳】【鲁棒性测试数据集】【攻击成功率和鲁棒性指标】【规则增强的LLM】
 
-321. Linking Adaptive Structure Induction and Neuron Filtering: A Spectral Perspective for Aspect-based Sentiment Analysis [COLING2024] [paper link](https://aclanthology.org/2024.lrec-main.926/)
+321. **Linking Adaptive Structure Induction and Neuron Filtering: A Spectral Perspective for Aspect-based Sentiment Analysis** [COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.926/)]
 
       从谱分析角度连接自适应结构归纳和神经元过滤，用于基于方面的情感分析任务。【自适应结构归纳】【方面情感分析数据集】【方面情感分类准确率】【谱分析引导的结构学习模型】
 
-322. Multilingual Substitution-based Word Sense Induction [COLING2024] [paper link](https://aclanthology.org/2024.lrec-main.1035/)
+322. **Multilingual Substitution-based Word Sense Induction** [COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1035/)]
 
       基于多语言替换的词义归纳方法，利用跨语言替换信息增强词义发现和聚类能力。【多语言词义归纳】【多语言词义数据集】【词义聚类质量】【跨语言替换感知的词义模型】
 
-323. NutFrame: Frame-based Conceptual Structure Induction with LLMs [COLING2024] [paper link](https://aclanthology.org/2024.lrec-main.1079/)
+323. **NutFrame: Frame-based Conceptual Structure Induction with LLMs** [COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1079/)]
 
       使用大语言模型进行基于框架的概念结构归纳，自动发现和构建文本中的概念框架结构。【概念结构归纳】【框架语义数据集】【框架抽取准确率】【LLM驱动的框架归纳系统】
 
-324. PRIMO: Progressive Induction for Multi-hop Open Rule Generation [COLING2024] [paper link](https://aclanthology.org/2024.lrec-main.1137/)
+324. **PRIMO: Progressive Induction for Multi-hop Open Rule Generation** [COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1137/)]
 
       渐进式归纳方法用于多跳开放规则生成，实现复杂推理规则的自动发现和构建。【渐进式归纳】【开放规则生成数据集】【规则质量评估】【渐进式规则学习算法】
 
-325. When Your Cousin Has the Right Connections: Unsupervised Bilingual Lexicon Induction for Related Data-Imbalanced Languages [COLING2024] [paper link](https://aclanthology.org/2024.lrec-main.1526/)
+325. **When Your Cousin Has the Right Connections: Unsupervised Bilingual Lexicon Induction for Related Data-Imbalanced Languages** [COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1526/)]
 
       针对相关但数据不平衡的语言进行无监督双语词典归纳，利用语言系谱关系处理数据稀缺问题。【无监督双语词典归纳】【相关语言对数据集】【词汇对齐精度】【系谱感知的词典归纳模型】
 
-326. TaxoCritic: Exploring Credit Assignment in Taxonomy Induction with Multi-Critic Reinforcement Learning [COLING2024] [paper link](https://aclanthology.org/2024.dlnld-1.2/)
+326. **TaxoCritic: Exploring Credit Assignment in Taxonomy Induction with Multi-Critic Reinforcement Learning** [COLING 2024] [[paper link](https://aclanthology.org/2024.dlnld-1.2/)]
 
       使用多评判者强化学习探索分类体系归纳中的信用分配问题，优化分类体系构建的决策过程。【分类体系归纳】【分类体系构建数据集】【分类体系质量指标】【多评判者强化学习模型】
 
-327. Pre-trained Semantic Interaction based Inductive Graph Neural Networks for Text Classification [COLING2025] [paper link](https://aclanthology.org/2025.coling-main.54/)
+327. **Pre-trained Semantic Interaction based Inductive Graph Neural Networks for Text Classification** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.54/)]
 
       基于预训练语义交互的归纳图神经网络用于文本分类，融合预训练模型和图结构的优势。【归纳图神经网络】【文本分类数据集】【分类准确率】【预训练模型与GNN融合架构】
 
-328. Commonsense Subgraph for Inductive Relation Reasoning with Meta-learning [COLING2025] [paper link](https://aclanthology.org/2025.coling-main.150/)
+328. **Commonsense Subgraph for Inductive Relation Reasoning with Meta-learning** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.150/)]
 
       使用元学习的常识子图进行归纳关系推理，利用常识知识库增强关系推理和泛化能力。【归纳关系推理】【常识推理数据集】【关系推理准确率】【元学习驱动的关系推理模型】
 
-329. Inductive Link Prediction in N-ary Knowledge Graphs [COLING2025] [paper link](https://aclanthology.org/2025.coling-main.595/)
+329. **Inductive Link Prediction in N-ary Knowledge Graphs** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.595/)]
 
       在N元知识图谱中进行归纳链接预测，将传统二元关系扩展到复杂多元关系的预测任务。【归纳链接预测】【N元知识图谱数据集】【链接预测准确率】【N元关系感知的GNN】
+
 
 ## Others
    
