@@ -41,47 +41,47 @@
 
       MIRAGE数据集。
 
-8.  **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
-   
-      提出了一种基于数列的类比推理合成数据管线，以code为呈现形式构建了一批SFT合成数据，有效的提高了LLMs的类比推理和code推理能力。
-
-9.  **MTR:A Dataset Fusing Inductive, Deductive, and Defeasible Reasoning** [ACL2023] [[paper link](https://aclanthology.org/2023.findings-acl.640.pdf)]
+8.  **MTR:A Dataset Fusing Inductive, Deductive, and Defeasible Reasoning** [ACL2023] [[paper link](https://aclanthology.org/2023.findings-acl.640.pdf)]
 
      现有的数据集大多只关注单一类型的推理，提出了一个新的数据集MTR，旨在融合归纳推理、演绎推理和可废止推理，采用半自动方法生成数据集，包括逻辑生成、逻辑修正和自然语言生成。
 【关系推理任务】【MTR】【准确率】【BiLSTM、BERT等】
 
-10.  **InductionBench: LLMs Fail in the Simplest Complexity Class** [ACL2025] [[paper link](https://aclanthology.org/2025.acl-long.1287.pdf)]
+9.  **InductionBench: LLMs Fail in the Simplest Complexity Class** [ACL2025] [[paper link](https://aclanthology.org/2025.acl-long.1287.pdf)]
 
      提出InductionBench，一个基于子正则函数层级（subregular hierarchy）的基准测试，通过生成不同复杂度的字符串转换任务（如ISL、L-OSL、R-OSL函数），评估LLM从输入-输出对中推断规则的能力。
 【字符串到字符串的转换，要求模型从输入-输出对中推断规则】【动态生成的合成数据集】【精确率、召回率、兼容性】【LLMs】
 
-11.  **Enhancing Large Language Models Against Inductive Instructions with Dual-critique Prompting** [NAACL2024] [[paper link](https://aclanthology.org/2024.naacl-long.299.pdf)]
+10.  **Enhancing Large Language Models Against Inductive Instructions with Dual-critique Prompting** [NAACL2024] [[paper link](https://aclanthology.org/2024.naacl-long.299.pdf)]
 
      研究LLMs在处理包含错误前提或恶意意图的用户指令时的表现。构建INDUST基准：包含三种类型的归纳指令（事实检查指令FCI、基于错误前提的问题QFP、基于错误前提的创造性指令CIFP）。通过两个步骤增强模型对错误指令的识别能力：
 用户批判（User-critique）：模型检查用户指令中的错误或有害信息。自我批判（Self-critique）：模型在生成回答时自我审查以避免传播错误内容。
 【评估和改进LLMs对归纳指令的处理能力】【INDUST，LINDUST】【真实性（Truthfulness），帮助性（Helpfulness）】【LLMs】
 
-12.  **CLUTRR:ADiagnostic Benchmark for Inductive Reasoning from Text** [EMNLP2019] [[paper link](https://aclanthology.org/D19-1458.pdf)]
+11.  **CLUTRR:ADiagnostic Benchmark for Inductive Reasoning from Text** [EMNLP2019] [[paper link](https://aclanthology.org/D19-1458.pdf)]
 
      自然语言理解（NLU）在未见过的逻辑规则组合或噪声数据时表现不佳。引入基准测试（CLUTRR），评估模型在归纳推理和系统性泛化方面的能力。通过生成涉及虚构家族的短篇故事，要求模型推断未明确提及的两个家庭成员之间的关系。文本模型模型（如BERT、MAC）在系统性泛化上落后于直接处理符号化输入的GAT模型。
 【短篇故事中推断亲属关系】【CLUTRR（半合成生成的故事）】【准确率】【文本模型、GAT】
 
-13.  **A Benchmark for Semi-Inductive Link Prediction in Knowledge Graphs** [EMNLP2023] [[paper link](https://aclanthology.org/2023.findings-emnlp.713.pdf)]
+12.  **A Benchmark for Semi-Inductive Link Prediction in Knowledge Graphs** [EMNLP2023] [[paper link](https://aclanthology.org/2023.findings-emnlp.713.pdf)]
 
      提出Wikidata5M-SI的基准测试，用于评估知识图谱中半归纳链接预测模型。该基准基于Wikidata5M数据集。任务类型：直推式、少量样本和零样本链接预测；上下文信息：从仅依赖KG结构、包含实体提及到包含详细描述。
 【半归纳链接预测（SI-LP）】【Wikidata5M-SI】【MRR和Hits@K（K=1, 3, 10）】【图模型、文本模型、混合模型】
 
-14. Language Models as Inductive Reasoners [EACL 2024] [paper link](https://aclanthology.org/2024.eacl-long.13/)
+13. Language Models as Inductive Reasoners [EACL 2024] [paper link](https://aclanthology.org/2024.eacl-long.13/)
 
     提出了一种从自然语言事实中归纳自然语言规则的新任务，创建了包含1.2k规则-事实对的DEER数据集。该研究使用自然语言作为知识表示，预训练语言模型作为"推理器"，提供了预训练语言模型归纳自然语言规则能力的首次全面分析。【归纳推理】【自然语言表示、预训练语言模型】【DEER数据集、规则-事实对】
 
-15. RuDSI: Graph-based Word Sense Induction Dataset for Russian [COLING2022] [paper link](https://aclanthology.org/2022.textgraphs-1.9/)
+14. RuDSI: Graph-based Word Sense Induction Dataset for Russian [COLING2022] [paper link](https://aclanthology.org/2022.textgraphs-1.9/)
 
     构建基于图的俄语词义归纳数据集，为俄语词义消歧和多义词研究提供标准评估资源。【词义归纳数据集】【俄语词义数据集RuDSI】【词义聚类质量】【图词义表示方法】
 
-16. ShadowSense: A Multi-annotated Dataset for Evaluating Word Sense Induction [COLING2024] [paper link](https://aclanthology.org/2024.lrec-main.1286/)
+15. ShadowSense: A Multi-annotated Dataset for Evaluating Word Sense Induction [COLING2024] [paper link](https://aclanthology.org/2024.lrec-main.1286/)
 
     构建多标注词义归纳评估数据集，为词义归纳方法提供标准化和多维度的评估基准。【词义归纳评估】【ShadowSense数据集】【标注一致性指标】【多重标注融合的评估框架】
+
+16.  **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
+   
+      提出了一种基于数列的类比推理合成数据管线，以code为呈现形式构建了一批SFT合成数据，有效的提高了LLMs的类比推理和code推理能力。
 
 
 ## Explanations and Explorations
