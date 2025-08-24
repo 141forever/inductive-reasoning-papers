@@ -1617,7 +1617,7 @@
 
 319.  **Categorial Grammar Induction with Stochastic Category Selection** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.258.pdf)]
 
-     本文提出一种用于范畴文法（categorial grammar）归纳的新型模型，能够从原始未标注文本学习语法结构，且无需依赖词性标注或偏向性目标函数。其关键在于设计出一种随机过程，用于动态选择可用的句法范畴，从而移除先前模型中对分支结构行为的“捷径”依赖。在针对儿童语言输入语料（child-directed speech）的实验中，该模型实现了 recall-homogeneity 指标为 0.48，相比之前的范畴文法归纳器取得了显著提升。【语法归纳】【English child-directed speech 语料】【recall-homogeneity = 0.48】【带有随机范畴选择机制的范畴文法归纳模型】
+   本文提出一种用于范畴文法（categorial grammar）归纳的新型模型，能够从原始未标注文本学习语法结构，且无需依赖词性标注或偏向性目标函数。其关键在于设计出一种随机过程，用于动态选择可用的句法范畴，从而移除先前模型中对分支结构行为的“捷径”依赖。在针对儿童语言输入语料（child-directed speech）的实验中，该模型实现了 recall-homogeneity 指标为 0.48，相比之前的范畴文法归纳器取得了显著提升。【语法归纳】【English child-directed speech 语料】【recall-homogeneity = 0.48】【带有随机范畴选择机制的范畴文法归纳模型】
 
 320. **Linguistic Rule Induction Improves Adversarial and OOD Robustness in Large Language Models** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.924/)]
 
@@ -1654,7 +1654,7 @@
 
 328. **Commonsense Subgraph for Inductive Relation Reasoning with Meta-learning** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.150/)]
 
-     本文提出 CSML（Commonsense Subgraph Meta-Learning），一种将常识元信息纳入元学习框架的新方法，用于解决归纳式关系推理中的少样本问题。通过提取实体对应的概念构建“常识子图”（commonsense subgraph），CSML 利用这些高层语义作为元信息，帮助模型在极少或零样本关系下迅速适应与泛化。【归纳式关系推理】【概念抽取构建的常识子图 + few-shot 关系推理任务】【MRR, Hits@1/3/10 等指标】【CSML（元学习 + 常识子图辅助模型）】
+     本文提出 CSML（Commonsense Subgraph Meta-Learning），一种将常识元信息纳入元学习框架的新方法，用于解决归纳式关系推理中的少样本问题。通过提取实体对应的概念构建“常识子图”（commonsense subgraph），CSML 利用这些高层语义作为元信息，帮助模型在极少或零样本关系下迅速适应与泛化。【（少样本/零样本）归纳式关系推理】【概念抽取构建的常识子图 + few-shot 关系推理任务】【MRR, Hits@1/3/10 等指标】【CSML（元学习 + 常识子图辅助模型）】
 
 329. **Inductive Link Prediction in N-ary Knowledge Graphs** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.595/)]
 
