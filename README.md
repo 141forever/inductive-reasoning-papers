@@ -1549,7 +1549,7 @@
 
 304.**Cross-Lingual Emotion Lexicon Induction using Representation Alignment in Low-Resource Settings** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.517.pdf)]  
 
-      本文探讨在资源极度匮乏的语言环境下，如何从资源丰富语言的情感词典迁移构建目标语言的情感词典；方法先利用极小规模的单语语料（如少量圣经节）训练 fastText 嵌入并通过三种无监督对齐算法（Wasserstein-Procrustes、Unsupervised Orthogonal Refinement、Neural LM alignment）构建跨语言向量空间，再用 CSLS 基于词向量检索源语言的近邻，将其情感强度平均投射到目标词，最终评估包括翻译精度（precision@k）、与已有情感词典的皮尔逊相关性，以及下游句子情感预测性能。【情感词典归纳】【极小圣经语料 + NRC English Emotion Intensity Lexicon】【translation precision@3, Pearson correlation, sentence-level emotion prediction accuracy】【fastText + cross-lingual alignment (Wasserstein-Procrustes, Orthogonal Refinement, Neural LM variants) + CSLS 投射】  
+  本文探讨在资源极度匮乏的语言环境下，如何从资源丰富语言的情感词典迁移构建目标语言的情感词典；方法先利用极小规模的单语语料（如少量圣经节）训练 fastText 嵌入并通过三种无监督对齐算法（Wasserstein-Procrustes、Unsupervised Orthogonal Refinement、Neural LM alignment）构建跨语言向量空间，再用 CSLS 基于词向量检索源语言的近邻，将其情感强度平均投射到目标词，最终评估包括翻译精度（precision@k）、与已有情感词典的皮尔逊相关性，以及下游句子情感预测性能。【情感词典归纳】【极小圣经语料 + NRC English Emotion Intensity Lexicon】【translation precision@3, Pearson correlation, sentence-level emotion prediction accuracy】【fastText + cross-lingual alignment (Wasserstein-Procrustes, Orthogonal Refinement, Neural LM variants) + CSLS 投射】  
 
 
 305.  **A Simple and Effective Approach to Robust Unsupervised Bilingual Dictionary Induction** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.526.pdf)]  
@@ -1629,7 +1629,7 @@
 
 322.**Multilingual Substitution-based Word Sense Induction** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1035.pdf)]
 
-     本文提出一种基于**替换法（lexical substitution）**的多语言词义归纳（WSI）方法，在支持的 **100 种语言**之间几乎无需任何特别适配即可应用。作者利用 XLM-R 多语言掩码语言模型，通过设计多种替换生成策略（包括 Concat 和 Word Continuation Masking, WCM）结合目标注入（如 SDP）及 FastText 跨语言重新排序方法构建词义表示；然后对每个实例基于生成替换词构建 TF-IDF 向量并聚类，实现硬聚类的词义归纳。实验表明，该方法在常见的英文 WSI 数据集上表现与最先进的单语言方法相当，且在低资源语言上更具通用性与实用性。【词义归纳】【覆盖 100 种语言的单语语料 + XLM-R, FastText】【WSI 聚类性能（与单语言方法对比）】
+  本文提出一种基于**替换法（lexical substitution）**的多语言词义归纳（WSI）方法，在支持的 **100 种语言**之间几乎无需任何特别适配即可应用。作者利用 XLM-R 多语言掩码语言模型，通过设计多种替换生成策略（包括 Concat 和 Word Continuation Masking, WCM）结合目标注入（如 SDP）及 FastText 跨语言重新排序方法构建词义表示；然后对每个实例基于生成替换词构建 TF-IDF 向量并聚类，实现硬聚类的词义归纳。实验表明，该方法在常见的英文 WSI 数据集上表现与最先进的单语言方法相当，且在低资源语言上更具通用性与实用性。【词义归纳】【覆盖 100 种语言的单语语料 + XLM-R, FastText】【WSI 聚类性能（与单语言方法对比）】
 
 323. **NutFrame: Frame-based Conceptual Structure Induction with LLMs** [LREC 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1079/)]
 
@@ -1646,7 +1646,7 @@
 
 326.  **TaxoCritic: Exploring Credit Assignment in Taxonomy Induction with Multi-Critic Reinforcement Learning** [DLnLD (LREC-COLING Workshop) 2024] [[paper link](https://aclanthology.org/2024.dlnld-1.2/)]
 
-     本文面向自动分类体系构建（taxonomy induction），提出一种新颖的多 Critic 强化学习方法——TaxoCritic。该方法通过多个 Critic 代理（multi-critic RL agents）来细粒度评估生成分类边的子操作（sub-actions），增强归属与责任归因（credit assignment），从而提升模型在边识别（edge identification）上的准确性与稳健性。实验结果展示该方法相比现有模型在正确性和鲁棒性方面具有明显优势。【分类体系归纳】【DLnLD 2024 Workshop 提供的语料 /分类体系数据】【分类边准确率与鲁棒性指标】【深度多-Critic 强化学习模型（multi-critic RL with credit assignment）】
+  本文面向自动分类体系构建（taxonomy induction），提出一种新颖的多 Critic 强化学习方法——TaxoCritic。该方法通过多个 Critic 代理（multi-critic RL agents）来细粒度评估生成分类边的子操作（sub-actions），增强归属与责任归因（credit assignment），从而提升模型在边识别（edge identification）上的准确性与稳健性。实验结果展示该方法相比现有模型在正确性和鲁棒性方面具有明显优势。【分类体系归纳】【DLnLD 2024 Workshop 提供的语料 /分类体系数据】【分类边准确率与鲁棒性指标】【深度多-Critic 强化学习模型（multi-critic RL with credit assignment）】
 
 327. **Pre-trained Semantic Interaction based Inductive Graph Neural Networks for Text Classification** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.54.pdf)]
 
