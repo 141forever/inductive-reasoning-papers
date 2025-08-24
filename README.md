@@ -279,17 +279,17 @@
 
       探讨不同序列到序列神经网络模型（如CNN、LSTM、Transformer等）的归纳偏置。测试模型在层次化泛化和计数策略之间的偏好，在组合泛化和记忆之间的偏好。【层次化泛化与线性/计数泛化的区分任务、组合泛化与记忆的区分任务、SCAN数据集上的组合泛化任务】【自定义的字符串映射数据集、自定义的组合任务数据集、SCAN数据集】【完美一致比例、单例一致比例】【CNN、LSTM、Transformer】
 
-48. **It is not True that Transformers are Inductive Learners: Probing NLI Models with External Negation** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.116/)]
+48. **It is not True that Transformers are Inductive Learners: Probing NLI Models with External Negation** [EACL2024] [[paper link](https://aclanthology.org/2024.eacl-long.116.pdf)]
 
-    通过外部否定探测NLI模型，证明了Transformer模型在自然语言推理任务中未能学会逻辑推理。研究发现模型将外部否定视为干扰项，无法归纳学习排中律，且无法将单个前缀的模式泛化到相似前缀。【自然语言推理】【外部否定探测、逻辑推理能力】【排中律、模式泛化】
+      探讨 Transformer 模型（尤其是 NLI 模型）是否真正具备逻辑归纳学习能力。通过在 NLI 假设句中系统添加外部否定前缀（如 “it is not true that”），测试模型能否学习并泛化“排中律”（Law of Excluded Middle, LEM）规律，从而检验其是否掌握深层逻辑，而非依赖浅层启发式。【自然语言推理（NLI）】【MNLI、SNLI、基于外部否定构造的 challenge 数据集】【Accuracy】【DeBERTa-large（SNLI）、BART-large（MNLI / MNLI+SNLI+FEVER+ANLI）、RoBERTa-large（MNLI / SNLI / SNLI+MNLI+FEVER+ANLI）】
 
-49. **Inductive Knowledge Graph Completion with GNNs and Rules: An Analysis** [COLING2024] [[paper link](https://aclanthology.org/2024.lrec-main.792/)]
+49. **Inductive Knowledge Graph Completion with GNNs and Rules: An Analysis** [LREC‑COLING2024] [[paper link](https://aclanthology.org/2024.lrec-main.792.pdf)]
 
-    系统分析图神经网络和规则结合进行归纳知识图谱补全的方法，比较不同技术组合的有效性。【归纳知识图谱补全】【FB15k-237, WN18RR数据集】【Hit@K, MRR】【GNN-规则混合推理模型】
+    探讨在归纳式知识图谱补全任务中，规则基方法为何劣于图神经网络（GNNs）（如 NBFNet），并提出融合策略以提升性能和保持可解释性。【归纳式知识图谱补全（Inductive KGC）】【AnyBURL 规则方法、NBFNet 基于 GNN 的方法、构造的混合变体】【Mean Reciprocal Rank（MRR）、Hits@1/3/10】【NBFNet、AnyBURL、混合模型（改进规则方法 + GNN 重排序）】
 
-50. **How Well Can a Long Sequence Model Model Long Sequences? Comparing Architectural Inductive Biases on Long-Context Abilities** [COLING2025] [[paper link](https://aclanthology.org/2025.coling-main.3/)]
+50. **How Well Can a Long Sequence Model Model Long Sequences? Comparing Architectural Inductive Biases on Long‑Context Abilities** [COLING2025] [[paper link](https://aclanthology.org/2025.coling-main.3.pdf)]
 
-    比较不同架构归纳偏差对长序列建模能力的影响，分析长上下文处理的有效性和局限性。【架构归纳偏差】【长文本理解数据集】【长序列建模准确率】【多种长序列架构】
+    探讨不同架构（包括线性序列模型、混合模型与 Transformer 等）在处理训练长度之外的极长上下文时的表现差异与归纳偏置的实际效能。【长上下文建模能力评估（long‑context abilities）】【RULER 合成基准、needle‑in‑a‑haystack（NIAH）任务】【Accuracy】【Mamba2, Mamba2Attn (Hybrid), Transformer++, Sheared‑LLaMA, RecurrentGemma (含 instruction‑tuned), RWKV】
 
 
 ## Evaluations
@@ -302,13 +302,13 @@
 
     对当前大语言模型的归纳推理能力进行了全面评估，认为仅考虑规则归纳过于狭窄，归纳推理通常与规则应用、结果验证和信息整合等其他能力混合。使用符号任务探测发现即使最先进的LLMs也显著失败。【归纳推理能力评估】【大语言模型、符号任务探测】【规则应用、结果验证、信息整合】
 
-3. **ReproHum : Human Evaluation Reproduction Report for "Hierarchical Sketch Induction for Paraphrase Generation"** [COLING2024] [[paper link](https://aclanthology.org/2024.humeval-1.18/)]
+3. **ReproHum #0712-01: Human Evaluation Reproduction Report for “Hierarchical Sketch Induction for Paraphrase Generation”** [HumEval 2024] [[paper link](https://aclanthology.org/2024.humeval-1.18.pdf)]  
 
-    针对层次化草图归纳释义生成研究的人类评估复现报告，验证原始研究结果的可重复性。【层次化草图归纳】【释义生成数据集】【人类评估一致性】【层次化生成模型】
+   本文复现实验 Hosking 等（2022）关于 HRQ-VAE 模型生成同义句的人类评价，通过尽可能复制评价流程（包括评估平台、评价标准等），结果与原研究高度一致，表明该人类评价具备较高可复现性。【评价可复现性】【同义句生成评价实验复现】【评价一致性指标（与原结果对比一致）】【—】
 
-4. **Evaluating Generalization Capability of Language Models across Abductive, Deductive and Inductive Logical Reasoning** [COLING2025] [[paper link](https://aclanthology.org/2025.coling-main.330/)]
+4. **Evaluating Generalization Capability of Language Models across Abductive, Deductive and Inductive Logical Reasoning** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.330.pdf)]  
 
-    全面评估语言模型在溯因、演绎和归纳逻辑推理中的泛化能力，分析不同推理类型的能力差异。【逻辑推理泛化】【多类型逻辑推理数据集】【推理准确率】【多类型逻辑推理评估框架】
+   研究语言模型在不同类型逻辑推理（归纳、演绎、溯因）之间的泛化能力，评估其对未见逻辑规则的推理表现；通过构建包含多种推理类型的 UniADILR 数据集，考察模型在外推未见规则上的表现。构建新数据集 UniADILR → 系统测试 LMs 的 ADI 推理泛化能力 →【逻辑推理】【UniADILR】【准确率（分类或证明生成正确率）】【Transformer-based LMs（如 GPT, BERT 等）】
 
 ## Methods
 
@@ -1539,33 +1539,33 @@
 
       提出了一种新颖的基于语料库的事件本体归纳模型CEO，用于放宽预定义事件本体的限制。该模型利用摘要数据集的远程监督检测语料库级别的显著事件，并利用外部事件知识强制短距离内的事件具有相近的嵌入。【事件本体归纳】【语料库级别、远程监督】【外部事件知识、嵌入相似性】
 
-302. **Relation Induction in Word Embeddings Revisited** [COLING 2018] [[paper link](https://aclanthology.org/C18-1138/)]
+302. **Relation Induction in Word Embeddings Revisited** [COLING 2018] [[paper link](https://aclanthology.org/C18-1138.pdf)]
 
-      重新审视词嵌入中的关系归纳问题，系统分析现有方法并提出改进策略，提升关系发现的准确性和鲁棒性。【关系归纳】【词嵌入关系数据集】【关系发现准确率】【词向量空间几何分析模型】
+   提出两种概率关系归纳模型：一种基于翻译但使用高斯分布建模翻译向量的变异性并对源词和目标词施加软约束；另一种利用贝叶斯线性回归假设相关词向量之间存在线性映射，以较弱的假设提升泛化能力。通过高斯+软约束减少错误诱发，或用线性回归在需要更多样本时更稳健。 【关系归纳】【BATS 数据集等（显式关系对训练／测试）】【关系预测准确性（排序精度）】【word embeddings + Bayesian Gaussian translation model, Bayesian linear regression model】
 
-303. **Induction of a Large-Scale Knowledge Graph from the Regesta Imperii** [COLING 2018] [[paper link](https://aclanthology.org/W18-4518/)]
+303. **Induction of a Large-Scale Knowledge Graph from the Regesta Imperii** [LaTeCH 2018] [[paper link](https://aclanthology.org/W18-4518.pdf)]  
 
-      从中世纪历史文档Regesta Imperii中自动构建大规模知识图谱，展示历史文本的结构化知识提取能力。【知识图谱归纳】【Regesta Imperii历史文档】【知识抽取精度和三元组质量】【命名实体识别和关系抽取流水线】
+   将 Regesta Imperii（中世纪欧洲帝王和教皇签发的大量摘要文档）中的主体—动词—宾语关系抽取为三元组，构建并可视化一个大规模知识图谱，目标是为历史学者提供检索与探索工具。【知识图谱构建】【Regesta Imperii 文档集（超过 150 000 摘要）】【图结构分析指标（节点数、边数、度分布等）】【基于句法分析与命名实体识别的三元组抽取方法】
 
-304. **Cross-Lingual Emotion Lexicon Induction using Representation Alignment in Low-Resource Settings** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.517/)]
+304. **Cross-Lingual Emotion Lexicon Induction using Representation Alignment in Low-Resource Settings** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.517.pdf)]  
 
-      在低资源环境下通过表示对齐技术进行跨语言情感词典归纳，解决资源稀缺语言的情感分析问题。【跨语言情感词典归纳】【多语言情感数据集】【情感词汇覆盖率和F1分数】【跨语言词嵌入对齐模型】
+   本文旨在研究如何从资源丰富语言中迁移情感词典到资源贫乏语言。在仅有极小单语语料的条件下，通过构建跨语言对齐的词向量空间，将源语言已有的情感强度评分迁移至目标语言，评估可得情感词典的质量和在下游句子情感预测任务中的表现，以衡量方法对低资源情感分析的适用性。提出利用三种无监督对齐算法（Wasserstein-Procrustes, Unsupervised Orthogonal Refinement, neural LM-based alignment）对 fastText 单语词嵌入进行对齐，再通过 CSLS（Cross-Domain Similarity Local Scaling）从源词找到目标词的 k=3 最相关邻居进行情感评分投射。使用的资源包括源语言情感词典和源/目标语言的单语语料；评价采用翻译精度、与现有情感词典的相关性，以及句子级情感预测效果。【情感词典归纳】【小规模单语语料 + 源语言情感词典】【翻译精度、相关性、句子情感预测准确性】【跨语言 fastText 嵌入对齐方法（如 Wasserstein-Procrustes、Unsupervised Orthogonal Refinement、neural LM alignment）】
 
-305. **A Simple and Effective Approach to Robust Unsupervised Bilingual Dictionary Induction** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.526/)]
+305. **A Simple and Effective Approach to Robust Unsupervised Bilingual Dictionary Induction** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.526.pdf)]  
 
-      提出简单有效的鲁棒无监督双语词典归纳方法，通过改进对齐策略提升跨语言词汇映射的准确性。【无监督双语词典归纳】【MUSE, VecMap数据集】【P@1, P@5, P@10】【改进的词嵌入对齐算法】
+      本文提出一种简单而有效的鲁棒无监督双语词典归纳方法，针对现有方法对噪声和初始化敏感的问题，改进了跨语言词向量的对齐与映射策略。通过引入更稳健的初始映射、迭代精炼和噪声过滤机制，使得在不同语料和语言对下表现更加稳定，且不依赖平行数据。实验在 MUSE 和 VecMap 等多语言数据集上进行，结果表明在多种语言对上均优于现有无监督方法，显著提升 P@1、P@5、P@10 等指标。【无监督双语词典归纳】【MUSE, VecMap】【P@1, P@5, P@10】【改进的稳健词嵌入对齐算法】
 
-306. **Data Selection for Bilingual Lexicon Induction from Specialized Comparable Corpora** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.527/)]
+306. **Data Selection for Bilingual Lexicon Induction from Specialized Comparable Corpora** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.527.pdf)]  
 
-      研究专业化可比语料库中双语词典归纳的数据选择策略，优化领域特定词汇的提取效果。【双语词典归纳】【专业领域可比语料库】【词汇抽取精度和覆盖率】【数据过滤和选择算法】
+   本文探讨在专门领域的小规模可比语料中如何有效进行双语词典归纳。由于领域内平行或可比语料稀缺，直接训练往往效果有限。作者提出利用外域可比语料，通过数据选择挑选对目标领域最有帮助的句对，从而提升词典归纳的准确性。论文系统比较了三种数据选择方法：基于词频的 TF-IDF 评分、基于语言模型的交叉熵选择、以及利用 BERT 句向量计算相似度的方法。在多语言多领域实验中，交叉熵方法表现最佳，相比不做数据选择的基线，平均精准率（MAP）提升约 4 个百分点，同时计算效率是 BERT 方法的十倍，适用于实际低资源场景。【双语词典归纳】【专用可比语料 + 外域补充】【MAP（平均精准率）】【数据选择方法：TF-IDF、交叉熵、BERT 模型】
 
-307. **Combining Word Embeddings with Bilingual Orthography Embeddings for Bilingual Dictionary Induction** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.531/)]
+307. **Combining Word Embeddings with Bilingual Orthography Embeddings for Bilingual Dictionary Induction** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.531.pdf)]  
 
-      结合词嵌入和双语正字法嵌入进行双语词典归纳，利用拼写信息增强跨语言词汇对齐效果。【双语词典归纳】【多语言词典数据集】【词汇对齐准确率】【多模态嵌入融合模型】
+      本文提出在双语词典归纳任务中结合语义词嵌入和双语正字法（拼写）嵌入，以提升特别是低频词和命名实体的翻译效果。作者训练无监督序列到序列转写模型（seq2seqTr）来生成双语正字法嵌入（BOEs），并与语义词嵌入（BWEs）联合，通过分类模型在两者之间自适应选择最佳翻译来源。实验在 English–Russian BUCC 2020 数据集上按词频分层评估，方法在高、中、低频区间均显著提升 acc@n 指标，并在 NEWS 2010 转写任务上也表现优异，证明跨脚本音译能力强。【双语词典归纳】【BUCC 2020 (En–Ru)、NEWS 2010】【acc@n】【BWEs+BOEs 多模态融合模型（seq2seqTr + 分类器）】
 
-308. **BME-TUW at SR'20: Lexical grammar induction for surface realization** [COLING 2020] [[paper link](https://aclanthology.org/2020.msr-1.2/)]
+308. **Combining Word Embeddings with Bilingual Orthography Embeddings for Bilingual Dictionary Induction** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.531.pdf)]
 
-      开发用于表面实现任务的词汇语法归纳方法，在SR'20共享任务中展示自动语法规则学习能力。【词汇语法归纳】【SR'20表面实现数据集】【BLEU分数】【统计语法归纳系统】
+   本文研究如何在双语词典归纳（BDI）任务中结合语义信息和正字法（拼写）信息以提升低频词或命名实体的翻译准确性。提出通过训练无监督的序列到序列转写模型（seq2seqTr）构建 **Bilingual Orthography Embeddings（BOEs）**，使源语言和目标语言中音译对在向量空间中靠近，然后设计一个分类模型在**BWEs（语义嵌入）**与 **BOEs（正字法嵌入）** 之间智能选择最合适的翻译来源。通过在 English–Russian 的 BUCC 2020 数据集上依频率（高频/中频/低频）细分测试，分类模型相比基线方法在所有频率区间均显著提升 **acc@n** 指标；此外，在 NEWS 2010 转写挖掘任务上，BOEs 的表现也优越，表明其跨脚本音译能力强。【双语词典归纳】【BUCC 2020 (En–Ru) + NEWS 2010 转写挖掘任务】【acc@n】【BWEs, BOEs, seq2seqTr-based classification model】
 
 309. **Lexical Induction of Morphological and Orthographic Forms for Low-Resourced Languages** [COLING 2020] [[paper link](https://aclanthology.org/2020.msr-1.5/)]
 
