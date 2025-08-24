@@ -68,11 +68,11 @@
 
 14. **RuDSI: Graph-based Word Sense Induction Dataset for Russian** [TextGraphs-16 (2022)] [[paper link](https://aclanthology.org/2022.textgraphs-1.9/)]
 
-   本文提出 RuDSI——一种基于图结构的俄语词义归纳（WSI）数据集，利用俄国国家语料库构建语境用法图（Word Usage Graphs, WUGs），通过人工标注与半自动图聚类生成词义，完全数据驱动，无预先定义的词义标签；分析注释流程与聚类参数对结果的影响，并评估多个基线 WSI 方法在此数据集上的表现。【词义归纳】【Russian National Corpus（WUG 构造）】【聚类质量指标（如 ARI 等）】【—（数据集基准方法）】
+     本文提出 RuDSI——一种基于图结构的俄语词义归纳（WSI）数据集，利用俄国国家语料库构建语境用法图（Word Usage Graphs, WUGs），通过人工标注与半自动图聚类生成词义，完全数据驱动，无预先定义的词义标签；分析注释流程与聚类参数对结果的影响，并评估多个基线 WSI 方法在此数据集上的表现。【词义归纳】【Russian National Corpus（WUG 构造）】【聚类质量指标（如 ARI 等）】【—（数据集基准方法）】
 
 15. **ShadowSense: A Multi-annotated Dataset for Evaluating Word Sense Induction** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1286/)]
 
-   本文提出 ShadowSense —— 一个针对词义归纳（WSI）任务的新型双语（捷克语–英语）数据集，其特点在于每个实例由多位（最多十位）标注者独立注释，以记录标注者间一致性作为评价系统可靠性的关键依据。作者详细描述注释流程、语境用法聚类方法，以及如何利用标注一致性对实例加权或过滤，从而构建更稳健的评估机制。同时，评估了三种神经 WSI 系统，展示在该数据集上的表现与传统评估范式具有显著差异。【词义归纳】【捷克语–英语双语语料 + 多标注者注释】【标注者一致性权重评估（可加权或剔除低一致性实例）】【—】  
+     本文提出 ShadowSense —— 一个针对词义归纳（WSI）任务的新型双语（捷克语–英语）数据集，其特点在于每个实例由多位（最多十位）标注者独立注释，以记录标注者间一致性作为评价系统可靠性的关键依据。作者详细描述注释流程、语境用法聚类方法，以及如何利用标注一致性对实例加权或过滤，从而构建更稳健的评估机制。同时，评估了三种神经 WSI 系统，展示在该数据集上的表现与传统评估范式具有显著差异。【词义归纳】【捷克语–英语双语语料 + 多标注者注释】【标注者一致性权重评估（可加权或剔除低一致性实例）】【—】  
 
 
 16.  **Code-Driven Inductive Synthesis: Enhancing Reasoning Abilities of Large Language Models with Sequences** [Arxiv2025] [[paper link](https://arxiv.org/abs/2503.13109)]
@@ -285,11 +285,11 @@
 
 49.  **Inductive Knowledge Graph Completion with GNNs and Rules: An Analysis** [arXiv 2023] [[paper link](https://arxiv.org/abs/2308.07942)]
 
-   本文分析了在归纳式知识图谱补全任务中，基于图神经网络（GNNs，如 NBFNet）的方法为何优于规则学习方法（如 AnyBURL），并提出改进策略使规则方法性能接近甚至超越 GNN。通过解决两个主要问题——“零置信实体未被排序”和“仅依赖单一路径聚合证据”，作者设计了混合模型（rule-based + GNN重排序 /证据聚合），在标准归纳任务（如 FB15k-237、WN18RR、NELL-995）上实现接近甚至超越 NBFNet 的性能，同时保持规则方法的可解释性；而进一步使用对全图进行重排名的变体，则持续优于 NBFNet。【知识图谱补全（归纳式）】【FB15k-237, WN18RR, NELL-995 归纳版】【MRR, Hits@1, Hits@3, Hits@10】【AnyBURL (规则方法), NBFNet (GNN), 混合策略（规则 + GNN 重排序/证据聚合）】
+      本文分析了在归纳式知识图谱补全任务中，基于图神经网络（GNNs，如 NBFNet）的方法为何优于规则学习方法（如 AnyBURL），并提出改进策略使规则方法性能接近甚至超越 GNN。通过解决两个主要问题——“零置信实体未被排序”和“仅依赖单一路径聚合证据”，作者设计了混合模型（rule-based + GNN重排序 /证据聚合），在标准归纳任务（如 FB15k-237、WN18RR、NELL-995）上实现接近甚至超越 NBFNet 的性能，同时保持规则方法的可解释性；而进一步使用对全图进行重排名的变体，则持续优于 NBFNet。【知识图谱补全（归纳式）】【FB15k-237, WN18RR, NELL-995 归纳版】【MRR, Hits@1, Hits@3, Hits@10】【AnyBURL (规则方法), NBFNet (GNN), 混合策略（规则 + GNN 重排序/证据聚合）】
 
 50. **How Well Can a Long Sequence Model Model Long Sequences? Comparing Architectural Inductive Biases on Long-Context Abilities** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.3.pdf)]
 
-   本文评估了各种“长序列模型”（包括纯序列模型、Transformer 变体及混合模型）在超出训练上下文长度下处理长文本序列的能力，揭示理论可扩展性并不总意味着实践中的稳定表现。通过在 Ruler 合成基准以及 needle-in-a-haystack 任务上进行比较，发现无论是纯序列层、注意力机制还是混合结构，所有模型在外推至更长序列时普遍表现不佳，且不同架构对序列格式的敏感性不同，表明归纳偏差的不一致性极大影响长上下文理解能力。【长序列建模】【Ruler 合成任务, needle-in-a-haystack 控制任务】【准确率】【Mamba2（纯序列模型）, Transformer++（改进 Transformer）, Mamba2Attn（混合模型）, RecurrentGemma, Sheared-LLaMA, RWKV 等】  
+      本文评估了各种“长序列模型”（包括纯序列模型、Transformer 变体及混合模型）在超出训练上下文长度下处理长文本序列的能力，揭示理论可扩展性并不总意味着实践中的稳定表现。通过在 Ruler 合成基准以及 needle-in-a-haystack 任务上进行比较，发现无论是纯序列层、注意力机制还是混合结构，所有模型在外推至更长序列时普遍表现不佳，且不同架构对序列格式的敏感性不同，表明归纳偏差的不一致性极大影响长上下文理解能力。【长序列建模】【Ruler 合成任务, needle-in-a-haystack 控制任务】【准确率】【Mamba2（纯序列模型）, Transformer++（改进 Transformer）, Mamba2Attn（混合模型）, RecurrentGemma, Sheared-LLaMA, RWKV 等】  
 
 
 
@@ -1496,10 +1496,10 @@
 
       提出了一种无监督语法归纳方法，通过自诱导语法结构增强Transformer模型的语言理解和生成能力，解决了传统方法依赖外部解析器的问题，并验证了其在归纳学习中的有效性。方法总结：通过语法解析器生成语法掩码指导注意力机制，结合BPE嵌入和混合损失函数优化语法归纳过程。【机器翻译（MT）和自然语言理解】【机器翻译：IWSLT14-De/En、NC11-De/En、ASPEC-Zh/Ja；自然语言理解：GLUE（包含CoLA、SST-2、MNLI等子任务）】【BLEU、准确率/F1/Matthews相关系数】【基于语法掩码的语法感知Transformer】
 
-291.**Unsupervised Does Not Mean Uninterpretable: The Case for Word Sense Induction and Disambiguation** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.74.pdf)]  
+291. **Unsupervised Does Not Mean Uninterpretable: The Case for Word Sense Induction and Disambiguation** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.74.pdf)]
       本文探讨无监督词义归纳与消歧（WSI/WSD）任务的可解释性问题，提出将神经嵌入聚类结果映射到人类可理解的语义标签的方法。作者基于多语言语料构建聚类，并通过上下文特征与原型词表映射生成解释标签，验证无监督方法并非“黑箱”。在 SemEval 和 WiC 等数据集上评估，结果显示该方法可在保持高性能的同时，提供可解释的词义聚类，帮助理解模型决策过程。【词义归纳/消歧】【SemEval WSI/WSD, WiC】【聚类性能与可解释性评估指标】【基于神经嵌入聚类+可解释语义标签映射】
 
-292. **From Segmentation to Analyses: a Probabilistic Model for Unsupervised Morphology Induction** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.41.pdf)]  
+293. **From Segmentation to Analyses: a Probabilistic Model for Unsupervised Morphology Induction** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.41.pdf)]  
       本文提出一种从词形分割到形态分析的统一概率模型，用于无监督形态归纳任务。模型在贝叶斯框架下同时学习词的形态切分及其语义分析，利用词典先验和词频信息，通过吉布斯采样推断词缀与词根。实验证明，该方法在多种形态复杂语言（芬兰语、土耳其语等）的分割和分析任务上优于现有无监督方法，提供了更丰富且结构化的形态分析结果。【无监督形态归纳】【芬兰语、土耳其语等形态复杂语料】【分割F1、分析准确率】【贝叶斯概率模型（吉布斯采样）】
 
 293.**The ContrastMedium Algorithm: Taxonomy Induction From Noisy Knowledge Graphs With Just A Few Links** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.19.pdf)]  
@@ -1540,16 +1540,16 @@
 
 302. **Relation Induction in Word Embeddings Revisited** [COLING 2018] [[paper link](https://aclanthology.org/C18-1138.pdf)]
 
-   本文针对“关系归纳”任务——即根据已有的词对关系样本，预测新的符合该关系的词对，分析了传统基于向量平移的方法易受错误正例影响的弱点，提出两种更鲁棒的概率模型：一种利用高斯分布在平移向量上建模其变异性并为源词与目标词施加软约束，另一种采用贝叶斯线性回归假设源词与目标词之间存在线性映射但更弱的结构假设，两者在控制错误预测与泛化能力之间取得更优平衡。【关系归纳】【BATS 数据集（关系实例）】【预测准确性（降低错误率）】【概率关系模型：Gaussian translation + Bayesian linear regression】
+      本文针对“关系归纳”任务——即根据已有的词对关系样本，预测新的符合该关系的词对，分析了传统基于向量平移的方法易受错误正例影响的弱点，提出两种更鲁棒的概率模型：一种利用高斯分布在平移向量上建模其变异性并为源词与目标词施加软约束，另一种采用贝叶斯线性回归假设源词与目标词之间存在线性映射但更弱的结构假设，两者在控制错误预测与泛化能力之间取得更优平衡。【关系归纳】【BATS 数据集（关系实例）】【预测准确性（降低错误率）】【概率关系模型：Gaussian translation + Bayesian linear regression】
 
 
 303. **Induction of a Large-Scale Knowledge Graph from the Regesta Imperii** [LaTeCH 2018] [[paper link](https://aclanthology.org/W18-4518.pdf)]  
 
-   将 Regesta Imperii（中世纪欧洲帝王和教皇签发的大量摘要文档）中的主体—动词—宾语关系抽取为三元组，构建并可视化一个大规模知识图谱，目标是为历史学者提供检索与探索工具。【知识图谱构建】【Regesta Imperii 文档集（超过 150 000 摘要）】【图结构分析指标（节点数、边数、度分布等）】【基于句法分析与命名实体识别的三元组抽取方法】
+      将 Regesta Imperii（中世纪欧洲帝王和教皇签发的大量摘要文档）中的主体—动词—宾语关系抽取为三元组，构建并可视化一个大规模知识图谱，目标是为历史学者提供检索与探索工具。【知识图谱构建】【Regesta Imperii 文档集（超过 150 000 摘要）】【图结构分析指标（节点数、边数、度分布等）】【基于句法分析与命名实体识别的三元组抽取方法】
 
 304.**Cross-Lingual Emotion Lexicon Induction using Representation Alignment in Low-Resource Settings** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.517.pdf)]  
 
-   本文探讨在资源极度匮乏的语言环境下，如何从资源丰富语言的情感词典迁移构建目标语言的情感词典；方法先利用极小规模的单语语料（如少量圣经节）训练 fastText 嵌入并通过三种无监督对齐算法（Wasserstein-Procrustes、Unsupervised Orthogonal Refinement、Neural LM alignment）构建跨语言向量空间，再用 CSLS 基于词向量检索源语言的近邻，将其情感强度平均投射到目标词，最终评估包括翻译精度（precision@k）、与已有情感词典的皮尔逊相关性，以及下游句子情感预测性能。【情感词典归纳】【极小圣经语料 + NRC English Emotion Intensity Lexicon】【translation precision@3, Pearson correlation, sentence-level emotion prediction accuracy】【fastText + cross-lingual alignment (Wasserstein-Procrustes, Orthogonal Refinement, Neural LM variants) + CSLS 投射】  
+      本文探讨在资源极度匮乏的语言环境下，如何从资源丰富语言的情感词典迁移构建目标语言的情感词典；方法先利用极小规模的单语语料（如少量圣经节）训练 fastText 嵌入并通过三种无监督对齐算法（Wasserstein-Procrustes、Unsupervised Orthogonal Refinement、Neural LM alignment）构建跨语言向量空间，再用 CSLS 基于词向量检索源语言的近邻，将其情感强度平均投射到目标词，最终评估包括翻译精度（precision@k）、与已有情感词典的皮尔逊相关性，以及下游句子情感预测性能。【情感词典归纳】【极小圣经语料 + NRC English Emotion Intensity Lexicon】【translation precision@3, Pearson correlation, sentence-level emotion prediction accuracy】【fastText + cross-lingual alignment (Wasserstein-Procrustes, Orthogonal Refinement, Neural LM variants) + CSLS 投射】  
 
 
 305.  **A Simple and Effective Approach to Robust Unsupervised Bilingual Dictionary Induction** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.526.pdf)]  
@@ -1564,7 +1564,7 @@
 
 307. **Combining Word Embeddings with Bilingual Orthography Embeddings for Bilingual Dictionary Induction** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.531.pdf)]  
 
-      本文提出在双语词典归纳任务中结合语义词嵌入和双语正字法（拼写）嵌入，以提升特别是低频词和命名实体的翻译效果。作者训练无监督序列到序列转写模型（seq2seqTr）来生成双语正字法嵌入（BOEs），并与语义词嵌入（BWEs）联合，通过分类模型在两者之间自适应选择最佳翻译来源。实验在 English–Russian BUCC 2020 数据集上按词频分层评估，方法在高、中、低频区间均显著提升 acc@n 指标，并在 NEWS 2010 转写任务上也表现优异，证明跨脚本音译能力强。【双语词典归纳】【BUCC 2020 (En–Ru)、NEWS 2010】【acc@n】【BWEs+BOEs 多模态融合模型（seq2seqTr + 分类器）】
+        本文提出在双语词典归纳任务中结合语义词嵌入和双语正字法（拼写）嵌入，以提升特别是低频词和命名实体的翻译效果。作者训练无监督序列到序列转写模型（seq2seqTr）来生成双语正字法嵌入（BOEs），并与语义词嵌入（BWEs）联合，通过分类模型在两者之间自适应选择最佳翻译来源。实验在 English–Russian BUCC 2020 数据集上按词频分层评估，方法在高、中、低频区间均显著提升 acc@n 指标，并在 NEWS 2010 转写任务上也表现优异，证明跨脚本音译能力强。【双语词典归纳】【BUCC 2020 (En–Ru)、NEWS 2010】【acc@n】【BWEs+BOEs 多模态融合模型（seq2seqTr + 分类器）】
 
 
 308. **Combining Word Embeddings with Bilingual Orthography Embeddings for Bilingual Dictionary Induction** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.531.pdf)]
@@ -1573,7 +1573,7 @@
 
 309. **Lexical Induction of Morphological and Orthographic Forms for Low-Resourced Languages** [COLING Workshop MSR 2020] [[paper link](https://aclanthology.org/2020.msr-1.5.pdf)]
 
-   本文针对资源极端匮乏的低资源语言（尤其是沒有标准正字法的方言性语言，如 Arabizi）中的高词汇稀疏问题，提出一种结合规则推导与词嵌入的词形与正字法变体归纳方法：通过规则映射生成潜在变体候选，并基于词向量相似性筛选与扩展。案例应用于拉丁化阿拉伯方言（Arabizi），构建包含超过 171 000 条词条的变体词汇词典，并在情感分析任务中显著提升表现。【词形与正字法归纳】【Arabizi 方言拉丁化语料 + 规则映射 + 词嵌入】【情感分析任务性能提升】【规则基 + 词嵌入融合方法】
+     本文针对资源极端匮乏的低资源语言（尤其是沒有标准正字法的方言性语言，如 Arabizi）中的高词汇稀疏问题，提出一种结合规则推导与词嵌入的词形与正字法变体归纳方法：通过规则映射生成潜在变体候选，并基于词向量相似性筛选与扩展。案例应用于拉丁化阿拉伯方言（Arabizi），构建包含超过 171 000 条词条的变体词汇词典，并在情感分析任务中显著提升表现。【词形与正字法归纳】【Arabizi 方言拉丁化语料 + 规则映射 + 词嵌入】【情感分析任务性能提升】【规则基 + 词嵌入融合方法】
 
 310. **BOS at SemEval-2020 Task 1: Word Sense Induction via Lexical Substitution for Lexical Semantic Change Detection** [SemEval 2020] [[paper link](https://aclanthology.org/2020.semeval-1.20.pdf)]
 
@@ -1581,84 +1581,84 @@
 
 311. **Bilingual Lexicon Induction across Orthographically-distinct Under-Resourced Dravidian Languages** [VarDial 2020] [[paper link](https://www.aclweb.org/anthology/2020.vardial-1.6/)]
 
-   本文针对使用不同书写系统的资源匮乏 Dravidian 语言（如 Tamil、Telugu、Kannada、Malayalam），提出一种方法：首先将这些语言统一转写为拉丁字母，通过最大公共子序列（LCS）替代 Levenshtein 编辑距离来检测同源词，再用于双语词典归纳以提升嵌入对齐的准确性。实验显示，该方法大幅提升了多种语言对上的词典归纳准确率，使得词典自动构建在这些低资源、书写系统多样的语言组合中变得可行。【双语词典归纳】【Dravidian 语言 Wikipedia 单语语料 + IndoWordNet 种子词典】【翻译准确率（%）】【转写处理 + LCS 驱动的嵌入对齐方法】
+     本文针对使用不同书写系统的资源匮乏 Dravidian 语言（如 Tamil、Telugu、Kannada、Malayalam），提出一种方法：首先将这些语言统一转写为拉丁字母，通过最大公共子序列（LCS）替代 Levenshtein 编辑距离来检测同源词，再用于双语词典归纳以提升嵌入对齐的准确性。实验显示，该方法大幅提升了多种语言对上的词典归纳准确率，使得词典自动构建在这些低资源、书写系统多样的语言组合中变得可行。【双语词典归纳】【Dravidian 语言 Wikipedia 单语语料 + IndoWordNet 种子词典】【翻译准确率（%）】【转写处理 + LCS 驱动的嵌入对齐方法】
 
 
 312. **Team Rouges at SemEval-2020 Task 12: Cross-lingual Inductive Transfer to Detect Offensive Language** [SemEval 2020] [[paper link](https://aclanthology.org/2020.semeval-1.290.pdf)]
 
-   本文提出一种跨语言归纳迁移方法，用于在多语言环境中识别社交媒体中的冒犯性语言。作者基于上下文化字嵌入模型 XLM-RoBERTa（XLM-R），在五种语言的 OffensEval 2020 多语言冒犯语识别数据集上进行训练与评估——在英语子任务中取得 F1=0.919 的第四名，在土耳其语子任务中取得 F1=0.781 的第八名。进一步实验显示该模型在零样本学习场景下依然具有竞争力，具备良好的跨语言扩展能力。【冒犯语言识别】【OffensEval 2020 (五种语言 Twitter 语料)】【F1-score】【XLM-R】
+     本文提出一种跨语言归纳迁移方法，用于在多语言环境中识别社交媒体中的冒犯性语言。作者基于上下文化字嵌入模型 XLM-RoBERTa（XLM-R），在五种语言的 OffensEval 2020 多语言冒犯语识别数据集上进行训练与评估——在英语子任务中取得 F1=0.919 的第四名，在土耳其语子任务中取得 F1=0.781 的第八名。进一步实验显示该模型在零样本学习场景下依然具有竞争力，具备良好的跨语言扩展能力。【冒犯语言识别】【OffensEval 2020 (五种语言 Twitter 语料)】【F1-score】【XLM-R】
 
 
 313.  **Resource Constrained Dialog Policy Learning via Differentiable Inductive Logic Programming** [COLING 2020] [[paper link](https://aclanthology.org/2020.coling-main.597.pdf)]  
 
-   本文提出一种面向资源受限场景的对话策略学习方法——通过可微归纳逻辑（DILOG），将归纳逻辑编程与神经网络结合于一体，旨在提升在样本极少时的学习效率与跨领域迁移能力。DILOG 在 SimDial 数据集上的单样本训练中实现了**99%以上的领域内测试准确率**，并可零样本迁移到其他领域保持**99%以上迁移准确率**；在 MultiWoZ 上，同样展示了超过**90%的 Inform 和 Success**指标，同时提出引入 Action F1 分数，以衡量误报问题。与最先进神经模型相比，DILOG 在 MultiWoZ 上达到了**约 100 倍的数据效率**，且性能相当:contentReference[oaicite:0]{index=0}。【对话策略学习（资源受限）】【SimDial, MultiWoZ】【域内准确率, Inform, Success, Action F1】【DILOG（可微归纳逻辑模型）】
+      本文提出一种面向资源受限场景的对话策略学习方法——通过可微归纳逻辑（DILOG），将归纳逻辑编程与神经网络结合于一体，旨在提升在样本极少时的学习效率与跨领域迁移能力。DILOG 在 SimDial 数据集上的单样本训练中实现了**99%以上的领域内测试准确率**，并可零样本迁移到其他领域保持**99%以上迁移准确率**；在 MultiWoZ 上，同样展示了超过**90%的 Inform 和 Success**指标，同时提出引入 Action F1 分数，以衡量误报问题。与最先进神经模型相比，DILOG 在 MultiWoZ 上达到了**约 100 倍的数据效率**，且性能相当:contentReference[oaicite:0]{index=0}。【对话策略学习（资源受限）】【SimDial, MultiWoZ】【域内准确率, Inform, Success, Action F1】【DILOG（可微归纳逻辑模型）】
 
 
 314.  **ConTextING: Granting Document-Wise Contextual Embeddings to Graph Neural Networks for Inductive Text Classification** [COLING 2022] [[paper link](https://aclanthology.org/2022.coling-1.100/)]
 
-   本文提出 ConTextING 模型，将文档级上下文嵌入引入到图神经网络中，以提升归纳式文本分类能力。作者针对先前 GNN 方法缺乏上下文感知、难以处理未见词与新文档的问题，设计了机制融合每个文档自己的语言模型编码（例如 BERT）与文档内部的图结构，通过图节点接入文档级嵌入，增强每份文档图的表示能力并支持归纳泛化能力【文本分类（归纳式）】【各文档 BERT 级上下文嵌入 + 文档级图结构】【分类准确率（如 Acc, F1）】【ConTextING（GNN + 文档上下文融合模型）】
+      本文提出 ConTextING 模型，将文档级上下文嵌入引入到图神经网络中，以提升归纳式文本分类能力。作者针对先前 GNN 方法缺乏上下文感知、难以处理未见词与新文档的问题，设计了机制融合每个文档自己的语言模型编码（例如 BERT）与文档内部的图结构，通过图节点接入文档级嵌入，增强每份文档图的表示能力并支持归纳泛化能力【文本分类（归纳式）】【各文档 BERT 级上下文嵌入 + 文档级图结构】【分类准确率（如 Acc, F1）】【ConTextING（GNN + 文档上下文融合模型）】
 
 315.  **ArcaneQA: Dynamic Program Induction and Contextualized Encoding for Knowledge Base Question Answering** [COLING 2022] [[paper link](https://aclanthology.org/2022.coling-1.148.pdf)]
 
-   本文针对知识库问答（KBQA）中的搜索空间大与模式链接歧义两个挑战，提出 ArcaneQA —— 一种生成式模型框架，集成**动态程序归纳**（dynamic program induction）以灵活生成逻辑程序查询 **与** **动态上下文化编码**（dynamic contextualized encoding）以改进 schema linking，两者相互促进。实验表明，在多个 KBQA 基准数据集上，ArcaneQA 在效果与效率上均具备高度竞争力。【知识库问答（KBQA）】【多种流行 KBQA 基准数据集】【效果与效率表现优越】【ArcaneQA（生成式模型 + 动态程序归纳 + 动态上下文化编码）】
+      本文针对知识库问答（KBQA）中的搜索空间大与模式链接歧义两个挑战，提出 ArcaneQA —— 一种生成式模型框架，集成**动态程序归纳**（dynamic program induction）以灵活生成逻辑程序查询 **与** **动态上下文化编码**（dynamic contextualized encoding）以改进 schema linking，两者相互促进。实验表明，在多个 KBQA 基准数据集上，ArcaneQA 在效果与效率上均具备高度竞争力。【知识库问答（KBQA）】【多种流行 KBQA 基准数据集】【效果与效率表现优越】【ArcaneQA（生成式模型 + 动态程序归纳 + 动态上下文化编码）】
 
 
 316. **Cross-lingual Feature Extraction from Monolingual Corpora for Low-resource Unsupervised Bilingual Lexicon Induction** [COLING 2022] [[paper link](https://aclanthology.org/2022.coling-1.469/)]  
 
-   本文针对低资源语言环境下的无监督双语词典归纳（UBLI）任务，提出一种新颖的跨语言特征提取（CFE）方法。该方法从单语语料中挖掘语言无关的语义特征：通过分析词与其上下文词之间的字符级距离关系，构建反映词语语言无关关联的语义向量，再将其与预训练词嵌入融合以提升双语映射质量。实验表明，这种结合特征的方法显著改善了在极端资源匮乏条件下的词典归纳性能。【双语词典归纳（无监督）】【单语语料上下文 + 字符级距离特征】【—】【预训练词嵌入 + CFE 特征融合】  
+     本文针对低资源语言环境下的无监督双语词典归纳（UBLI）任务，提出一种新颖的跨语言特征提取（CFE）方法。该方法从单语语料中挖掘语言无关的语义特征：通过分析词与其上下文词之间的字符级距离关系，构建反映词语语言无关关联的语义向量，再将其与预训练词嵌入融合以提升双语映射质量。实验表明，这种结合特征的方法显著改善了在极端资源匮乏条件下的词典归纳性能。【双语词典归纳（无监督）】【单语语料上下文 + 字符级距离特征】【—】【预训练词嵌入 + CFE 特征融合】  
 
 317. **Prior Relational Schema Assists Effective Contrastive Learning for Inductive Knowledge Graph Completion** [COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1139/)]
 
-   本文研究在归纳式知识图谱补全任务中，如何利用关系的先验模式（relational schema）辅助对比学习以提升模型的泛化能力。作者通过引入实体类型构成的关系 schema 作为先验约束，设计了一种基于该先验的对比学习机制，使得模型在无监督或少监督下仍能学得更加区分性的实体关系表达，从而显著提升对新实体/新关系的补全能力。【归纳式知识图谱补全】【实体类型关系 schema 先验】【MRR, Hits@1, Hits@3, Hits@10 等补全指标】【Contrastive Learning + Relational Schema 先验融合模型】
+     本文研究在归纳式知识图谱补全任务中，如何利用关系的先验模式（relational schema）辅助对比学习以提升模型的泛化能力。作者通过引入实体类型构成的关系 schema 作为先验约束，设计了一种基于该先验的对比学习机制，使得模型在无监督或少监督下仍能学得更加区分性的实体关系表达，从而显著提升对新实体/新关系的补全能力。【归纳式知识图谱补全】【实体类型关系 schema 先验】【MRR, Hits@1, Hits@3, Hits@10 等补全指标】【Contrastive Learning + Relational Schema 先验融合模型】
 
 318. **Prompt-fused Framework for Inductive Logical Query Answering** [LREC 2024] [[paper link](https://arxiv.org/abs/2403.12646)]
 
-   本文提出 Pro-QE，一种针对知识图谱中归纳式逻辑查询应答的新型框架，旨在处理“新出现实体”（emerging entities）的推理问题，同时避免将复杂查询拆成子操作分别处理，而是从整体视角理解查询。Pro-QE 通过以下机制实现：① 融合已有查询嵌入方法，结合上下文信息聚合来构建新实体的表示；② 由符号逻辑查询生成 **query prompt**，用于引导模型从整体上捕捉查询逻辑；③ 构建两个全新的归纳式逻辑查询基准用于评估模型对未见实体的处理能力；④ 消融实验验证 aggregator 与 prompt 模块的有效性。【归纳式逻辑查询应答】【FB15k-237, NELL-995（归纳式逻辑查询基准）】【MRR（平均倒数排名）等查询准确性指标】【Pro-QE（含 aggregator + query prompt）】
+     本文提出 Pro-QE，一种针对知识图谱中归纳式逻辑查询应答的新型框架，旨在处理“新出现实体”（emerging entities）的推理问题，同时避免将复杂查询拆成子操作分别处理，而是从整体视角理解查询。Pro-QE 通过以下机制实现：① 融合已有查询嵌入方法，结合上下文信息聚合来构建新实体的表示；② 由符号逻辑查询生成 **query prompt**，用于引导模型从整体上捕捉查询逻辑；③ 构建两个全新的归纳式逻辑查询基准用于评估模型对未见实体的处理能力；④ 消融实验验证 aggregator 与 prompt 模块的有效性。【归纳式逻辑查询应答】【FB15k-237, NELL-995（归纳式逻辑查询基准）】【MRR（平均倒数排名）等查询准确性指标】【Pro-QE（含 aggregator + query prompt）】
 
 319.  **Categorial Grammar Induction with Stochastic Category Selection** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.258.pdf)]
 
-   本文提出一种用于范畴文法（categorial grammar）归纳的新型模型，能够从原始未标注文本学习语法结构，且无需依赖词性标注或偏向性目标函数。其关键在于设计出一种随机过程，用于动态选择可用的句法范畴，从而移除先前模型中对分支结构行为的“捷径”依赖。在针对儿童语言输入语料（child-directed speech）的实验中，该模型实现了 recall-homogeneity 指标为 0.48，相比之前的范畴文法归纳器取得了显著提升。【语法归纳】【English child-directed speech 语料】【recall-homogeneity = 0.48】【带有随机范畴选择机制的范畴文法归纳模型】
+     本文提出一种用于范畴文法（categorial grammar）归纳的新型模型，能够从原始未标注文本学习语法结构，且无需依赖词性标注或偏向性目标函数。其关键在于设计出一种随机过程，用于动态选择可用的句法范畴，从而移除先前模型中对分支结构行为的“捷径”依赖。在针对儿童语言输入语料（child-directed speech）的实验中，该模型实现了 recall-homogeneity 指标为 0.48，相比之前的范畴文法归纳器取得了显著提升。【语法归纳】【English child-directed speech 语料】【recall-homogeneity = 0.48】【带有随机范畴选择机制的范畴文法归纳模型】
 
 320. **Linguistic Rule Induction Improves Adversarial and OOD Robustness in Large Language Models** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.924/)]
 
-   本文研究语言模型是否能通过掌握语言学规则（如因果关系解析）提升其对抗性攻击（adversarial）和分布外（OOD）输入的鲁棒性。作者构建了一个 **Linguistic Rule (LingR) instruction** 数据集，（基于 Universal Dependencies English EWT），用于 fine-tune 模型以学习语言规则；此外设计了 **LingR-based chain-of-thoughts (LingR-CoTs)** 引导模型逐步推理。实验显示，经过 LingR fine-tuning 的 LLaMA-13B（LingR-LLaMA）在多个 adversarial 和 OOD 鲁棒性评估中，表现可与 GPT-3.5 和 GPT-4 相媲美，验证了语言学规则归纳对模型稳健性的关键作用。【模型鲁棒性提升 / 对抗 & OOD 评估】【Universal Dependencies (EWT)+LingR 指令；LingR-CoTs】【对抗与 OOD 鲁棒性 comparable to GPT-3.5 & GPT-4】【LingR-LLaMA-13B (fine-tuned LLaMA-13B with linguistic rule instruction and CoT)】
+     本文研究语言模型是否能通过掌握语言学规则（如因果关系解析）提升其对抗性攻击（adversarial）和分布外（OOD）输入的鲁棒性。作者构建了一个 **Linguistic Rule (LingR) instruction** 数据集，（基于 Universal Dependencies English EWT），用于 fine-tune 模型以学习语言规则；此外设计了 **LingR-based chain-of-thoughts (LingR-CoTs)** 引导模型逐步推理。实验显示，经过 LingR fine-tuning 的 LLaMA-13B（LingR-LLaMA）在多个 adversarial 和 OOD 鲁棒性评估中，表现可与 GPT-3.5 和 GPT-4 相媲美，验证了语言学规则归纳对模型稳健性的关键作用。【模型鲁棒性提升 / 对抗 & OOD 评估】【Universal Dependencies (EWT)+LingR 指令；LingR-CoTs】【对抗与 OOD 鲁棒性 comparable to GPT-3.5 & GPT-4】【LingR-LLaMA-13B (fine-tuned LLaMA-13B with linguistic rule instruction and CoT)】
 
 321. **Linking Adaptive Structure Induction and Neuron Filtering: A Spectral Perspective for Aspect-based Sentiment Analysis** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.926/)]  
 
-   本文从谱（spectral）视角探讨如何在面向“基于方面的情感分析”（ABSA）任务中，自适应地归纳图结构（structure induction）并结合神经元级别的过滤机制（Neuron Filtering，NeuLT），以提升模型性能。核心方法包括在预训练语言模型（如 RoBERTa）输出后引入不同频段的谱过滤器（spectral filters），然后将过滤后的表示输入图结构学习模块（graph learner + GNN）进行自适应结构归纳。实验在三个公开 ABSA 基准上进行，结果显示该谱方法能够缩短“方面–情感距离”（Aspect-sentiment Distance, AsD），并取得 SOTA 或接近 SOTA 的效果。【Aspect-based Sentiment Analysis】【三个公开 ABSA 数据集】【分类准确率 / AsD 距离】【PLM + spectral filters + GSL module (graph learner + GNN)**
+     本文从谱（spectral）视角探讨如何在面向“基于方面的情感分析”（ABSA）任务中，自适应地归纳图结构（structure induction）并结合神经元级别的过滤机制（Neuron Filtering，NeuLT），以提升模型性能。核心方法包括在预训练语言模型（如 RoBERTa）输出后引入不同频段的谱过滤器（spectral filters），然后将过滤后的表示输入图结构学习模块（graph learner + GNN）进行自适应结构归纳。实验在三个公开 ABSA 基准上进行，结果显示该谱方法能够缩短“方面–情感距离”（Aspect-sentiment Distance, AsD），并取得 SOTA 或接近 SOTA 的效果。【Aspect-based Sentiment Analysis】【三个公开 ABSA 数据集】【分类准确率 / AsD 距离】【PLM + spectral filters + GSL module (graph learner + GNN)**
 
 322.**Multilingual Substitution-based Word Sense Induction** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1035.pdf)]
 
-   本文提出一种基于**替换法（lexical substitution）**的多语言词义归纳（WSI）方法，在支持的 **100 种语言**之间几乎无需任何特别适配即可应用。作者利用 XLM-R 多语言掩码语言模型，通过设计多种替换生成策略（包括 Concat 和 Word Continuation Masking, WCM）结合目标注入（如 SDP）及 FastText 跨语言重新排序方法构建词义表示；然后对每个实例基于生成替换词构建 TF-IDF 向量并聚类，实现硬聚类的词义归纳。实验表明，该方法在常见的英文 WSI 数据集上表现与最先进的单语言方法相当，且在低资源语言上更具通用性与实用性。【词义归纳】【覆盖 100 种语言的单语语料 + XLM-R, FastText】【WSI 聚类性能（与单语言方法对比）】
+     本文提出一种基于**替换法（lexical substitution）**的多语言词义归纳（WSI）方法，在支持的 **100 种语言**之间几乎无需任何特别适配即可应用。作者利用 XLM-R 多语言掩码语言模型，通过设计多种替换生成策略（包括 Concat 和 Word Continuation Masking, WCM）结合目标注入（如 SDP）及 FastText 跨语言重新排序方法构建词义表示；然后对每个实例基于生成替换词构建 TF-IDF 向量并聚类，实现硬聚类的词义归纳。实验表明，该方法在常见的英文 WSI 数据集上表现与最先进的单语言方法相当，且在低资源语言上更具通用性与实用性。【词义归纳】【覆盖 100 种语言的单语语料 + XLM-R, FastText】【WSI 聚类性能（与单语言方法对比）】
 
 323. **NutFrame: Frame-based Conceptual Structure Induction with LLMs** [LREC 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1079/)]
 
-   本文构建了基于 FrameNet 的概念结构归纳基准 **NutFrame**，包含三个子任务：**Frame Induction**（框架归纳）、**Frame Element Induction**（框架成分归纳）及 **Frame Relation Induction**（框架关系归纳）。作者通过设计精巧提示（prompts）引导大语言模型（LLMs）自动归纳框架结构与元素，并评估其在不同子任务上的效果，从宏观层面推动了利用 LLMs 在语义结构学习和框架构建方面的能力。【概念结构归纳（FrameNet）】【NutFrame基准（三子任务：Frame, Element, Relation Induction）】【—】【LLM + prompt引导机制】
+     本文构建了基于 FrameNet 的概念结构归纳基准 **NutFrame**，包含三个子任务：**Frame Induction**（框架归纳）、**Frame Element Induction**（框架成分归纳）及 **Frame Relation Induction**（框架关系归纳）。作者通过设计精巧提示（prompts）引导大语言模型（LLMs）自动归纳框架结构与元素，并评估其在不同子任务上的效果，从宏观层面推动了利用 LLMs 在语义结构学习和框架构建方面的能力。【概念结构归纳（FrameNet）】【NutFrame基准（三子任务：Frame, Element, Relation Induction）】【—】【LLM + prompt引导机制】
 
 324. **PRIMO: Progressive Induction for Multi-hop Open Rule Generation** [LREC/COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1137.pdf)]
 
-   本文提出 PRIMO，一种渐进式多阶段开放规则生成方法，用于推导多跳规则，从而捕捉更复杂的推理链。该方法引入本体（ontology）信息以减少生成模糊性与逻辑不一致性，并设计三个依次协作的模块：**生成**（generation）、**提取**（extraction）和**排序**（ranking），并在每一步将生成的假设原子融入下一轮前提，实现多跳推理。在此基础上，PRIMO 还引入人类反馈的强化学习（RLHF）进一步提升规则的质量和多样性。实验使用构建的多跳开放规则基准（含 495 个前提原子，共 2851 个样本），在 BLEU-1, BLEU-4, ROUGE-L 等指标上显著优于 Prompt、COMET、Orion 等基线模型，并在 Self-BLEU-2 上反映出更高规则多样性，同时明显降低语义重复率 (Self-BLEU-2 更低，即多样性更高)。PRIMO 在参数量远小于大型语言模型（如 Vicuna-13B）的情况下，实现了接近 LLM 的性能。实验结果支持其在多跳开放规则生成任务中的优异与鲁棒性。【开放规则生成（多跳）】【Freebase 构建的多跳开放规则数据集（495 前提原子，2851 样本）】【BLEU-1, BLEU-4, ROUGE-L, Self-BLEU-2 多样性指标】【PRIMO（生成 + 提取 + 排序 多阶段模型）+ 本体约束 + RLHF 强化学习】
+     本文提出 PRIMO，一种渐进式多阶段开放规则生成方法，用于推导多跳规则，从而捕捉更复杂的推理链。该方法引入本体（ontology）信息以减少生成模糊性与逻辑不一致性，并设计三个依次协作的模块：**生成**（generation）、**提取**（extraction）和**排序**（ranking），并在每一步将生成的假设原子融入下一轮前提，实现多跳推理。在此基础上，PRIMO 还引入人类反馈的强化学习（RLHF）进一步提升规则的质量和多样性。实验使用构建的多跳开放规则基准（含 495 个前提原子，共 2851 个样本），在 BLEU-1, BLEU-4, ROUGE-L 等指标上显著优于 Prompt、COMET、Orion 等基线模型，并在 Self-BLEU-2 上反映出更高规则多样性，同时明显降低语义重复率 (Self-BLEU-2 更低，即多样性更高)。PRIMO 在参数量远小于大型语言模型（如 Vicuna-13B）的情况下，实现了接近 LLM 的性能。实验结果支持其在多跳开放规则生成任务中的优异与鲁棒性。【开放规则生成（多跳）】【Freebase 构建的多跳开放规则数据集（495 前提原子，2851 样本）】【BLEU-1, BLEU-4, ROUGE-L, Self-BLEU-2 多样性指标】【PRIMO（生成 + 提取 + 排序 多阶段模型）+ 本体约束 + RLHF 强化学习】
 
 
 325. **When Your Cousin Has the Right Connections: Unsupervised Bilingual Lexicon Induction for Related Data-Imbalanced Languages** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1526/)]
 
-   本文针对资源极端匮乏、与高资源语言（HRL）密切相关但数据严重不平衡的低资源语言（LRLs），提出一种无监督双语词典归纳（BLI）新方法。作者首先证实现有对齐或嵌入方法在这种偏极端的数据不平衡设置下几乎失效，然后设计：仅使用 HRL 的遮蔽语言模型（MLM）对 LRL 句子中的未知词进行预测引导；通过迭代替换已知词使句子更“HRL可理解”，不断扩展词典。实验以 Bhojpuri 和 Magahi（单语语料 < 5M token）对 Hindi 为目标高资源语言展开，结果远超传统方法，并在 Marathi 和 Nepali 中获得对比参考，同时公开发布五种 LR Indic 语言（Bhojpuri, Magahi, Awadhi, Braj, Maithili）—Hindi 的生成词典资源。【双语词典归纳（无监督）】【LRL 单语语料 + HRL MLM（Hindi-BERT）、Indic LRL 句子】【Precision@2（P@2）、非同形预测准确率（NIA）】【迭代遮蔽预测 + HRL MLM 推断 + 正字法重排（Rulebook variant）方法】
+     本文针对资源极端匮乏、与高资源语言（HRL）密切相关但数据严重不平衡的低资源语言（LRLs），提出一种无监督双语词典归纳（BLI）新方法。作者首先证实现有对齐或嵌入方法在这种偏极端的数据不平衡设置下几乎失效，然后设计：仅使用 HRL 的遮蔽语言模型（MLM）对 LRL 句子中的未知词进行预测引导；通过迭代替换已知词使句子更“HRL可理解”，不断扩展词典。实验以 Bhojpuri 和 Magahi（单语语料 < 5M token）对 Hindi 为目标高资源语言展开，结果远超传统方法，并在 Marathi 和 Nepali 中获得对比参考，同时公开发布五种 LR Indic 语言（Bhojpuri, Magahi, Awadhi, Braj, Maithili）—Hindi 的生成词典资源。【双语词典归纳（无监督）】【LRL 单语语料 + HRL MLM（Hindi-BERT）、Indic LRL 句子】【Precision@2（P@2）、非同形预测准确率（NIA）】【迭代遮蔽预测 + HRL MLM 推断 + 正字法重排（Rulebook variant）方法】
 
 326.  **TaxoCritic: Exploring Credit Assignment in Taxonomy Induction with Multi-Critic Reinforcement Learning** [DLnLD (LREC-COLING Workshop) 2024] [[paper link](https://aclanthology.org/2024.dlnld-1.2/)]
 
-   本文面向自动分类体系构建（taxonomy induction），提出一种新颖的多 Critic 强化学习方法——TaxoCritic。该方法通过多个 Critic 代理（multi-critic RL agents）来细粒度评估生成分类边的子操作（sub-actions），增强归属与责任归因（credit assignment），从而提升模型在边识别（edge identification）上的准确性与稳健性。实验结果展示该方法相比现有模型在正确性和鲁棒性方面具有明显优势。【分类体系归纳】【DLnLD 2024 Workshop 提供的语料 /分类体系数据】【分类边准确率与鲁棒性指标】【深度多-Critic 强化学习模型（multi-critic RL with credit assignment）】
+     本文面向自动分类体系构建（taxonomy induction），提出一种新颖的多 Critic 强化学习方法——TaxoCritic。该方法通过多个 Critic 代理（multi-critic RL agents）来细粒度评估生成分类边的子操作（sub-actions），增强归属与责任归因（credit assignment），从而提升模型在边识别（edge identification）上的准确性与稳健性。实验结果展示该方法相比现有模型在正确性和鲁棒性方面具有明显优势。【分类体系归纳】【DLnLD 2024 Workshop 提供的语料 /分类体系数据】【分类边准确率与鲁棒性指标】【深度多-Critic 强化学习模型（multi-critic RL with credit assignment）】
 
 327. **Pre-trained Semantic Interaction based Inductive Graph Neural Networks for Text Classification** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.54.pdf)]
 
-   本文提出 PaSIG，一种结合预训练语义交互与归纳式图神经网络的文本分类框架。构建文本–词语异构图，并通过设计**非对称拓扑结构**确保信息仅从词节点传递到测试文本节点，实现训练与测试的解耦；使用 fine-tuned 语言模型（如 BERT）为词语与文本节点生成包含分类语义的信息嵌入；引入**gated fusion**机制，自适应融合中心节点与邻居信息；为提升推理效率，还设计了子图采样与中间状态保留策略。实验覆盖五个标杆文本分类数据集，PaSIG 平均提升准确率约 2.7%，在推断速度及资源消耗方面也优于最先进方法。【文本分类（归纳式）】【MR, Ohsumed, 20NG, R8, R52 五个文本分类数据集】【分类准确率, macro-F1】【PaSIG（预训练语义交互 + 非对称图结构 + gated fusion + 子图采样）】
+     本文提出 PaSIG，一种结合预训练语义交互与归纳式图神经网络的文本分类框架。构建文本–词语异构图，并通过设计**非对称拓扑结构**确保信息仅从词节点传递到测试文本节点，实现训练与测试的解耦；使用 fine-tuned 语言模型（如 BERT）为词语与文本节点生成包含分类语义的信息嵌入；引入**gated fusion**机制，自适应融合中心节点与邻居信息；为提升推理效率，还设计了子图采样与中间状态保留策略。实验覆盖五个标杆文本分类数据集，PaSIG 平均提升准确率约 2.7%，在推断速度及资源消耗方面也优于最先进方法。【文本分类（归纳式）】【MR, Ohsumed, 20NG, R8, R52 五个文本分类数据集】【分类准确率, macro-F1】【PaSIG（预训练语义交互 + 非对称图结构 + gated fusion + 子图采样）】
 
 328. **Commonsense Subgraph for Inductive Relation Reasoning with Meta-learning** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.150/)]
 
-   本文提出 CSML（Commonsense Subgraph Meta-Learning），一种将常识元信息纳入元学习框架的新方法，用于解决归纳式关系推理中的少样本问题。通过提取实体对应的概念构建“常识子图”（commonsense subgraph），CSML 利用这些高层语义作为元信息，帮助模型在极少或零样本关系下迅速适应与泛化。【归纳式关系推理】【概念抽取构建的常识子图 + few-shot 关系推理任务】【MRR, Hits@1/3/10 等指标】【CSML（元学习 + 常识子图辅助模型）】
+     本文提出 CSML（Commonsense Subgraph Meta-Learning），一种将常识元信息纳入元学习框架的新方法，用于解决归纳式关系推理中的少样本问题。通过提取实体对应的概念构建“常识子图”（commonsense subgraph），CSML 利用这些高层语义作为元信息，帮助模型在极少或零样本关系下迅速适应与泛化。【归纳式关系推理】【概念抽取构建的常识子图 + few-shot 关系推理任务】【MRR, Hits@1/3/10 等指标】【CSML（元学习 + 常识子图辅助模型）】
 
 329. **Inductive Link Prediction in N-ary Knowledge Graphs** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.595/)]
 
-   本文提出全新的归纳式链接预测任务——**Inductive Link Prediction in N-ary Knowledge Graphs (ILPN)**，目标是准确预测包含“未见实体或角色”的 n-ary 关系事实中缺失元素的能力；针对传统三元组方法难以表达 n-ary 结构的问题，作者构建了“n-ary 语义超图”（semantic hypergraph）结构，并设计了图聚合网络 NS-HART（基于角色感知 Transformer 的子图推理），以在归纳设置中捕捉实体无关的多跳语义模式。通过在模拟“带实体特征 / 无实体特征的迁移推理”和“对子图进行成对推理”这三个归纳任务上进行广泛实验，NS-HART 均显著优于传统三元组模型与现有超图 GNN 方法，体现出卓越的归纳能力。【归纳式链接预测（ILP on n-ary KGs）】【ILPN 任务设置 + n-ary 语义超图结构】
+     本文提出全新的归纳式链接预测任务——**Inductive Link Prediction in N-ary Knowledge Graphs (ILPN)**，目标是准确预测包含“未见实体或角色”的 n-ary 关系事实中缺失元素的能力；针对传统三元组方法难以表达 n-ary 结构的问题，作者构建了“n-ary 语义超图”（semantic hypergraph）结构，并设计了图聚合网络 NS-HART（基于角色感知 Transformer 的子图推理），以在归纳设置中捕捉实体无关的多跳语义模式。通过在模拟“带实体特征 / 无实体特征的迁移推理”和“对子图进行成对推理”这三个归纳任务上进行广泛实验，NS-HART 均显著优于传统三元组模型与现有超图 GNN 方法，体现出卓越的归纳能力。【归纳式链接预测（ILP on n-ary KGs）】【ILPN 任务设置 + n-ary 语义超图结构】
 
 
 ## Others
