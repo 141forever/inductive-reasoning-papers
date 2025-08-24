@@ -64,7 +64,7 @@
 
 13.  **Language Models as Inductive Reasoners** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.13.pdf)]
 
-   本文提出一种新的归纳推理范式：以自然语言形式表示事实与规则，并使用预训练语言模型作为“推理者”从自然语言事实中归纳生成自然语言规则。作者构建了专用数据集 **DEER**（包含约 1,200 对事实–规则对），并设计新自动评估指标，同时提出哲学启发的归纳框架，在自动和人类评价中均显著优于基线方法，首次全面分析预训练语言模型在自然语言归纳规则推理任务中的性能 :contentReference[oaicite:0]{index=0}。【归纳式规则归纳】【DEER（自然语言事实–规则对）】【自动评估指标 + 人类评价性能】【预训练语言模型作为归纳推理者 + 哲学启发框架】
+     本文提出一种新的归纳推理范式：以自然语言形式表示事实与规则，并使用预训练语言模型作为“推理者”从自然语言事实中归纳生成自然语言规则。作者构建了专用数据集 **DEER**（包含约 1,200 对事实–规则对），并设计新自动评估指标，同时提出哲学启发的归纳框架，在自动和人类评价中均显著优于基线方法，首次全面分析预训练语言模型在自然语言归纳规则推理任务中的性能 :contentReference[oaicite:0]{index=0}。【归纳式规则归纳】【DEER（自然语言事实–规则对）】【自动评估指标 + 人类评价性能】【预训练语言模型作为归纳推理者 + 哲学启发框架】
 
 14. **RuDSI: Graph-based Word Sense Induction Dataset for Russian** [TextGraphs-16 (2022)] [[paper link](https://aclanthology.org/2022.textgraphs-1.9/)]
 
