@@ -1645,18 +1645,18 @@
      本文针对资源极端匮乏、与高资源语言（HRL）密切相关但数据严重不平衡的低资源语言（LRLs），提出一种无监督双语词典归纳（BLI）新方法。作者首先证实现有对齐或嵌入方法在这种偏极端的数据不平衡设置下几乎失效，然后设计：仅使用 HRL 的遮蔽语言模型（MLM）对 LRL 句子中的未知词进行预测引导；通过迭代替换已知词使句子更“HRL可理解”，不断扩展词典。实验以 Bhojpuri 和 Magahi（单语语料 < 5M token）对 Hindi 为目标高资源语言展开，结果远超传统方法，并在 Marathi 和 Nepali 中获得对比参考，同时公开发布五种 LR Indic 语言（Bhojpuri, Magahi, Awadhi, Braj, Maithili）—Hindi 的生成词典资源。【双语词典归纳（无监督）】【LRL 单语语料 + HRL MLM（Hindi-BERT）、Indic LRL 句子】【Precision@2（P@2）、非同形预测准确率（NIA）】【迭代遮蔽预测 + HRL MLM 推断 + 正字法重排（Rulebook variant）方法】
 
 326.  **TaxoCritic: Exploring Credit Assignment in Taxonomy Induction with Multi-Critic Reinforcement Learning** [DLnLD (LREC-COLING Workshop) 2024] [[paper link](https://aclanthology.org/2024.dlnld-1.2/)]
-
+     
   本文面向自动分类体系构建（taxonomy induction），提出一种新颖的多 Critic 强化学习方法——TaxoCritic。该方法通过多个 Critic 代理（multi-critic RL agents）来细粒度评估生成分类边的子操作（sub-actions），增强归属与责任归因（credit assignment），从而提升模型在边识别（edge identification）上的准确性与稳健性。实验结果展示该方法相比现有模型在正确性和鲁棒性方面具有明显优势。【分类体系归纳】【DLnLD 2024 Workshop 提供的语料 /分类体系数据】【分类边准确率与鲁棒性指标】【深度多-Critic 强化学习模型（multi-critic RL with credit assignment）】
 
-327. **Pre-trained Semantic Interaction based Inductive Graph Neural Networks for Text Classification** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.54.pdf)]
+329. **Pre-trained Semantic Interaction based Inductive Graph Neural Networks for Text Classification** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.54.pdf)]
 
      本文提出 PaSIG，一种结合预训练语义交互与归纳式图神经网络的文本分类框架。构建文本–词语异构图，并通过设计**非对称拓扑结构**确保信息仅从词节点传递到测试文本节点，实现训练与测试的解耦；使用 fine-tuned 语言模型（如 BERT）为词语与文本节点生成包含分类语义的信息嵌入；引入**gated fusion**机制，自适应融合中心节点与邻居信息；为提升推理效率，还设计了子图采样与中间状态保留策略。实验覆盖五个标杆文本分类数据集，PaSIG 平均提升准确率约 2.7%，在推断速度及资源消耗方面也优于最先进方法。【文本分类（归纳式）】【MR, Ohsumed, 20NG, R8, R52 五个文本分类数据集】【分类准确率, macro-F1】【PaSIG（预训练语义交互 + 非对称图结构 + gated fusion + 子图采样）】
 
-328. **Commonsense Subgraph for Inductive Relation Reasoning with Meta-learning** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.150/)]
+330. **Commonsense Subgraph for Inductive Relation Reasoning with Meta-learning** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.150/)]
 
      本文提出 CSML（Commonsense Subgraph Meta-Learning），一种将常识元信息纳入元学习框架的新方法，用于解决归纳式关系推理中的少样本问题。通过提取实体对应的概念构建“常识子图”（commonsense subgraph），CSML 利用这些高层语义作为元信息，帮助模型在极少或零样本关系下迅速适应与泛化。【（少样本/零样本）归纳式关系推理】【概念抽取构建的常识子图 + few-shot 关系推理任务】【MRR, Hits@1/3/10 等指标】【CSML（元学习 + 常识子图辅助模型）】
 
-329. **Inductive Link Prediction in N-ary Knowledge Graphs** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.595/)]
+331. **Inductive Link Prediction in N-ary Knowledge Graphs** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.595/)]
 
      本文提出全新的归纳式链接预测任务——**Inductive Link Prediction in N-ary Knowledge Graphs (ILPN)**，目标是准确预测包含“未见实体或角色”的 n-ary 关系事实中缺失元素的能力；针对传统三元组方法难以表达 n-ary 结构的问题，作者构建了“n-ary 语义超图”（semantic hypergraph）结构，并设计了图聚合网络 NS-HART（基于角色感知 Transformer 的子图推理），以在归纳设置中捕捉实体无关的多跳语义模式。通过在模拟“带实体特征 / 无实体特征的迁移推理”和“对子图进行成对推理”这三个归纳任务上进行广泛实验，NS-HART 均显著优于传统三元组模型与现有超图 GNN 方法，体现出卓越的归纳能力。【归纳式链接预测（ILP on n-ary KGs）】【ILPN 任务设置 + n-ary 语义超图结构】
 
