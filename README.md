@@ -1138,7 +1138,7 @@
 
       提出了一种联合学习关键短语归纳和摘要生成的方法，通过归纳源文档的关键信息生成更忠实的事实性摘要。方法：基于条件变分自编码器（CVAE），联合训练关键短语预测和摘要生成，避免依赖外部工具。【抽象摘要】【XSUM、CNNDM】【ROUGE（R1、R2、RL）、BERTScore、事实一致性指标】【GISG（基于BART的CVAE框架）】
 
-204. **Distilling Hypernymy Relations from Language Models: On the Effectiveness of Zero-Shot Taxonomy Induction** [NAACL2022] [[paper link](ttps://aclanthology.org/2022.starsem-1.13.pdf)]
+204. **Distilling Hypernymy Relations from Language Models: On the Effectiveness of Zero-Shot Taxonomy Induction** [NAACL2022] [[paper link](https://aclanthology.org/2022.starsem-1.13.pdf)]
 
       用语言模型“猜”出术语的上下位关系（比如“猫是动物的一种”），无需额外训练，直接通过提示和评分归纳出分类法。方法：用BERT/GPT-2等模型给提示句打分或填词，选最靠谱的答案当上下位关系。【分类法学习】【SemEval的TExEval-1和TExEval-2】【精确度、召回率、F1值】【基于LLMs的零样本方法】
 
