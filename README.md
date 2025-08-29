@@ -1498,45 +1498,47 @@
 
       提出了一种无监督语法归纳方法，通过自诱导语法结构增强Transformer模型的语言理解和生成能力，解决了传统方法依赖外部解析器的问题，并验证了其在归纳学习中的有效性。方法总结：通过语法解析器生成语法掩码指导注意力机制，结合BPE嵌入和混合损失函数优化语法归纳过程。【机器翻译（MT）和自然语言理解】【机器翻译：IWSLT14-De/En、NC11-De/En、ASPEC-Zh/Ja；自然语言理解：GLUE（包含CoLA、SST-2、MNLI等子任务）】【BLEU、准确率/F1/Matthews相关系数】【基于语法掩码的语法感知Transformer】
 
-291. **Unsupervised Does Not Mean Uninterpretable: The Case for Word Sense Induction and Disambiguation** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.74.pdf)]
+291. **Unsupervised Does Not Mean Uninterpretable: The Case for Word Sense Induction and Disambiguation** [EACL 2017] [[paper link](https://aclanthology.org/2024.eacl-long.74.pdf)]
+ 
      本文探讨无监督词义归纳与消歧（WSI/WSD）任务的可解释性问题，提出将神经嵌入聚类结果映射到人类可理解的语义标签的方法。作者基于多语言语料构建聚类，并通过上下文特征与原型词表映射生成解释标签，验证无监督方法并非“黑箱”。在 SemEval 和 WiC 等数据集上评估，结果显示该方法可在保持高性能的同时，提供可解释的词义聚类，帮助理解模型决策过程。【词义归纳/消歧】【SemEval WSI/WSD, WiC】【聚类性能与可解释性评估指标】【基于神经嵌入聚类+可解释语义标签映射】
 
-292. **From Segmentation to Analyses: a Probabilistic Model for Unsupervised Morphology Induction** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.41.pdf)] 
+293. **From Segmentation to Analyses: a Probabilistic Model for Unsupervised Morphology Induction** [EACL 2017] [[paper link](https://aclanthology.org/2024.eacl-long.41.pdf)] 
+
      本文提出一种从词形分割到形态分析的统一概率模型，用于无监督形态归纳任务。模型在贝叶斯框架下同时学习词的形态切分及其语义分析，利用词典先验和词频信息，通过吉布斯采样推断词缀与词根。实验证明，该方法在多种形态复杂语言（芬兰语、土耳其语等）的分割和分析任务上优于现有无监督方法，提供了更丰富且结构化的形态分析结果。【无监督形态归纳】【芬兰语、土耳其语等形态复杂语料】【分割F1、分析准确率】【贝叶斯概率模型（吉布斯采样）】
 
-293. **The ContrastMedium Algorithm: Taxonomy Induction From Noisy Knowledge Graphs With Just A Few Links** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.19.pdf)]  
+295. **The ContrastMedium Algorithm: Taxonomy Induction From Noisy Knowledge Graphs With Just A Few Links** [EACL 2017] [[paper link](https://aclanthology.org/2024.eacl-long.19.pdf)]  
 
      本文提出 ContrastMedium 算法，旨在在仅有极少超/下位边且知识图谱噪声较大的条件下进行分类体系（taxonomy）归纳。该方法通过模拟“流体扩散”过程，将少量已知的层级信息（如超类-子类关系）传播到整个图中，从而形成潜在层次结构；随后结合分布式嵌入和图正则化，对节点进行重新排序以增强鲁棒性。实验证明，该算法在 WordNet 子图及其他噪声知识图谱上显著优于基线方法，尤其在稀疏和噪声环境下保持高性能。【分类体系归纳】【WordNet 子图、噪声知识图谱】【F1、层级一致性指标】【ContrastMedium 扩散算法 + 图正则化】
 
-294. **Bilingual Lexicon Induction by Learning to Combine Word-Level and Character-Level Representations** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.82.pdf)]  
+296. **Bilingual Lexicon Induction by Learning to Combine Word-Level and Character-Level Representations** [EACL 2017] [[paper link](https://aclanthology.org/2024.eacl-long.82.pdf)]  
 
      本文提出一种结合词级与字符级表示的双语词典归纳方法，旨在提升跨语言词汇对齐的准确性，尤其在低频词和形态丰富语言场景中。模型联合学习词向量和字符级表示（基于CNN/LSTM），并通过可训练的加权机制自适应融合两种表示，然后在无监督对齐框架下（如 MUSE）进行映射。实验结果表明，该方法在多组语言对上的 Precision@1 显著优于仅用词级表示的基线，对形态变化和拼写差异更具鲁棒性。【双语词典归纳】【多语言对词典数据】【Precision@1】【词级+字符级表示融合模型（CNN/LSTM + 加权融合）】
 
-295. **Unsupervised Dialogue Act Induction using Gaussian Mixtures** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.46.pdf)]  
+297. **Unsupervised Dialogue Act Induction using Gaussian Mixtures** [EACL 2017] [[paper link](https://aclanthology.org/2024.eacl-long.46.pdf)]  
 
      本文提出一种基于高斯混合模型（GMM）的无监督对话行为归纳方法，将对话中的话语表示映射到潜在语义空间，通过高斯混合聚类自动发现对话行为类别。该方法不依赖人工标注，利用句向量及上下文信息建模话语的语义分布。实验在 Switchboard 和 AMI 等多语料对话数据集上进行，结果显示该方法在 Purity、V-measure 等聚类指标上优于多种无监督基线，对对话行为模式具有良好的自动归纳能力。【对话行为归纳】【Switchboard, AMI】【Purity, V-measure】【高斯混合模型聚类】
 
-296. **Bootstrapping Unsupervised Bilingual Lexicon Induction** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.83.pdf)]  
+298. **Bootstrapping Unsupervised Bilingual Lexicon Induction** [EACL 2017] [[paper link](https://aclanthology.org/2024.eacl-long.83.pdf)]  
 
      本文提出一种自举式无监督双语词典归纳方法，通过迭代扩展高置信度词对来不断改进跨语言词向量映射。方法在初始无监督对齐的基础上，选择置信度最高的词对加入训练集，重新估计映射矩阵，循环迭代直到收敛，从而显著提升低资源和形态丰富语言的词典诱导精度。实验证明，该方法在多组语言对上的 Precision@1 较传统无监督方法有显著提高，且无需任何平行语料。【无监督双语词典归纳】【多语言对词典数据】【Precision@1】【自举迭代映射方法】
 
-297. **Semantic Frame Induction with Deep Metric Learning** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.40.pdf)]  
+299. **Semantic Frame Induction with Deep Metric Learning** [EACL 2023] [[paper link](https://aclanthology.org/2024.eacl-long.40.pdf)]  
 
      本文提出一种结合深度度量学习的语义框架归纳方法，旨在自动从文本中发现语义框架及其角色结构。方法利用预训练语言模型获取谓词-论元上下文表示，通过深度度量学习将同一框架实例映射到相邻空间，从而实现无监督聚类。实验在 FrameNet 及其他语义角色标注数据上进行，结果显示该方法在框架归纳和角色识别上均优于传统聚类和嵌入方法，表现出较强的自动归纳能力。【语义框架归纳】【FrameNet 等 SRL 数据】【聚类质量指标（F1、AMI 等）】【深度度量学习 + 预训练语言模型】
 
-298. **Semi-supervised New Event Type Induction and Description via Contrastive Loss-Enforced Batch Attention** [EACL 2024] [[paper link](https://aclanthology.org/2024.eacl-long.42.pdf)]  
+300. **Semi-supervised New Event Type Induction and Description via Contrastive Loss-Enforced Batch Attention** [EACL 2023] [[paper link](https://aclanthology.org/2024.eacl-long.42.pdf)]  
 
      本文提出一种半监督的新事件类型归纳与描述方法，利用对比损失约束的批量注意力机制（Batch Attention with Contrastive Loss）提升少标注场景下的新事件类型识别能力。方法通过已知事件和未标注事件的联合训练，将语义相似的实例聚在一起，并利用注意力机制对每个批次的实例进行全局对比优化，同时自动生成新事件类型的描述。实验证明，该方法在多个事件抽取基准数据集上显著优于传统聚类和纯监督方法，在少量标注样本条件下也能准确发现和描述新类型事件。【事件类型归纳】【ACE、KAIROS 等事件数据】【聚类与描述质量指标（F1、NMI、描述生成BLEU）】【批量注意力+对比损失的半监督模型】
 
-299. **Zero-Shot On-the-Fly Event Schema Induction** [EACL 2024] [[paper link](https://aclanthology.org/2024.findings-eacl.103.pdf)]  
+301. **Zero-Shot On-the-Fly Event Schema Induction** [EACL 2023] [[paper link](https://aclanthology.org/2024.findings-eacl.103.pdf)]  
 
      本文提出一种零样本的即时事件模式（schema）归纳方法，无需预先定义事件类型即可在推理时动态生成事件模式。方法利用大型预训练语言模型，从上下文抽取事件触发词和论元，并通过提示（prompt）引导模型生成事件类型及其论元角色，实现“即取即用”的事件模式构建。实验证明，该方法在多个开放域事件抽取数据集上表现优异，能够准确发现新事件类型及其结构，对低资源和开放域场景具有很强适用性。【事件模式归纳（零样本）】【开放域事件抽取数据】【模式发现与论元识别指标】【预训练语言模型+提示生成】
 
-300. **CEO: Corpus-based Open-Domain Event Ontology Induction** [EACL 2024] [[paper link](https://aclanthology.org/2024.findings-eacl.102.pdf)]  
+302. **CEO: Corpus-based Open-Domain Event Ontology Induction** [EACL 2024] [[paper link](https://aclanthology.org/2024.findings-eacl.102.pdf)]  
 
      本文提出 CEO 框架，用于从大规模语料中自动构建开放域事件本体。CEO 通过从文本中抽取事件触发词、论元及其语义角色，利用聚类与模式发现方法自动归纳事件类型及其层次关系，并构建事件类型之间的本体网络。实验在开放域新闻与维基数据集上验证，CEO 能生成结构合理、层级清晰的事件本体，显著优于现有方法，支持开放域知识抽取与推理。【事件本体归纳】【新闻、维基开放域语料】【本体层次质量指标（层级一致性、聚类质量）】【触发词/论元抽取+聚类+层级模式发现】
 
-301. **Relation Induction in Word Embeddings Revisited** [COLING 2018] [[paper link](https://aclanthology.org/C18-1138.pdf)]
+303. **Relation Induction in Word Embeddings Revisited** [COLING 2018] [[paper link](https://aclanthology.org/C18-1138.pdf)]
 
      本文针对“关系归纳”任务——即根据已有的词对关系样本，预测新的符合该关系的词对，分析了传统基于向量平移的方法易受错误正例影响的弱点，提出两种更鲁棒的概率模型：一种利用高斯分布在平移向量上建模其变异性并为源词与目标词施加软约束，另一种采用贝叶斯线性回归假设源词与目标词之间存在线性映射但更弱的结构假设，两者在控制错误预测与泛化能力之间取得更优平衡。【关系归纳】【BATS 数据集（关系实例）】【预测准确性（降低错误率）】【概率关系模型：Gaussian translation + Bayesian linear regression】
 
