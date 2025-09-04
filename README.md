@@ -1150,7 +1150,7 @@
 206. **Deja vu: Contrastive Historical Modeling with Prefix-tuning for Temporal Knowledge Graph Reasoning**
      [NAACL2024] [[paper link](https://aclanthology.org/2024.findings-naacl.75.pdf)] 
 
-      基于预训练语言模型的时序知识图谱推理，需要昂贵的训练，难以适应少样本归纳式设置。提出用对比学习拉近相关历史对的表示距离，在冻结的PLM中引入可训练的时间前缀令牌，通过prefix-tuning注入时间信息。【时序知识图谱推理（TKGR），包括转导式（预测已知实体间缺失事实）和少样本归纳式（预测新实体间关系）两种设置。】【转导式：ICEWS14、ICEWS18、ICEWS05-15、ICEWS14*、WIKI、YAGO。少样本归纳式：ICEWS14-OOG、ICEWS18-OOG、ICEWS0515-OOG。】【MRR、Hits@N】【GPT-3.5、GPT-4】
+      基于预训练语言模型的时序知识图谱推理，需要昂贵的训练，难以适应少样本归纳式设置。提出用对比学习拉近相关历史对的表示距离，在冻结的PLM中引入可训练的时间前缀令牌，通过prefix-tuning注入时间信息。【时序知识图谱推理（TKGR），包括转导式（预测已知实体间缺失事实）和少样本归纳式（预测新实体间关系）两种设置。】【转导式：ICEWS14、ICEWS18、ICEWS05-15、ICEWS14*、WIKI、YAGO。少样本归纳式：ICEWS14-OOG、ICEWS18-OOG、ICEWS0515-OOG。】【MRR、Hits@N】【ChapTER】
 
 207. **A(More) Realistic Evaluation Setup for Generalisation of Community Models on Malicious Content Detection**
      [NAACL2024] [[paper link](https://aclanthology.org/2024.findings-naacl.30.pdf)] 
