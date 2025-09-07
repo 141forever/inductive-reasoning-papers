@@ -1619,36 +1619,39 @@
      本文研究“语言学规则归纳”在提升大型语言模型（LLMs）抗击对抗性攻击（adversarial）及分布外（OOD）鲁棒性方面的作用。作者构建了一个“语言规则指令集”，用于 fine-tune LLaMA-13B，使其学习从因果关系等语言学规则出发进行逐步推理（LingR-based chain-of-thoughts）。实验证明，经过这种处理的 LLaMA-13B（LingR-LLaMA）在各种 adversarial 和 OOD 评估任务中，其性能可与 GPT-3.5 和 GPT-4 相媲美，表明规则归纳是提高模型稳健性的关键因素。【鲁棒性提升 / 对抗 & OOD】【语言规则指令集 + LingR-CoT 推理】【对抗 & OOD 鲁棒性 comparable to GPT-3.5 & GPT-4】【LingR-LLaMA-13B (LLaMA-13B + linguistic rule induction)】
 
 321. **Linking Adaptive Structure Induction and Neuron Filtering: A Spectral Perspective for Aspect-based Sentiment Analysis** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.926.pdf)]  
+
      提出一种面向方面情感分析的自适应图结构归纳方法与频域神经元过滤（NeuLT），先用图结构学习构建邻接关系并结合GNN完成预测，再在词表示的频谱上进行过滤以提升结构质量与分类性能；在三个公开数据集上，方法显著缩短方面与情感的距离（AsD），Accuracy 与 Macro-F1 达到或接近 SOTA，表明频域视角与神经元过滤有助于稳健的结构归纳与性能提升。【文本分类→情感分析→基于方面的情感分析】【三个公共 ABSA 数据集】【Accuracy, Macro-F1, AsD】【GSL 自适应图结构 + GNN + NeuLT（频域神经元过滤）】
 
-322. **Multilingual Substitution-based Word Sense Induction** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1035.pdf)]
+323. **Multilingual Substitution-based Word Sense Induction** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1035.pdf)]
 
      本文提出一种基于替换法（lexical substitution）的多语言词义归纳（WSI）方法，在支持的 100 种语言之间几乎无需任何特别适配即可应用。作者利用 XLM-R 多语言掩码语言模型，通过设计多种替换生成策略（包括 Concat 和 Word Continuation Masking, WCM）结合目标注入（如 SDP）及 FastText 跨语言重新排序方法构建词义表示；然后对每个实例基于生成替换词构建 TF-IDF 向量并聚类，实现硬聚类的词义归纳。实验表明，该方法在常见的英文 WSI 数据集上表现与最先进的单语言方法相当，且在低资源语言上更具通用性与实用性。【词义归纳】【覆盖 100 种语言的单语语料 + XLM-R, FastText】【WSI 聚类性能（与单语言方法对比）】
 
-323. **NutFrame: Frame-based Conceptual Structure Induction with LLMs** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1079/)]  
+324. **NutFrame: Frame-based Conceptual Structure Induction with LLMs** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1079/)]  
+
      提出基于 FrameNet 的概念结构归纳基准 NutFrame，包含 Frame Induction、Frame Element Induction 和 Frame Relation Induction 三个子任务；利用提示设计引导大语言模型自动发现框架及其成分和关系，评估其在不同子任务上的表现，展示 LLM 在语义结构学习和框架构建方面的潜力。【概念结构归纳】【NutFrame 基准（三个子任务）】【—】【LLM + prompt 引导】
 
-324. **PRIMO: Progressive Induction for Multi-hop Open Rule Generation** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1137.pdf)]
+326. **PRIMO: Progressive Induction for Multi-hop Open Rule Generation** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1137.pdf)]
 
      本文提出 PRIMO，一种渐进式多阶段开放规则生成方法，用于推导多跳规则，从而捕捉更复杂的推理链。该方法引入本体（ontology）信息以减少生成模糊性与逻辑不一致性，并设计三个依次协作的模块：生成（generation）、提取（extraction）和排序（ranking），并在每一步将生成的假设原子融入下一轮前提，实现多跳推理。在此基础上，PRIMO 还引入人类反馈的强化学习（RLHF）进一步提升规则的质量和多样性。实验使用构建的多跳开放规则基准（含 495 个前提原子，共 2851 个样本），在 BLEU-1, BLEU-4, ROUGE-L 等指标上显著优于 Prompt、COMET、Orion 等基线模型，并在 Self-BLEU-2 上反映出更高规则多样性，同时明显降低语义重复率 (Self-BLEU-2 更低，即多样性更高)。PRIMO 在参数量远小于大型语言模型（如 Vicuna-13B）的情况下，实现了接近 LLM 的性能。实验结果支持其在多跳开放规则生成任务中的优异与鲁棒性。【开放规则生成（多跳）】【Freebase 构建的多跳开放规则数据集（495 前提原子，2851 样本）】【BLEU-1, BLEU-4, ROUGE-L, Self-BLEU-2 多样性指标】【PRIMO（生成 + 提取 + 排序 多阶段模型）+ 本体约束 + RLHF 强化学习】
 
 
-325. **When Your Cousin Has the Right Connections: Unsupervised Bilingual Lexicon Induction for Related Data-Imbalanced Languages** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1526/)]
+327. **When Your Cousin Has the Right Connections: Unsupervised Bilingual Lexicon Induction for Related Data-Imbalanced Languages** [LREC-COLING 2024] [[paper link](https://aclanthology.org/2024.lrec-main.1526/)]
 
      本文针对资源极端匮乏、与高资源语言（HRL）密切相关但数据严重不平衡的低资源语言（LRLs），提出一种无监督双语词典归纳（BLI）新方法。作者首先证实现有对齐或嵌入方法在这种偏极端的数据不平衡设置下几乎失效，然后设计：仅使用 HRL 的遮蔽语言模型（MLM）对 LRL 句子中的未知词进行预测引导；通过迭代替换已知词使句子更“HRL可理解”，不断扩展词典。实验以 Bhojpuri 和 Magahi（单语语料 < 5M token）对 Hindi 为目标高资源语言展开，结果远超传统方法，并在 Marathi 和 Nepali 中获得对比参考，同时公开发布五种 LR Indic 语言（Bhojpuri, Magahi, Awadhi, Braj, Maithili）—Hindi 的生成词典资源。【双语词典归纳（无监督）】【LRL 单语语料 + HRL MLM（Hindi-BERT）、Indic LRL 句子】【Precision@2（P@2）、非同形预测准确率（NIA）】【迭代遮蔽预测 + HRL MLM 推断 + 正字法重排（Rulebook variant）方法】
 
-326. **TaxoCritic: Exploring Credit Assignment in Taxonomy Induction with Multi-Critic Reinforcement Learning** [DLnLD (LREC-COLING Workshop) 2024] [[paper link](https://aclanthology.org/2024.dlnld-1.2/)]  
+328. **TaxoCritic: Exploring Credit Assignment in Taxonomy Induction with Multi-Critic Reinforcement Learning** [DLnLD (LREC-COLING Workshop) 2024] [[paper link](https://aclanthology.org/2024.dlnld-1.2/)]  
+
      提出 TaxoCritic 方法，用于自动分类体系构建，通过多 Critic 强化学习细粒度评估生成的分类边子操作，改进归因分配并提高边识别的准确性与稳健性；实验证明该方法在正确性和鲁棒性方面优于现有模型。【分类体系归纳】【DLnLD 2024 Workshop 分类语料】【分类边准确率和鲁棒性】【多 Critic 强化学习模型（credit assignment）】
 
-329. **Pre-trained Semantic Interaction based Inductive Graph Neural Networks for Text Classification** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.54.pdf)]
+330. **Pre-trained Semantic Interaction based Inductive Graph Neural Networks for Text Classification** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.54.pdf)]
 
      本文提出 PaSIG，一种结合预训练语义交互与归纳式图神经网络的文本分类框架。构建文本–词语异构图，并通过设计非对称拓扑结构确保信息仅从词节点传递到测试文本节点，实现训练与测试的解耦；使用 fine-tuned 语言模型（如 BERT）为词语与文本节点生成包含分类语义的信息嵌入；引入gated fusion机制，自适应融合中心节点与邻居信息；为提升推理效率，还设计了子图采样与中间状态保留策略。实验覆盖五个标杆文本分类数据集，PaSIG 平均提升准确率约 2.7%，在推断速度及资源消耗方面也优于最先进方法。【文本分类（归纳式）】【MR, Ohsumed, 20NG, R8, R52 五个文本分类数据集】【分类准确率, macro-F1】【PaSIG（预训练语义交互 + 非对称图结构 + gated fusion + 子图采样）】
 
-330. **Commonsense Subgraph for Inductive Relation Reasoning with Meta-learning** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.150/)]
+331. **Commonsense Subgraph for Inductive Relation Reasoning with Meta-learning** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.150/)]
 
      本文提出 CSML（Commonsense Subgraph Meta-Learning），一种将常识元信息纳入元学习框架的新方法，用于解决归纳式关系推理中的少样本问题。通过提取实体对应的概念构建“常识子图”（commonsense subgraph），CSML 利用这些高层语义作为元信息，帮助模型在极少或零样本关系下迅速适应与泛化。【（少样本/零样本）归纳式关系推理】【概念抽取构建的常识子图 + few-shot 关系推理任务】【MRR, Hits@1/3/10 等指标】【CSML（元学习 + 常识子图辅助模型）】
 
-331. **Inductive Link Prediction in N-ary Knowledge Graphs** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.595/)]  
+332. **Inductive Link Prediction in N-ary Knowledge Graphs** [COLING 2025] [[paper link](https://aclanthology.org/2025.coling-main.595/)]  
 
      本文提出归纳式链接预测的新任务 ILPN（Inductive Link Prediction in N-ary Knowledge Graphs），旨在预测包含未见实体或角色的 n-ary 关系中的缺失元素。为解决传统三元组方法难以处理 n-ary 结构的问题，作者构建 n-ary 语义超图表示，并提出 NS-HART 模型（基于角色感知 Transformer 的子图推理）以捕捉实体无关的多跳语义模式。实验在“带实体特征/无实体特征的迁移推理”以及“对子图成对推理”等多种归纳任务中验证，NS-HART 在 MRR、Hits@10 等指标上显著优于三元组模型与现有超图 GNN 方法，展现了卓越的归纳能力。【知识图谱推理→链接预测→归纳式链接预测（n-ary KGs）】【ILPN 任务 + n-ary 语义超图】【MRR, Hits@10, AUC-PR】【NS-HART（role-aware Transformer 子图聚合网络）】
 
