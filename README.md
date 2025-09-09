@@ -1431,11 +1431,7 @@
 
 275. **FinePrompt: Unveiling the Role of Finetuned Inductive Bias on Compositional Reasoning in GPT-4** [EMNLP2023] [[paper link](https://aclanthology.org/2023.findings-emnlp.245.pdf)]  
 
-      通过利用微调模型中已验证的归纳偏差，提升GPT-4在组合推理任务中的性能，同时减少人工设计提示的负担。提出了FinePrompt方法，通过以下三种策略将微调模型的归纳偏差转化为提示：
-
-- Attribute-Infused Prompt：注入任务相关的属性（如算术规则或不等式定义）作为提示的一部分。
-- Pipeline-Infused Prompt：将复杂任务分解为子问题序列，模仿微调模型中的流水线方法。
-- Graph-Infused Prompt：将图结构中的连接信息（如实体或句子间的关系）嵌入到提示中。【多跳问答和文本数值推理】【MuSiQue（多跳问答）和DROP（数值推理）】【DROP：答案精确匹配和F1分数；MuSiQue：答案F1和支持段落F1】【GPT-4】
+      通过利用微调模型中已验证的归纳偏差，提升GPT-4在组合推理任务中的性能，同时减少人工设计提示的负担。提出了FinePrompt方法，通过以下三种策略将微调模型的归纳偏差转化为提示：Attribute-Infused Prompt：注入任务相关的属性（如算术规则或不等式定义）作为提示的一部分。Pipeline-Infused Prompt：将复杂任务分解为子问题序列，模仿微调模型中的流水线方法。Graph-Infused Prompt：将图结构中的连接信息（如实体或句子间的关系）嵌入到提示中。【多跳问答和文本数值推理】【MuSiQue（多跳问答）和DROP（数值推理）】【DROP：答案精确匹配和F1分数；MuSiQue：答案F1和支持段落F1】【GPT-4】
 
 276. **Inductive Relation Inference of Knowledge Graph Enhanced by Ontology Information** [EMNLP2023] [[paper link](https://aclanthology.org/2023.findings-emnlp.431.pdf)] 
 
